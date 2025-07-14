@@ -1,0 +1,78 @@
+2025-04-29 14:15:49,272 - ERROR - Unexpected error during backfill: 'Connection' object has no attribute 'execute_fetchone'
+2025-04-29 14:16:13,542 - INFO - Backfilling 2025-04-29 10:10:26 → 2025-04-29 10:16:13.542516
+2025-04-29 14:16:14,264 - INFO - Successfully inserted 348 rows.
+2025-04-29 14:17:34,147 - INFO - Backfilling 2025-04-29 10:10:26 → 2025-04-29 10:17:34.147756
+2025-04-29 14:17:34,622 - INFO - Successfully inserted 429 rows.
+2025-04-29 14:18:35,505 - INFO - Backfilling 2025-04-29 10:10:26 → 2025-04-29 10:18:35.505856+00:00
+2025-04-29 14:18:36,146 - INFO - Successfully inserted 1000 rows.
+2025-04-29 14:20:25,116 - INFO - Backfilling last hour: 2025-04-29 09:20:25.116231+00:00 → 2025-04-29 10:20:25.116231+00:00
+2025-04-29 14:20:26,468 - INFO - Successfully inserted 1000 rows.
+2025-04-29 14:22:00,865 - INFO - Backfilling last hour: 2025-04-29 09:22:00.865592+00:00 → 2025-04-29 10:22:00.865592+00:00
+2025-04-29 14:22:00,865 - INFO - API Request params: {'symbol': 'BTCUSDT', 'interval': '1s', 'startTime': 1745918520865, 'endTime': 1745922120865, 'limit': 3600}
+2025-04-29 14:22:01,907 - INFO - Received 1000 records from API
+2025-04-29 14:22:01,907 - INFO - Data range: 2025-04-29 09:22:01+00:00 → 2025-04-29 09:38:40+00:00
+2025-04-29 14:22:01,911 - INFO - First timestamp to insert: 2025-04-29 09:22:01
+2025-04-29 14:22:01,911 - INFO - Last timestamp to insert: 2025-04-29 09:38:40
+2025-04-29 14:22:01,917 - INFO - Total rows in database for this period: 1000
+2025-04-29 14:22:01,917 - INFO - Successfully processed 1000 rows from API
+2025-04-29 14:22:44,611 - INFO - Backfilling last hour: 2025-04-29 09:22:44.611687+00:00 → 2025-04-29 10:22:44.611687+00:00
+2025-04-29 14:22:44,611 - INFO - API Request params: {'symbol': 'BTCUSDT', 'interval': '1s', 'startTime': 1745918564611, 'endTime': 1745922164611, 'limit': 3600}
+2025-04-29 14:22:45,082 - INFO - Received 1000 records from API
+2025-04-29 14:22:45,083 - INFO - Data range: 2025-04-29 09:22:45+00:00 → 2025-04-29 09:39:24+00:00
+2025-04-29 14:22:45,090 - INFO - First timestamp to insert: 2025-04-29 09:22:45
+2025-04-29 14:22:45,091 - INFO - Last timestamp to insert: 2025-04-29 09:39:24
+2025-04-29 14:22:45,098 - INFO - Total rows in database for this period: 1000
+2025-04-29 14:22:45,098 - INFO - Successfully processed 1000 rows from API
+2025-04-29 14:22:52,451 - INFO - Backfilling last hour: 2025-04-29 09:22:52.451212+00:00 → 2025-04-29 10:22:52.451212+00:00
+2025-04-29 14:22:52,451 - INFO - API Request params: {'symbol': 'BTCUSDT', 'interval': '1s', 'startTime': 1745918572451, 'endTime': 1745922172451, 'limit': 3600}
+2025-04-29 14:22:52,908 - INFO - Received 1000 records from API
+2025-04-29 14:22:52,909 - INFO - Data range: 2025-04-29 09:22:53+00:00 → 2025-04-29 09:39:32+00:00
+2025-04-29 14:22:52,914 - INFO - First timestamp to insert: 2025-04-29 09:22:53
+2025-04-29 14:22:52,914 - INFO - Last timestamp to insert: 2025-04-29 09:39:32
+2025-04-29 14:22:52,921 - INFO - Total rows in database for this period: 1000
+2025-04-29 14:22:52,921 - INFO - Successfully processed 1000 rows from API
+2025-04-29 14:23:44,069 - INFO - Backfilling last hour: 2025-04-29 08:23:44.069594+00:00 → 2025-04-29 10:23:44.069594+00:00
+2025-04-29 14:23:44,069 - INFO - API Request params: {'symbol': 'BTCUSDT', 'interval': '1s', 'startTime': 1745915024069, 'endTime': 1745922224069, 'limit': 3600}
+2025-04-29 14:23:44,593 - INFO - Received 1000 records from API
+2025-04-29 14:23:44,593 - INFO - Data range: 2025-04-29 08:23:45+00:00 → 2025-04-29 08:40:24+00:00
+2025-04-29 14:23:44,599 - INFO - First timestamp to insert: 2025-04-29 08:23:45
+2025-04-29 14:23:44,599 - INFO - Last timestamp to insert: 2025-04-29 08:40:24
+2025-04-29 14:23:44,603 - INFO - Total rows in database for this period: 1000
+2025-04-29 14:23:44,604 - INFO - Successfully processed 1000 rows from API
+2025-04-29 14:23:52,706 - INFO - Backfilling last hour: 2025-04-29 08:23:52.706140+00:00 → 2025-04-29 10:23:52.706140+00:00
+2025-04-29 14:23:52,706 - INFO - API Request params: {'symbol': 'BTCUSDT', 'interval': '1s', 'startTime': 1745915032706, 'endTime': 1745922232706, 'limit': 3600}
+2025-04-29 14:23:53,178 - INFO - Received 1000 records from API
+2025-04-29 14:23:53,178 - INFO - Data range: 2025-04-29 08:23:53+00:00 → 2025-04-29 08:40:32+00:00
+2025-04-29 14:23:53,184 - INFO - First timestamp to insert: 2025-04-29 08:23:53
+2025-04-29 14:23:53,184 - INFO - Last timestamp to insert: 2025-04-29 08:40:32
+2025-04-29 14:23:53,188 - INFO - Total rows in database for this period: 1000
+2025-04-29 14:23:53,188 - INFO - Successfully processed 1000 rows from API
+2025-04-29 14:24:06,433 - INFO - Backfilling last hour: 2025-04-29 08:24:06.433188+00:00 → 2025-04-29 10:24:06.433188+00:00
+2025-04-29 14:24:06,433 - INFO - API Request params: {'symbol': 'BTCUSDT', 'interval': '1s', 'startTime': 1745915046433, 'endTime': 1745922246433, 'limit': 3600}
+2025-04-29 14:24:06,882 - INFO - Received 1000 records from API
+2025-04-29 14:24:06,882 - INFO - Data range: 2025-04-29 08:24:07+00:00 → 2025-04-29 08:40:46+00:00
+2025-04-29 14:24:06,889 - INFO - First timestamp to insert: 2025-04-29 08:24:07
+2025-04-29 14:24:06,889 - INFO - Last timestamp to insert: 2025-04-29 08:40:46
+2025-04-29 14:24:06,893 - INFO - Total rows in database for this period: 1000
+2025-04-29 14:24:06,893 - INFO - Successfully processed 1000 rows from API
+2025-04-29 15:54:50,211 - INFO - Backfilling last hour: 2025-04-29 10:54:50.211223+00:00 → 2025-04-29 11:54:50.211223+00:00
+2025-04-29 15:54:53,446 - INFO - Received 3600 records from API
+2025-04-29 15:54:53,446 - INFO - Data range: 2025-04-29 10:54:51+00:00 → 2025-04-29 11:54:50+00:00
+2025-04-29 15:54:53,467 - INFO - First timestamp to insert: 2025-04-29 10:54:51
+2025-04-29 15:54:53,467 - INFO - Last timestamp to insert: 2025-04-29 11:54:50
+2025-04-29 15:54:53,475 - INFO - Total rows in database for this period: 3600
+2025-04-29 15:54:53,476 - INFO - Successfully processed 3600 rows from API
+2025-04-29 16:04:13,599 - INFO - Backfilling last hour: 2025-04-29 11:04:13.598922+00:00 → 2025-04-29 12:04:13.598922+00:00
+2025-04-29 16:04:15,803 - INFO - Received 3600 records from API
+2025-04-29 16:04:15,803 - INFO - Data range: 2025-04-29 11:04:14+00:00 → 2025-04-29 12:04:13+00:00
+2025-04-29 16:04:15,825 - INFO - First timestamp to insert: 2025-04-29 11:04:14
+2025-04-29 16:04:15,825 - INFO - Last timestamp to insert: 2025-04-29 12:04:13
+2025-04-29 16:04:15,833 - INFO - Total rows in database for this period: 3600
+2025-04-29 16:04:15,833 - INFO - Successfully processed 3600 rows from API
+2025-04-29 16:39:54,099 - INFO - Backfilling last hour: 2025-04-29 11:39:54.099544+00:00 → 2025-04-29 12:39:54.099544+00:00
+2025-04-29 16:39:56,403 - INFO - Received 3600 records from API
+2025-04-29 16:39:56,403 - INFO - Data range: 2025-04-29 11:39:55+00:00 → 2025-04-29 12:39:54+00:00
+2025-04-29 16:39:56,429 - INFO - First timestamp to insert: 2025-04-29 11:39:55
+2025-04-29 16:39:56,429 - INFO - Last timestamp to insert: 2025-04-29 12:39:54
+2025-04-29 16:39:56,437 - INFO - Total rows in database for this period: 3600
+2025-04-29 16:39:56,437 - INFO - Successfully processed 3600 rows from API

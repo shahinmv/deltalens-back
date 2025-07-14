@@ -1,0 +1,19 @@
+services:
+  binance-data-collector:
+    build: .
+    volumes:
+      - ./db.sqlite3:/app/db.sqlite3:rw
+      - ./logs:/app/logs:rw
+      - ./startup_logs:/app/startup_logs:rw
+    restart: unless-stopped
+    environment:
+      - TZ=UTC
+    user: "1000:1000"  # appuser's UID and GID
+    # Add healthcheck to ensure the database is accessible
+    healthcheck:
+      test: ["CMD", "ls", "-l", "/app/db.sqlite3"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    # Add privileged mode to ensure write permissions
+    privileged: true

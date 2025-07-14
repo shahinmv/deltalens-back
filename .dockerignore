@@ -1,0 +1,14 @@
+.git
+.gitignore
+.env
+*.pyc
+__pycache__
+*.log
+db.sqlite3
+DATA COLLECTION/*
+!DATA COLLECTION/live_ingest.py
+!DATA COLLECTION/back_fill_last_hour.py 
+!DATA COLLECTION/back_fill_funding.py 
+!DATA COLLECTION/back_fill_oi.py 
+!DATA COLLECTION/live_liquidations.py 
+!startup_logs/*

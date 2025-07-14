@@ -1,0 +1,612 @@
+2025-05-07 13:04:01,610 - INFO - Backfilling last hour: 2025-05-07 12:04:01.610283+00:00 → 2025-05-07 13:04:01.610283+00:00
+2025-05-07 13:04:03,771 - INFO - Received 3600 records from API
+2025-05-07 13:04:03,771 - INFO - Data range: 2025-05-07 12:04:02+00:00 → 2025-05-07 13:04:01+00:00
+2025-05-07 13:04:03,779 - INFO - First timestamp to insert: 2025-05-07 12:04:02
+2025-05-07 13:04:03,779 - INFO - Last timestamp to insert: 2025-05-07 13:04:01
+2025-05-07 13:04:03,790 - INFO - Rows before insertion: 3589
+2025-05-07 13:04:03,790 - INFO - Rows after insertion: 3600
+2025-05-07 13:04:03,790 - INFO - Rows actually appended: 11
+2025-05-07 13:04:03,790 - INFO - Rows ignored (already existed): 3589
+2025-05-07 13:04:03,791 - INFO - Total rows in database for this period: 3600
+2025-05-07 13:04:03,791 - INFO - Successfully processed 3600 rows from API
+2025-05-07 13:04:03,791 - INFO - ================================================
+2025-05-07 13:06:41,914 - INFO - Backfilling last hour: 2025-05-07 12:06:41.914219+00:00 → 2025-05-07 13:06:41.914219+00:00
+2025-05-07 13:06:44,333 - INFO - Received 3600 records from API
+2025-05-07 13:06:44,334 - INFO - Data range: 2025-05-07 12:06:42+00:00 → 2025-05-07 13:06:41+00:00
+2025-05-07 13:06:44,340 - INFO - First timestamp to insert: 2025-05-07 12:06:42
+2025-05-07 13:06:44,340 - INFO - Last timestamp to insert: 2025-05-07 13:06:41
+2025-05-07 13:06:44,350 - INFO - Rows before insertion: 3590
+2025-05-07 13:06:44,350 - INFO - Rows after insertion: 3600
+2025-05-07 13:06:44,350 - INFO - Rows actually appended: 10
+2025-05-07 13:06:44,350 - INFO - Rows ignored (already existed): 3590
+2025-05-07 13:06:44,350 - INFO - Total rows in database for this period: 3600
+2025-05-07 13:06:44,350 - INFO - Successfully processed 3600 rows from API
+2025-05-07 13:06:44,351 - INFO - ================================================
+2025-05-07 14:00:24,895 - INFO - Backfilling last hour: 2025-05-07 13:00:24.895176+00:00 → 2025-05-07 14:00:24.895176+00:00
+2025-05-07 14:00:26,900 - INFO - Received 3600 records from API
+2025-05-07 14:00:26,901 - INFO - Data range: 2025-05-07 13:00:25+00:00 → 2025-05-07 14:00:24+00:00
+2025-05-07 14:00:26,917 - INFO - First timestamp to insert: 2025-05-07 13:00:25
+2025-05-07 14:00:26,917 - INFO - Last timestamp to insert: 2025-05-07 14:00:24
+2025-05-07 14:00:26,934 - INFO - Rows before insertion: 677
+2025-05-07 14:00:26,934 - INFO - Rows after insertion: 3600
+2025-05-07 14:00:26,935 - INFO - Rows actually appended: 2923
+2025-05-07 14:00:26,935 - INFO - Rows ignored (already existed): 677
+2025-05-07 14:00:26,935 - INFO - Total rows in database for this period: 3600
+2025-05-07 14:00:26,935 - INFO - Successfully processed 3600 rows from API
+2025-05-07 14:00:26,935 - INFO - ================================================
+2025-05-07 15:00:01,796 - INFO - Backfilling last hour: 2025-05-07 14:00:01.796148+00:00 → 2025-05-07 15:00:01.796148+00:00
+2025-05-07 15:00:05,441 - INFO - Received 3600 records from API
+2025-05-07 15:00:05,442 - INFO - Data range: 2025-05-07 14:00:02+00:00 → 2025-05-07 15:00:01+00:00
+2025-05-07 15:00:05,458 - INFO - First timestamp to insert: 2025-05-07 14:00:02
+2025-05-07 15:00:05,458 - INFO - Last timestamp to insert: 2025-05-07 15:00:01
+2025-05-07 15:00:05,474 - INFO - Rows before insertion: 2439
+2025-05-07 15:00:05,474 - INFO - Rows after insertion: 3600
+2025-05-07 15:00:05,474 - INFO - Rows actually appended: 1161
+2025-05-07 15:00:05,474 - INFO - Rows ignored (already existed): 2439
+2025-05-07 15:00:05,474 - INFO - Total rows in database for this period: 3600
+2025-05-07 15:00:05,474 - INFO - Successfully processed 3600 rows from API
+2025-05-07 15:00:05,474 - INFO - ================================================
+2025-05-07 16:00:01,486 - INFO - Backfilling last hour: 2025-05-07 15:00:01.486835+00:00 → 2025-05-07 16:00:01.486835+00:00
+2025-05-07 16:00:05,169 - INFO - Received 3600 records from API
+2025-05-07 16:00:05,170 - INFO - Data range: 2025-05-07 15:00:02+00:00 → 2025-05-07 16:00:01+00:00
+2025-05-07 16:00:05,185 - INFO - First timestamp to insert: 2025-05-07 15:00:02
+2025-05-07 16:00:05,186 - INFO - Last timestamp to insert: 2025-05-07 16:00:01
+2025-05-07 16:00:05,199 - INFO - Rows before insertion: 3183
+2025-05-07 16:00:05,200 - INFO - Rows after insertion: 3600
+2025-05-07 16:00:05,200 - INFO - Rows actually appended: 417
+2025-05-07 16:00:05,200 - INFO - Rows ignored (already existed): 3183
+2025-05-07 16:00:05,200 - INFO - Total rows in database for this period: 3600
+2025-05-07 16:00:05,200 - INFO - Successfully processed 3600 rows from API
+2025-05-07 16:00:05,200 - INFO - ================================================
+2025-05-07 17:00:01,139 - INFO - Backfilling last hour: 2025-05-07 16:00:01.139869+00:00 → 2025-05-07 17:00:01.139869+00:00
+2025-05-07 17:00:03,307 - INFO - Received 3600 records from API
+2025-05-07 17:00:03,309 - INFO - Data range: 2025-05-07 16:00:02+00:00 → 2025-05-07 17:00:01+00:00
+2025-05-07 17:00:03,325 - INFO - First timestamp to insert: 2025-05-07 16:00:02
+2025-05-07 17:00:03,325 - INFO - Last timestamp to insert: 2025-05-07 17:00:01
+2025-05-07 17:00:03,339 - INFO - Rows before insertion: 3597
+2025-05-07 17:00:03,339 - INFO - Rows after insertion: 3600
+2025-05-07 17:00:03,340 - INFO - Rows actually appended: 3
+2025-05-07 17:00:03,340 - INFO - Rows ignored (already existed): 3597
+2025-05-07 17:00:03,340 - INFO - Total rows in database for this period: 3600
+2025-05-07 17:00:03,340 - INFO - Successfully processed 3600 rows from API
+2025-05-07 17:00:03,340 - INFO - ================================================
+2025-05-07 18:00:01,748 - INFO - Backfilling last hour: 2025-05-07 17:00:01.748768+00:00 → 2025-05-07 18:00:01.748768+00:00
+2025-05-07 18:00:03,891 - INFO - Received 3600 records from API
+2025-05-07 18:00:03,891 - INFO - Data range: 2025-05-07 17:00:02+00:00 → 2025-05-07 18:00:01+00:00
+2025-05-07 18:00:03,898 - INFO - First timestamp to insert: 2025-05-07 17:00:02
+2025-05-07 18:00:03,898 - INFO - Last timestamp to insert: 2025-05-07 18:00:01
+2025-05-07 18:00:03,902 - INFO - Rows before insertion: 3600
+2025-05-07 18:00:03,902 - INFO - Rows after insertion: 3600
+2025-05-07 18:00:03,903 - INFO - Rows actually appended: 0
+2025-05-07 18:00:03,903 - INFO - Rows ignored (already existed): 3600
+2025-05-07 18:00:03,903 - INFO - Total rows in database for this period: 3600
+2025-05-07 18:00:03,903 - INFO - Successfully processed 3600 rows from API
+2025-05-07 18:00:03,903 - INFO - ================================================
+2025-05-07 19:00:01,114 - INFO - Backfilling last hour: 2025-05-07 18:00:01.114607+00:00 → 2025-05-07 19:00:01.114607+00:00
+2025-05-07 19:00:03,718 - INFO - Received 3600 records from API
+2025-05-07 19:00:03,720 - INFO - Data range: 2025-05-07 18:00:02+00:00 → 2025-05-07 19:00:01+00:00
+2025-05-07 19:00:03,737 - INFO - First timestamp to insert: 2025-05-07 18:00:02
+2025-05-07 19:00:03,737 - INFO - Last timestamp to insert: 2025-05-07 19:00:01
+2025-05-07 19:00:03,750 - INFO - Rows before insertion: 3597
+2025-05-07 19:00:03,750 - INFO - Rows after insertion: 3600
+2025-05-07 19:00:03,750 - INFO - Rows actually appended: 3
+2025-05-07 19:00:03,751 - INFO - Rows ignored (already existed): 3597
+2025-05-07 19:00:03,751 - INFO - Total rows in database for this period: 3600
+2025-05-07 19:00:03,751 - INFO - Successfully processed 3600 rows from API
+2025-05-07 19:00:03,751 - INFO - ================================================
+2025-05-07 20:00:01,462 - INFO - Backfilling last hour: 2025-05-07 19:00:01.462637+00:00 → 2025-05-07 20:00:01.462637+00:00
+2025-05-07 20:00:03,828 - INFO - Received 3600 records from API
+2025-05-07 20:00:03,829 - INFO - Data range: 2025-05-07 19:00:02+00:00 → 2025-05-07 20:00:01+00:00
+2025-05-07 20:00:03,847 - INFO - First timestamp to insert: 2025-05-07 19:00:02
+2025-05-07 20:00:03,847 - INFO - Last timestamp to insert: 2025-05-07 20:00:01
+2025-05-07 20:00:03,863 - INFO - Rows before insertion: 3600
+2025-05-07 20:00:03,863 - INFO - Rows after insertion: 3600
+2025-05-07 20:00:03,863 - INFO - Rows actually appended: 0
+2025-05-07 20:00:03,863 - INFO - Rows ignored (already existed): 3600
+2025-05-07 20:00:03,863 - INFO - Total rows in database for this period: 3600
+2025-05-07 20:00:03,864 - INFO - Successfully processed 3600 rows from API
+2025-05-07 20:00:03,864 - INFO - ================================================
+2025-05-07 21:00:01,705 - INFO - Backfilling last hour: 2025-05-07 20:00:01.705232+00:00 → 2025-05-07 21:00:01.705232+00:00
+2025-05-07 21:00:03,984 - INFO - Received 3600 records from API
+2025-05-07 21:00:03,986 - INFO - Data range: 2025-05-07 20:00:02+00:00 → 2025-05-07 21:00:01+00:00
+2025-05-07 21:00:04,002 - INFO - First timestamp to insert: 2025-05-07 20:00:02
+2025-05-07 21:00:04,002 - INFO - Last timestamp to insert: 2025-05-07 21:00:01
+2025-05-07 21:00:04,011 - INFO - Rows before insertion: 3600
+2025-05-07 21:00:04,011 - INFO - Rows after insertion: 3600
+2025-05-07 21:00:04,012 - INFO - Rows actually appended: 0
+2025-05-07 21:00:04,012 - INFO - Rows ignored (already existed): 3600
+2025-05-07 21:00:04,012 - INFO - Total rows in database for this period: 3600
+2025-05-07 21:00:04,012 - INFO - Successfully processed 3600 rows from API
+2025-05-07 21:00:04,012 - INFO - ================================================
+2025-05-07 22:00:01,912 - INFO - Backfilling last hour: 2025-05-07 21:00:01.912137+00:00 → 2025-05-07 22:00:01.912137+00:00
+2025-05-07 22:00:03,998 - INFO - Received 3600 records from API
+2025-05-07 22:00:03,999 - INFO - Data range: 2025-05-07 21:00:02+00:00 → 2025-05-07 22:00:01+00:00
+2025-05-07 22:00:04,014 - INFO - First timestamp to insert: 2025-05-07 21:00:02
+2025-05-07 22:00:04,015 - INFO - Last timestamp to insert: 2025-05-07 22:00:01
+2025-05-07 22:00:04,031 - INFO - Rows before insertion: 3597
+2025-05-07 22:00:04,031 - INFO - Rows after insertion: 3600
+2025-05-07 22:00:04,031 - INFO - Rows actually appended: 3
+2025-05-07 22:00:04,031 - INFO - Rows ignored (already existed): 3597
+2025-05-07 22:00:04,031 - INFO - Total rows in database for this period: 3600
+2025-05-07 22:00:04,032 - INFO - Successfully processed 3600 rows from API
+2025-05-07 22:00:04,032 - INFO - ================================================
+2025-05-07 23:00:01,966 - INFO - Backfilling last hour: 2025-05-07 22:00:01.966310+00:00 → 2025-05-07 23:00:01.966310+00:00
+2025-05-07 23:00:04,261 - INFO - Received 3600 records from API
+2025-05-07 23:00:04,262 - INFO - Data range: 2025-05-07 22:00:02+00:00 → 2025-05-07 23:00:01+00:00
+2025-05-07 23:00:04,278 - INFO - First timestamp to insert: 2025-05-07 22:00:02
+2025-05-07 23:00:04,279 - INFO - Last timestamp to insert: 2025-05-07 23:00:01
+2025-05-07 23:00:04,289 - INFO - Rows before insertion: 3600
+2025-05-07 23:00:04,289 - INFO - Rows after insertion: 3600
+2025-05-07 23:00:04,289 - INFO - Rows actually appended: 0
+2025-05-07 23:00:04,289 - INFO - Rows ignored (already existed): 3600
+2025-05-07 23:00:04,290 - INFO - Total rows in database for this period: 3600
+2025-05-07 23:00:04,290 - INFO - Successfully processed 3600 rows from API
+2025-05-07 23:00:04,290 - INFO - ================================================
+2025-05-08 00:00:01,416 - INFO - Backfilling last hour: 2025-05-07 23:00:01.416753+00:00 → 2025-05-08 00:00:01.416753+00:00
+2025-05-08 00:00:03,960 - INFO - Received 3600 records from API
+2025-05-08 00:00:03,961 - INFO - Data range: 2025-05-07 23:00:02+00:00 → 2025-05-08 00:00:01+00:00
+2025-05-08 00:00:03,976 - INFO - First timestamp to insert: 2025-05-07 23:00:02
+2025-05-08 00:00:03,976 - INFO - Last timestamp to insert: 2025-05-08 00:00:01
+2025-05-08 00:00:03,988 - INFO - Rows before insertion: 3597
+2025-05-08 00:00:03,989 - INFO - Rows after insertion: 3600
+2025-05-08 00:00:03,989 - INFO - Rows actually appended: 3
+2025-05-08 00:00:03,989 - INFO - Rows ignored (already existed): 3597
+2025-05-08 00:00:03,989 - INFO - Total rows in database for this period: 3600
+2025-05-08 00:00:03,989 - INFO - Successfully processed 3600 rows from API
+2025-05-08 00:00:03,989 - INFO - ================================================
+2025-05-08 01:00:01,781 - INFO - Backfilling last hour: 2025-05-08 00:00:01.781449+00:00 → 2025-05-08 01:00:01.781449+00:00
+2025-05-08 01:00:04,137 - INFO - Received 3600 records from API
+2025-05-08 01:00:04,137 - INFO - Data range: 2025-05-08 00:00:02+00:00 → 2025-05-08 01:00:01+00:00
+2025-05-08 01:00:04,153 - INFO - First timestamp to insert: 2025-05-08 00:00:02
+2025-05-08 01:00:04,153 - INFO - Last timestamp to insert: 2025-05-08 01:00:01
+2025-05-08 01:00:04,163 - INFO - Rows before insertion: 3600
+2025-05-08 01:00:04,164 - INFO - Rows after insertion: 3600
+2025-05-08 01:00:04,164 - INFO - Rows actually appended: 0
+2025-05-08 01:00:04,164 - INFO - Rows ignored (already existed): 3600
+2025-05-08 01:00:04,164 - INFO - Total rows in database for this period: 3600
+2025-05-08 01:00:04,164 - INFO - Successfully processed 3600 rows from API
+2025-05-08 01:00:04,164 - INFO - ================================================
+2025-05-08 02:00:02,083 - INFO - Backfilling last hour: 2025-05-08 01:00:02.083045+00:00 → 2025-05-08 02:00:02.083045+00:00
+2025-05-08 02:00:04,480 - INFO - Received 3600 records from API
+2025-05-08 02:00:04,481 - INFO - Data range: 2025-05-08 01:00:03+00:00 → 2025-05-08 02:00:02+00:00
+2025-05-08 02:00:04,495 - INFO - First timestamp to insert: 2025-05-08 01:00:03
+2025-05-08 02:00:04,495 - INFO - Last timestamp to insert: 2025-05-08 02:00:02
+2025-05-08 02:00:04,504 - INFO - Rows before insertion: 3600
+2025-05-08 02:00:04,504 - INFO - Rows after insertion: 3600
+2025-05-08 02:00:04,504 - INFO - Rows actually appended: 0
+2025-05-08 02:00:04,504 - INFO - Rows ignored (already existed): 3600
+2025-05-08 02:00:04,504 - INFO - Total rows in database for this period: 3600
+2025-05-08 02:00:04,505 - INFO - Successfully processed 3600 rows from API
+2025-05-08 02:00:04,505 - INFO - ================================================
+2025-05-08 03:00:01,271 - INFO - Backfilling last hour: 2025-05-08 02:00:01.271627+00:00 → 2025-05-08 03:00:01.271627+00:00
+2025-05-08 03:00:04,624 - INFO - Received 3600 records from API
+2025-05-08 03:00:04,625 - INFO - Data range: 2025-05-08 02:00:02+00:00 → 2025-05-08 03:00:01+00:00
+2025-05-08 03:00:04,640 - INFO - First timestamp to insert: 2025-05-08 02:00:02
+2025-05-08 03:00:04,640 - INFO - Last timestamp to insert: 2025-05-08 03:00:01
+2025-05-08 03:00:04,650 - INFO - Rows before insertion: 3600
+2025-05-08 03:00:04,650 - INFO - Rows after insertion: 3600
+2025-05-08 03:00:04,651 - INFO - Rows actually appended: 0
+2025-05-08 03:00:04,651 - INFO - Rows ignored (already existed): 3600
+2025-05-08 03:00:04,651 - INFO - Total rows in database for this period: 3600
+2025-05-08 03:00:04,651 - INFO - Successfully processed 3600 rows from API
+2025-05-08 03:00:04,651 - INFO - ================================================
+2025-05-08 04:00:01,459 - INFO - Backfilling last hour: 2025-05-08 03:00:01.459087+00:00 → 2025-05-08 04:00:01.459087+00:00
+2025-05-08 04:00:03,782 - INFO - Received 3600 records from API
+2025-05-08 04:00:03,783 - INFO - Data range: 2025-05-08 03:00:02+00:00 → 2025-05-08 04:00:01+00:00
+2025-05-08 04:00:03,798 - INFO - First timestamp to insert: 2025-05-08 03:00:02
+2025-05-08 04:00:03,798 - INFO - Last timestamp to insert: 2025-05-08 04:00:01
+2025-05-08 04:00:03,814 - INFO - Rows before insertion: 3597
+2025-05-08 04:00:03,814 - INFO - Rows after insertion: 3600
+2025-05-08 04:00:03,814 - INFO - Rows actually appended: 3
+2025-05-08 04:00:03,814 - INFO - Rows ignored (already existed): 3597
+2025-05-08 04:00:03,814 - INFO - Total rows in database for this period: 3600
+2025-05-08 04:00:03,814 - INFO - Successfully processed 3600 rows from API
+2025-05-08 04:00:03,815 - INFO - ================================================
+2025-05-08 05:00:01,762 - INFO - Backfilling last hour: 2025-05-08 04:00:01.762148+00:00 → 2025-05-08 05:00:01.762148+00:00
+2025-05-08 05:00:04,087 - INFO - Received 3600 records from API
+2025-05-08 05:00:04,088 - INFO - Data range: 2025-05-08 04:00:02+00:00 → 2025-05-08 05:00:01+00:00
+2025-05-08 05:00:04,104 - INFO - First timestamp to insert: 2025-05-08 04:00:02
+2025-05-08 05:00:04,104 - INFO - Last timestamp to insert: 2025-05-08 05:00:01
+2025-05-08 05:00:04,114 - INFO - Rows before insertion: 3600
+2025-05-08 05:00:04,114 - INFO - Rows after insertion: 3600
+2025-05-08 05:00:04,114 - INFO - Rows actually appended: 0
+2025-05-08 05:00:04,114 - INFO - Rows ignored (already existed): 3600
+2025-05-08 05:00:04,115 - INFO - Total rows in database for this period: 3600
+2025-05-08 05:00:04,115 - INFO - Successfully processed 3600 rows from API
+2025-05-08 05:00:04,115 - INFO - ================================================
+2025-05-08 06:00:01,294 - INFO - Backfilling last hour: 2025-05-08 05:00:01.294393+00:00 → 2025-05-08 06:00:01.294393+00:00
+2025-05-08 06:00:03,734 - INFO - Received 3600 records from API
+2025-05-08 06:00:03,735 - INFO - Data range: 2025-05-08 05:00:02+00:00 → 2025-05-08 06:00:01+00:00
+2025-05-08 06:00:03,751 - INFO - First timestamp to insert: 2025-05-08 05:00:02
+2025-05-08 06:00:03,752 - INFO - Last timestamp to insert: 2025-05-08 06:00:01
+2025-05-08 06:00:03,766 - INFO - Rows before insertion: 3597
+2025-05-08 06:00:03,766 - INFO - Rows after insertion: 3600
+2025-05-08 06:00:03,766 - INFO - Rows actually appended: 3
+2025-05-08 06:00:03,766 - INFO - Rows ignored (already existed): 3597
+2025-05-08 06:00:03,766 - INFO - Total rows in database for this period: 3600
+2025-05-08 06:00:03,766 - INFO - Successfully processed 3600 rows from API
+2025-05-08 06:00:03,766 - INFO - ================================================
+2025-05-08 07:00:01,721 - INFO - Backfilling last hour: 2025-05-08 06:00:01.721931+00:00 → 2025-05-08 07:00:01.721931+00:00
+2025-05-08 07:00:04,396 - INFO - Received 3600 records from API
+2025-05-08 07:00:04,397 - INFO - Data range: 2025-05-08 06:00:02+00:00 → 2025-05-08 07:00:01+00:00
+2025-05-08 07:00:04,410 - INFO - First timestamp to insert: 2025-05-08 06:00:02
+2025-05-08 07:00:04,410 - INFO - Last timestamp to insert: 2025-05-08 07:00:01
+2025-05-08 07:00:04,419 - INFO - Rows before insertion: 3600
+2025-05-08 07:00:04,420 - INFO - Rows after insertion: 3600
+2025-05-08 07:00:04,420 - INFO - Rows actually appended: 0
+2025-05-08 07:00:04,420 - INFO - Rows ignored (already existed): 3600
+2025-05-08 07:00:04,420 - INFO - Total rows in database for this period: 3600
+2025-05-08 07:00:04,420 - INFO - Successfully processed 3600 rows from API
+2025-05-08 07:00:04,420 - INFO - ================================================
+2025-05-08 08:00:01,768 - INFO - Backfilling last hour: 2025-05-08 07:00:01.768059+00:00 → 2025-05-08 08:00:01.768059+00:00
+2025-05-08 08:00:04,712 - INFO - Received 3600 records from API
+2025-05-08 08:00:04,714 - INFO - Data range: 2025-05-08 07:00:02+00:00 → 2025-05-08 08:00:01+00:00
+2025-05-08 08:00:04,728 - INFO - First timestamp to insert: 2025-05-08 07:00:02
+2025-05-08 08:00:04,728 - INFO - Last timestamp to insert: 2025-05-08 08:00:01
+2025-05-08 08:00:04,738 - INFO - Rows before insertion: 3600
+2025-05-08 08:00:04,738 - INFO - Rows after insertion: 3600
+2025-05-08 08:00:04,738 - INFO - Rows actually appended: 0
+2025-05-08 08:00:04,738 - INFO - Rows ignored (already existed): 3600
+2025-05-08 08:00:04,738 - INFO - Total rows in database for this period: 3600
+2025-05-08 08:00:04,738 - INFO - Successfully processed 3600 rows from API
+2025-05-08 08:00:04,739 - INFO - ================================================
+2025-05-08 09:00:01,719 - INFO - Backfilling last hour: 2025-05-08 08:00:01.719236+00:00 → 2025-05-08 09:00:01.719236+00:00
+2025-05-08 09:00:06,738 - INFO - Received 3600 records from API
+2025-05-08 09:00:06,739 - INFO - Data range: 2025-05-08 08:00:02+00:00 → 2025-05-08 09:00:01+00:00
+2025-05-08 09:00:06,757 - INFO - First timestamp to insert: 2025-05-08 08:00:02
+2025-05-08 09:00:06,757 - INFO - Last timestamp to insert: 2025-05-08 09:00:01
+2025-05-08 09:00:06,772 - INFO - Rows before insertion: 3600
+2025-05-08 09:00:06,772 - INFO - Rows after insertion: 3600
+2025-05-08 09:00:06,772 - INFO - Rows actually appended: 0
+2025-05-08 09:00:06,772 - INFO - Rows ignored (already existed): 3600
+2025-05-08 09:00:06,772 - INFO - Total rows in database for this period: 3600
+2025-05-08 09:00:06,773 - INFO - Successfully processed 3600 rows from API
+2025-05-08 09:00:06,773 - INFO - ================================================
+2025-05-08 10:00:01,955 - INFO - Backfilling last hour: 2025-05-08 09:00:01.955440+00:00 → 2025-05-08 10:00:01.955440+00:00
+2025-05-08 10:00:05,692 - INFO - Received 3600 records from API
+2025-05-08 10:00:05,693 - INFO - Data range: 2025-05-08 09:00:02+00:00 → 2025-05-08 10:00:01+00:00
+2025-05-08 10:00:05,708 - INFO - First timestamp to insert: 2025-05-08 09:00:02
+2025-05-08 10:00:05,708 - INFO - Last timestamp to insert: 2025-05-08 10:00:01
+2025-05-08 10:00:05,720 - INFO - Rows before insertion: 3600
+2025-05-08 10:00:05,720 - INFO - Rows after insertion: 3600
+2025-05-08 10:00:05,720 - INFO - Rows actually appended: 0
+2025-05-08 10:00:05,720 - INFO - Rows ignored (already existed): 3600
+2025-05-08 10:00:05,720 - INFO - Total rows in database for this period: 3600
+2025-05-08 10:00:05,720 - INFO - Successfully processed 3600 rows from API
+2025-05-08 10:00:05,720 - INFO - ================================================
+2025-05-08 11:00:01,773 - INFO - Backfilling last hour: 2025-05-08 10:00:01.773120+00:00 → 2025-05-08 11:00:01.773120+00:00
+2025-05-08 11:00:06,028 - INFO - Received 3600 records from API
+2025-05-08 11:00:06,030 - INFO - Data range: 2025-05-08 10:00:02+00:00 → 2025-05-08 11:00:01+00:00
+2025-05-08 11:00:06,045 - INFO - First timestamp to insert: 2025-05-08 10:00:02
+2025-05-08 11:00:06,045 - INFO - Last timestamp to insert: 2025-05-08 11:00:01
+2025-05-08 11:00:06,055 - INFO - Rows before insertion: 3600
+2025-05-08 11:00:06,055 - INFO - Rows after insertion: 3600
+2025-05-08 11:00:06,055 - INFO - Rows actually appended: 0
+2025-05-08 11:00:06,055 - INFO - Rows ignored (already existed): 3600
+2025-05-08 11:00:06,055 - INFO - Total rows in database for this period: 3600
+2025-05-08 11:00:06,055 - INFO - Successfully processed 3600 rows from API
+2025-05-08 11:00:06,056 - INFO - ================================================
+2025-05-08 13:00:01,978 - INFO - Backfilling last hour: 2025-05-08 12:00:01.978333+00:00 → 2025-05-08 13:00:01.978333+00:00
+2025-05-08 13:00:05,965 - INFO - Received 3600 records from API
+2025-05-08 13:00:05,966 - INFO - Data range: 2025-05-08 12:00:02+00:00 → 2025-05-08 13:00:01+00:00
+2025-05-08 13:00:05,982 - INFO - First timestamp to insert: 2025-05-08 12:00:02
+2025-05-08 13:00:05,982 - INFO - Last timestamp to insert: 2025-05-08 13:00:01
+2025-05-08 13:00:05,997 - INFO - Rows before insertion: 3047
+2025-05-08 13:00:05,997 - INFO - Rows after insertion: 3600
+2025-05-08 13:00:05,997 - INFO - Rows actually appended: 553
+2025-05-08 13:00:05,997 - INFO - Rows ignored (already existed): 3047
+2025-05-08 13:00:05,997 - INFO - Total rows in database for this period: 3600
+2025-05-08 13:00:05,997 - INFO - Successfully processed 3600 rows from API
+2025-05-08 13:00:05,997 - INFO - ================================================
+2025-05-08 14:00:01,337 - INFO - Backfilling last hour: 2025-05-08 13:00:01.337465+00:00 → 2025-05-08 14:00:01.337465+00:00
+2025-05-08 14:00:04,064 - INFO - Received 3600 records from API
+2025-05-08 14:00:04,064 - INFO - Data range: 2025-05-08 13:00:02+00:00 → 2025-05-08 14:00:01+00:00
+2025-05-08 14:00:04,080 - INFO - First timestamp to insert: 2025-05-08 13:00:02
+2025-05-08 14:00:04,080 - INFO - Last timestamp to insert: 2025-05-08 14:00:01
+2025-05-08 14:00:04,094 - INFO - Rows before insertion: 3455
+2025-05-08 14:00:04,094 - INFO - Rows after insertion: 3600
+2025-05-08 14:00:04,094 - INFO - Rows actually appended: 145
+2025-05-08 14:00:04,094 - INFO - Rows ignored (already existed): 3455
+2025-05-08 14:00:04,094 - INFO - Total rows in database for this period: 3600
+2025-05-08 14:00:04,094 - INFO - Successfully processed 3600 rows from API
+2025-05-08 14:00:04,094 - INFO - ================================================
+2025-05-08 15:00:01,688 - INFO - Backfilling last hour: 2025-05-08 14:00:01.688607+00:00 → 2025-05-08 15:00:01.688607+00:00
+2025-05-08 15:00:04,336 - INFO - Received 3600 records from API
+2025-05-08 15:00:04,338 - INFO - Data range: 2025-05-08 14:00:02+00:00 → 2025-05-08 15:00:01+00:00
+2025-05-08 15:00:04,353 - INFO - First timestamp to insert: 2025-05-08 14:00:02
+2025-05-08 15:00:04,353 - INFO - Last timestamp to insert: 2025-05-08 15:00:01
+2025-05-08 15:00:04,366 - INFO - Rows before insertion: 3337
+2025-05-08 15:00:04,366 - INFO - Rows after insertion: 3600
+2025-05-08 15:00:04,366 - INFO - Rows actually appended: 263
+2025-05-08 15:00:04,367 - INFO - Rows ignored (already existed): 3337
+2025-05-08 15:00:04,367 - INFO - Total rows in database for this period: 3600
+2025-05-08 15:00:04,367 - INFO - Successfully processed 3600 rows from API
+2025-05-08 15:00:04,367 - INFO - ================================================
+2025-05-08 17:00:01,556 - INFO - Backfilling last hour: 2025-05-08 16:00:01.556136+00:00 → 2025-05-08 17:00:01.556136+00:00
+2025-05-08 17:00:04,370 - INFO - Received 3600 records from API
+2025-05-08 17:00:04,371 - INFO - Data range: 2025-05-08 16:00:02+00:00 → 2025-05-08 17:00:01+00:00
+2025-05-08 17:00:04,387 - INFO - First timestamp to insert: 2025-05-08 16:00:02
+2025-05-08 17:00:04,388 - INFO - Last timestamp to insert: 2025-05-08 17:00:01
+2025-05-08 17:00:04,401 - INFO - Rows before insertion: 3126
+2025-05-08 17:00:04,401 - INFO - Rows after insertion: 3600
+2025-05-08 17:00:04,402 - INFO - Rows actually appended: 474
+2025-05-08 17:00:04,402 - INFO - Rows ignored (already existed): 3126
+2025-05-08 17:00:04,402 - INFO - Total rows in database for this period: 3600
+2025-05-08 17:00:04,402 - INFO - Successfully processed 3600 rows from API
+2025-05-08 17:00:04,402 - INFO - ================================================
+2025-05-08 18:00:01,591 - INFO - Backfilling last hour: 2025-05-08 17:00:01.591694+00:00 → 2025-05-08 18:00:01.591694+00:00
+2025-05-08 18:00:03,776 - INFO - Received 3600 records from API
+2025-05-08 18:00:03,777 - INFO - Data range: 2025-05-08 17:00:02+00:00 → 2025-05-08 18:00:01+00:00
+2025-05-08 18:00:03,793 - INFO - First timestamp to insert: 2025-05-08 17:00:02
+2025-05-08 18:00:03,793 - INFO - Last timestamp to insert: 2025-05-08 18:00:01
+2025-05-08 18:00:03,811 - INFO - Rows before insertion: 842
+2025-05-08 18:00:03,812 - INFO - Rows after insertion: 3600
+2025-05-08 18:00:03,812 - INFO - Rows actually appended: 2758
+2025-05-08 18:00:03,812 - INFO - Rows ignored (already existed): 842
+2025-05-08 18:00:03,812 - INFO - Total rows in database for this period: 3600
+2025-05-08 18:00:03,812 - INFO - Successfully processed 3600 rows from API
+2025-05-08 18:00:03,812 - INFO - ================================================
+2025-05-08 20:00:01,183 - INFO - Backfilling last hour: 2025-05-08 19:00:01.183535+00:00 → 2025-05-08 20:00:01.183535+00:00
+2025-05-08 20:00:04,951 - INFO - Received 3600 records from API
+2025-05-08 20:00:04,952 - INFO - Data range: 2025-05-08 19:00:02+00:00 → 2025-05-08 20:00:01+00:00
+2025-05-08 20:00:04,967 - INFO - First timestamp to insert: 2025-05-08 19:00:02
+2025-05-08 20:00:04,968 - INFO - Last timestamp to insert: 2025-05-08 20:00:01
+2025-05-08 20:00:04,986 - INFO - Rows before insertion: 1058
+2025-05-08 20:00:04,986 - INFO - Rows after insertion: 3600
+2025-05-08 20:00:04,986 - INFO - Rows actually appended: 2542
+2025-05-08 20:00:04,987 - INFO - Rows ignored (already existed): 1058
+2025-05-08 20:00:04,987 - INFO - Total rows in database for this period: 3600
+2025-05-08 20:00:04,987 - INFO - Successfully processed 3600 rows from API
+2025-05-08 20:00:04,987 - INFO - ================================================
+2025-05-08 21:00:01,817 - INFO - Backfilling last hour: 2025-05-08 20:00:01.817136+00:00 → 2025-05-08 21:00:01.817136+00:00
+2025-05-08 21:00:04,268 - INFO - Received 3600 records from API
+2025-05-08 21:00:04,270 - INFO - Data range: 2025-05-08 20:00:02+00:00 → 2025-05-08 21:00:01+00:00
+2025-05-08 21:00:04,284 - INFO - First timestamp to insert: 2025-05-08 20:00:02
+2025-05-08 21:00:04,285 - INFO - Last timestamp to insert: 2025-05-08 21:00:01
+2025-05-08 21:00:04,296 - INFO - Rows before insertion: 3600
+2025-05-08 21:00:04,296 - INFO - Rows after insertion: 3600
+2025-05-08 21:00:04,296 - INFO - Rows actually appended: 0
+2025-05-08 21:00:04,296 - INFO - Rows ignored (already existed): 3600
+2025-05-08 21:00:04,297 - INFO - Total rows in database for this period: 3600
+2025-05-08 21:00:04,297 - INFO - Successfully processed 3600 rows from API
+2025-05-08 21:00:04,297 - INFO - ================================================
+2025-05-08 23:00:01,190 - INFO - Backfilling last hour: 2025-05-08 22:00:01.190139+00:00 → 2025-05-08 23:00:01.190139+00:00
+2025-05-08 23:00:04,175 - INFO - Received 3600 records from API
+2025-05-08 23:00:04,177 - INFO - Data range: 2025-05-08 22:00:02+00:00 → 2025-05-08 23:00:01+00:00
+2025-05-08 23:00:04,191 - INFO - First timestamp to insert: 2025-05-08 22:00:02
+2025-05-08 23:00:04,191 - INFO - Last timestamp to insert: 2025-05-08 23:00:01
+2025-05-08 23:00:04,206 - INFO - Rows before insertion: 2788
+2025-05-08 23:00:04,206 - INFO - Rows after insertion: 3600
+2025-05-08 23:00:04,206 - INFO - Rows actually appended: 812
+2025-05-08 23:00:04,206 - INFO - Rows ignored (already existed): 2788
+2025-05-08 23:00:04,206 - INFO - Total rows in database for this period: 3600
+2025-05-08 23:00:04,206 - INFO - Successfully processed 3600 rows from API
+2025-05-08 23:00:04,206 - INFO - ================================================
+2025-05-09 00:00:01,608 - INFO - Backfilling last hour: 2025-05-08 23:00:01.608411+00:00 → 2025-05-09 00:00:01.608411+00:00
+2025-05-09 00:00:03,943 - INFO - Received 3600 records from API
+2025-05-09 00:00:03,945 - INFO - Data range: 2025-05-08 23:00:02+00:00 → 2025-05-09 00:00:01+00:00
+2025-05-09 00:00:03,961 - INFO - First timestamp to insert: 2025-05-08 23:00:02
+2025-05-09 00:00:03,962 - INFO - Last timestamp to insert: 2025-05-09 00:00:01
+2025-05-09 00:00:03,975 - INFO - Rows before insertion: 3598
+2025-05-09 00:00:03,975 - INFO - Rows after insertion: 3600
+2025-05-09 00:00:03,975 - INFO - Rows actually appended: 2
+2025-05-09 00:00:03,975 - INFO - Rows ignored (already existed): 3598
+2025-05-09 00:00:03,975 - INFO - Total rows in database for this period: 3600
+2025-05-09 00:00:03,975 - INFO - Successfully processed 3600 rows from API
+2025-05-09 00:00:03,976 - INFO - ================================================
+2025-05-09 01:00:01,780 - INFO - Backfilling last hour: 2025-05-09 00:00:01.780114+00:00 → 2025-05-09 01:00:01.780114+00:00
+2025-05-09 01:00:04,697 - INFO - Received 3600 records from API
+2025-05-09 01:00:04,698 - INFO - Data range: 2025-05-09 00:00:02+00:00 → 2025-05-09 01:00:01+00:00
+2025-05-09 01:00:04,714 - INFO - First timestamp to insert: 2025-05-09 00:00:02
+2025-05-09 01:00:04,714 - INFO - Last timestamp to insert: 2025-05-09 01:00:01
+2025-05-09 01:00:04,728 - INFO - Rows before insertion: 3598
+2025-05-09 01:00:04,728 - INFO - Rows after insertion: 3600
+2025-05-09 01:00:04,728 - INFO - Rows actually appended: 2
+2025-05-09 01:00:04,729 - INFO - Rows ignored (already existed): 3598
+2025-05-09 01:00:04,729 - INFO - Total rows in database for this period: 3600
+2025-05-09 01:00:04,729 - INFO - Successfully processed 3600 rows from API
+2025-05-09 01:00:04,729 - INFO - ================================================
+2025-05-09 02:00:01,823 - INFO - Backfilling last hour: 2025-05-09 01:00:01.823362+00:00 → 2025-05-09 02:00:01.823362+00:00
+2025-05-09 02:00:04,084 - INFO - Received 3600 records from API
+2025-05-09 02:00:04,086 - INFO - Data range: 2025-05-09 01:00:02+00:00 → 2025-05-09 02:00:01+00:00
+2025-05-09 02:00:04,101 - INFO - First timestamp to insert: 2025-05-09 01:00:02
+2025-05-09 02:00:04,102 - INFO - Last timestamp to insert: 2025-05-09 02:00:01
+2025-05-09 02:00:04,116 - INFO - Rows before insertion: 2573
+2025-05-09 02:00:04,116 - INFO - Rows after insertion: 3600
+2025-05-09 02:00:04,116 - INFO - Rows actually appended: 1027
+2025-05-09 02:00:04,116 - INFO - Rows ignored (already existed): 2573
+2025-05-09 02:00:04,117 - INFO - Total rows in database for this period: 3600
+2025-05-09 02:00:04,117 - INFO - Successfully processed 3600 rows from API
+2025-05-09 02:00:04,117 - INFO - ================================================
+2025-05-09 03:00:01,327 - INFO - Backfilling last hour: 2025-05-09 02:00:01.327016+00:00 → 2025-05-09 03:00:01.327016+00:00
+2025-05-09 03:00:03,692 - INFO - Received 3600 records from API
+2025-05-09 03:00:03,694 - INFO - Data range: 2025-05-09 02:00:02+00:00 → 2025-05-09 03:00:01+00:00
+2025-05-09 03:00:03,710 - INFO - First timestamp to insert: 2025-05-09 02:00:02
+2025-05-09 03:00:03,710 - INFO - Last timestamp to insert: 2025-05-09 03:00:01
+2025-05-09 03:00:03,724 - INFO - Rows before insertion: 3599
+2025-05-09 03:00:03,725 - INFO - Rows after insertion: 3600
+2025-05-09 03:00:03,725 - INFO - Rows actually appended: 1
+2025-05-09 03:00:03,725 - INFO - Rows ignored (already existed): 3599
+2025-05-09 03:00:03,725 - INFO - Total rows in database for this period: 3600
+2025-05-09 03:00:03,725 - INFO - Successfully processed 3600 rows from API
+2025-05-09 03:00:03,726 - INFO - ================================================
+2025-05-09 04:00:01,344 - INFO - Backfilling last hour: 2025-05-09 03:00:01.344600+00:00 → 2025-05-09 04:00:01.344600+00:00
+2025-05-09 04:00:03,495 - INFO - Received 3600 records from API
+2025-05-09 04:00:03,496 - INFO - Data range: 2025-05-09 03:00:02+00:00 → 2025-05-09 04:00:01+00:00
+2025-05-09 04:00:03,512 - INFO - First timestamp to insert: 2025-05-09 03:00:02
+2025-05-09 04:00:03,512 - INFO - Last timestamp to insert: 2025-05-09 04:00:01
+2025-05-09 04:00:03,525 - INFO - Rows before insertion: 3599
+2025-05-09 04:00:03,525 - INFO - Rows after insertion: 3600
+2025-05-09 04:00:03,525 - INFO - Rows actually appended: 1
+2025-05-09 04:00:03,525 - INFO - Rows ignored (already existed): 3599
+2025-05-09 04:00:03,525 - INFO - Total rows in database for this period: 3600
+2025-05-09 04:00:03,525 - INFO - Successfully processed 3600 rows from API
+2025-05-09 04:00:03,525 - INFO - ================================================
+2025-05-09 05:00:01,352 - INFO - Backfilling last hour: 2025-05-09 04:00:01.352759+00:00 → 2025-05-09 05:00:01.352759+00:00
+2025-05-09 05:00:04,815 - INFO - Received 3600 records from API
+2025-05-09 05:00:04,816 - INFO - Data range: 2025-05-09 04:00:02+00:00 → 2025-05-09 05:00:01+00:00
+2025-05-09 05:00:04,830 - INFO - First timestamp to insert: 2025-05-09 04:00:02
+2025-05-09 05:00:04,831 - INFO - Last timestamp to insert: 2025-05-09 05:00:01
+2025-05-09 05:00:04,841 - INFO - Rows before insertion: 3597
+2025-05-09 05:00:04,842 - INFO - Rows after insertion: 3600
+2025-05-09 05:00:04,842 - INFO - Rows actually appended: 3
+2025-05-09 05:00:04,842 - INFO - Rows ignored (already existed): 3597
+2025-05-09 05:00:04,842 - INFO - Total rows in database for this period: 3600
+2025-05-09 05:00:04,842 - INFO - Successfully processed 3600 rows from API
+2025-05-09 05:00:04,842 - INFO - ================================================
+2025-05-09 06:00:01,179 - INFO - Backfilling last hour: 2025-05-09 05:00:01.179619+00:00 → 2025-05-09 06:00:01.179619+00:00
+2025-05-09 06:00:05,072 - INFO - Received 3600 records from API
+2025-05-09 06:00:05,073 - INFO - Data range: 2025-05-09 05:00:02+00:00 → 2025-05-09 06:00:01+00:00
+2025-05-09 06:00:05,089 - INFO - First timestamp to insert: 2025-05-09 05:00:02
+2025-05-09 06:00:05,089 - INFO - Last timestamp to insert: 2025-05-09 06:00:01
+2025-05-09 06:00:05,099 - INFO - Rows before insertion: 3600
+2025-05-09 06:00:05,099 - INFO - Rows after insertion: 3600
+2025-05-09 06:00:05,099 - INFO - Rows actually appended: 0
+2025-05-09 06:00:05,099 - INFO - Rows ignored (already existed): 3600
+2025-05-09 06:00:05,100 - INFO - Total rows in database for this period: 3600
+2025-05-09 06:00:05,100 - INFO - Successfully processed 3600 rows from API
+2025-05-09 06:00:05,100 - INFO - ================================================
+2025-05-09 07:00:01,861 - INFO - Backfilling last hour: 2025-05-09 06:00:01.861190+00:00 → 2025-05-09 07:00:01.861190+00:00
+2025-05-09 07:00:05,916 - INFO - Received 3600 records from API
+2025-05-09 07:00:05,917 - INFO - Data range: 2025-05-09 06:00:02+00:00 → 2025-05-09 07:00:01+00:00
+2025-05-09 07:00:05,933 - INFO - First timestamp to insert: 2025-05-09 06:00:02
+2025-05-09 07:00:05,934 - INFO - Last timestamp to insert: 2025-05-09 07:00:01
+2025-05-09 07:00:05,943 - INFO - Rows before insertion: 3600
+2025-05-09 07:00:05,943 - INFO - Rows after insertion: 3600
+2025-05-09 07:00:05,943 - INFO - Rows actually appended: 0
+2025-05-09 07:00:05,944 - INFO - Rows ignored (already existed): 3600
+2025-05-09 07:00:05,944 - INFO - Total rows in database for this period: 3600
+2025-05-09 07:00:05,944 - INFO - Successfully processed 3600 rows from API
+2025-05-09 07:00:05,944 - INFO - ================================================
+2025-05-09 08:00:01,272 - INFO - Backfilling last hour: 2025-05-09 07:00:01.272953+00:00 → 2025-05-09 08:00:01.272953+00:00
+2025-05-09 08:00:06,272 - INFO - Received 3600 records from API
+2025-05-09 08:00:06,273 - INFO - Data range: 2025-05-09 07:00:02+00:00 → 2025-05-09 08:00:01+00:00
+2025-05-09 08:00:06,290 - INFO - First timestamp to insert: 2025-05-09 07:00:02
+2025-05-09 08:00:06,290 - INFO - Last timestamp to insert: 2025-05-09 08:00:01
+2025-05-09 08:00:06,300 - INFO - Rows before insertion: 3600
+2025-05-09 08:00:06,300 - INFO - Rows after insertion: 3600
+2025-05-09 08:00:06,300 - INFO - Rows actually appended: 0
+2025-05-09 08:00:06,300 - INFO - Rows ignored (already existed): 3600
+2025-05-09 08:00:06,300 - INFO - Total rows in database for this period: 3600
+2025-05-09 08:00:06,301 - INFO - Successfully processed 3600 rows from API
+2025-05-09 08:00:06,301 - INFO - ================================================
+2025-05-09 09:00:01,149 - INFO - Backfilling last hour: 2025-05-09 08:00:01.149150+00:00 → 2025-05-09 09:00:01.149150+00:00
+2025-05-09 09:00:06,176 - INFO - Received 3600 records from API
+2025-05-09 09:00:06,176 - INFO - Data range: 2025-05-09 08:00:02+00:00 → 2025-05-09 09:00:01+00:00
+2025-05-09 09:00:06,189 - INFO - First timestamp to insert: 2025-05-09 08:00:02
+2025-05-09 09:00:06,189 - INFO - Last timestamp to insert: 2025-05-09 09:00:01
+2025-05-09 09:00:06,195 - INFO - Rows before insertion: 3600
+2025-05-09 09:00:06,195 - INFO - Rows after insertion: 3600
+2025-05-09 09:00:06,195 - INFO - Rows actually appended: 0
+2025-05-09 09:00:06,195 - INFO - Rows ignored (already existed): 3600
+2025-05-09 09:00:06,195 - INFO - Total rows in database for this period: 3600
+2025-05-09 09:00:06,195 - INFO - Successfully processed 3600 rows from API
+2025-05-09 09:00:06,196 - INFO - ================================================
+2025-05-09 10:00:02,039 - INFO - Backfilling last hour: 2025-05-09 09:00:02.039335+00:00 → 2025-05-09 10:00:02.039335+00:00
+2025-05-09 10:00:07,166 - INFO - Received 3600 records from API
+2025-05-09 10:00:07,166 - INFO - Data range: 2025-05-09 09:00:03+00:00 → 2025-05-09 10:00:02+00:00
+2025-05-09 10:00:07,178 - INFO - First timestamp to insert: 2025-05-09 09:00:03
+2025-05-09 10:00:07,179 - INFO - Last timestamp to insert: 2025-05-09 10:00:02
+2025-05-09 10:00:07,186 - INFO - Rows before insertion: 3600
+2025-05-09 10:00:07,186 - INFO - Rows after insertion: 3600
+2025-05-09 10:00:07,186 - INFO - Rows actually appended: 0
+2025-05-09 10:00:07,187 - INFO - Rows ignored (already existed): 3600
+2025-05-09 10:00:07,187 - INFO - Total rows in database for this period: 3600
+2025-05-09 10:00:07,187 - INFO - Successfully processed 3600 rows from API
+2025-05-09 10:00:07,187 - INFO - ================================================
+2025-05-09 11:04:25,224 - INFO - Backfilling last hour: 2025-05-09 10:04:25.224845+00:00 → 2025-05-09 11:04:25.224845+00:00
+2025-05-09 11:04:28,679 - INFO - Received 3600 records from API
+2025-05-09 11:04:28,680 - INFO - Data range: 2025-05-09 10:04:26+00:00 → 2025-05-09 11:04:25+00:00
+2025-05-09 11:04:28,698 - INFO - First timestamp to insert: 2025-05-09 10:04:26
+2025-05-09 11:04:28,698 - INFO - Last timestamp to insert: 2025-05-09 11:04:25
+2025-05-09 11:04:28,713 - INFO - Rows before insertion: 2098
+2025-05-09 11:04:28,713 - INFO - Rows after insertion: 3600
+2025-05-09 11:04:28,713 - INFO - Rows actually appended: 1502
+2025-05-09 11:04:28,714 - INFO - Rows ignored (already existed): 2098
+2025-05-09 11:04:28,714 - INFO - Total rows in database for this period: 3600
+2025-05-09 11:04:28,714 - INFO - Successfully processed 3600 rows from API
+2025-05-09 11:04:28,714 - INFO - ================================================
+2025-05-09 11:07:49,005 - INFO - Backfilling last hour: 2025-05-09 10:07:49.005858+00:00 → 2025-05-09 11:07:49.005858+00:00
+2025-05-09 11:07:52,649 - INFO - Received 3600 records from API
+2025-05-09 11:07:52,650 - INFO - Data range: 2025-05-09 10:07:50+00:00 → 2025-05-09 11:07:49+00:00
+2025-05-09 11:07:52,668 - INFO - First timestamp to insert: 2025-05-09 10:07:50
+2025-05-09 11:07:52,668 - INFO - Last timestamp to insert: 2025-05-09 11:07:49
+2025-05-09 11:07:52,683 - INFO - Rows before insertion: 3576
+2025-05-09 11:07:52,683 - INFO - Rows after insertion: 3600
+2025-05-09 11:07:52,683 - INFO - Rows actually appended: 24
+2025-05-09 11:07:52,683 - INFO - Rows ignored (already existed): 3576
+2025-05-09 11:07:52,684 - INFO - Total rows in database for this period: 3600
+2025-05-09 11:07:52,684 - INFO - Successfully processed 3600 rows from API
+2025-05-09 11:07:52,684 - INFO - ================================================
+2025-05-09 11:08:58,552 - INFO - Backfilling last hour: 2025-05-09 10:08:58.552794+00:00 → 2025-05-09 11:08:58.552794+00:00
+2025-05-09 11:09:01,091 - INFO - Received 3600 records from API
+2025-05-09 11:09:01,091 - INFO - Data range: 2025-05-09 10:08:59+00:00 → 2025-05-09 11:08:58+00:00
+2025-05-09 11:09:01,110 - INFO - First timestamp to insert: 2025-05-09 10:08:59
+2025-05-09 11:09:01,110 - INFO - Last timestamp to insert: 2025-05-09 11:08:58
+2025-05-09 11:09:01,121 - INFO - Rows before insertion: 3591
+2025-05-09 11:09:01,121 - INFO - Rows after insertion: 3600
+2025-05-09 11:09:01,121 - INFO - Rows actually appended: 9
+2025-05-09 11:09:01,121 - INFO - Rows ignored (already existed): 3591
+2025-05-09 11:09:01,121 - INFO - Total rows in database for this period: 3600
+2025-05-09 11:09:01,122 - INFO - Successfully processed 3600 rows from API
+2025-05-09 11:09:01,122 - INFO - ================================================
+2025-05-09 12:00:01,174 - INFO - Backfilling last hour: 2025-05-09 11:00:01.174171+00:00 → 2025-05-09 12:00:01.174171+00:00
+2025-05-09 12:00:04,804 - INFO - Received 3600 records from API
+2025-05-09 12:00:04,805 - INFO - Data range: 2025-05-09 11:00:02+00:00 → 2025-05-09 12:00:01+00:00
+2025-05-09 12:00:04,819 - INFO - First timestamp to insert: 2025-05-09 11:00:02
+2025-05-09 12:00:04,819 - INFO - Last timestamp to insert: 2025-05-09 12:00:01
+2025-05-09 12:00:04,833 - INFO - Rows before insertion: 3592
+2025-05-09 12:00:04,833 - INFO - Rows after insertion: 3600
+2025-05-09 12:00:04,833 - INFO - Rows actually appended: 8
+2025-05-09 12:00:04,833 - INFO - Rows ignored (already existed): 3592
+2025-05-09 12:00:04,833 - INFO - Total rows in database for this period: 3600
+2025-05-09 12:00:04,834 - INFO - Successfully processed 3600 rows from API
+2025-05-09 12:00:04,834 - INFO - ================================================
+2025-05-09 13:00:02,042 - INFO - Backfilling last hour: 2025-05-09 12:00:02.042324+00:00 → 2025-05-09 13:00:02.042324+00:00
+2025-05-09 13:00:07,821 - INFO - Received 3600 records from API
+2025-05-09 13:00:07,822 - INFO - Data range: 2025-05-09 12:00:03+00:00 → 2025-05-09 13:00:02+00:00
+2025-05-09 13:00:07,854 - INFO - First timestamp to insert: 2025-05-09 12:00:03
+2025-05-09 13:00:07,854 - INFO - Last timestamp to insert: 2025-05-09 13:00:02
+2025-05-09 13:00:07,884 - INFO - Rows before insertion: 3600
+2025-05-09 13:00:07,885 - INFO - Rows after insertion: 3600
+2025-05-09 13:00:07,885 - INFO - Rows actually appended: 0
+2025-05-09 13:00:07,886 - INFO - Rows ignored (already existed): 3600
+2025-05-09 13:00:07,886 - INFO - Total rows in database for this period: 3600
+2025-05-09 13:00:07,887 - INFO - Successfully processed 3600 rows from API
+2025-05-09 13:00:07,888 - INFO - ================================================
+2025-05-10 08:00:51,975 - INFO - Backfilling last hour: 2025-05-10 07:00:51.975854+00:00 → 2025-05-10 08:00:51.975854+00:00
+2025-05-10 08:00:54,367 - INFO - Received 3600 records from API
+2025-05-10 08:00:54,368 - INFO - Data range: 2025-05-10 07:00:52+00:00 → 2025-05-10 08:00:51+00:00
+2025-05-10 08:00:54,381 - INFO - First timestamp to insert: 2025-05-10 07:00:52
+2025-05-10 08:00:54,382 - INFO - Last timestamp to insert: 2025-05-10 08:00:51
+2025-05-10 08:00:54,398 - INFO - Rows before insertion: 19
+2025-05-10 08:00:54,399 - INFO - Rows after insertion: 3600
+2025-05-10 08:00:54,399 - INFO - Rows actually appended: 3581
+2025-05-10 08:00:54,399 - INFO - Rows ignored (already existed): 19
+2025-05-10 08:00:54,399 - INFO - Total rows in database for this period: 3600
+2025-05-10 08:00:54,399 - INFO - Successfully processed 3600 rows from API
+2025-05-10 08:00:54,399 - INFO - ================================================
+2025-05-11 19:23:17,699 - INFO - Backfilling last hour: 2025-05-11 18:23:17.699800+00:00 → 2025-05-11 19:23:17.699800+00:00
+2025-05-11 19:23:20,320 - INFO - Received 3600 records from API
+2025-05-11 19:23:20,321 - INFO - Data range: 2025-05-11 18:23:18+00:00 → 2025-05-11 19:23:17+00:00
+2025-05-11 19:23:20,335 - INFO - First timestamp to insert: 2025-05-11 18:23:18
+2025-05-11 19:23:20,335 - INFO - Last timestamp to insert: 2025-05-11 19:23:17
+2025-05-11 19:23:20,350 - INFO - Rows before insertion: 0
+2025-05-11 19:23:20,350 - INFO - Rows after insertion: 3600
+2025-05-11 19:23:20,350 - INFO - Rows actually appended: 3600
+2025-05-11 19:23:20,350 - INFO - Rows ignored (already existed): 0
+2025-05-11 19:23:20,350 - INFO - Total rows in database for this period: 3600
+2025-05-11 19:23:20,350 - INFO - Successfully processed 3600 rows from API
+2025-05-11 19:23:20,351 - INFO - ================================================
+2025-05-11 19:27:41,701 - INFO - Backfilling last hour: 2025-05-11 18:27:41.701723+00:00 → 2025-05-11 19:27:41.701723+00:00
+2025-05-11 19:27:44,057 - INFO - Received 3600 records from API
+2025-05-11 19:27:44,058 - INFO - Data range: 2025-05-11 18:27:42+00:00 → 2025-05-11 19:27:41+00:00
+2025-05-11 19:27:44,074 - INFO - First timestamp to insert: 2025-05-11 18:27:42
+2025-05-11 19:27:44,075 - INFO - Last timestamp to insert: 2025-05-11 19:27:41
+2025-05-11 19:27:44,090 - INFO - Rows before insertion: 3336
+2025-05-11 19:27:44,090 - INFO - Rows after insertion: 3600
+2025-05-11 19:27:44,090 - INFO - Rows actually appended: 264
+2025-05-11 19:27:44,090 - INFO - Rows ignored (already existed): 3336
+2025-05-11 19:27:44,091 - INFO - Total rows in database for this period: 3600
+2025-05-11 19:27:44,091 - INFO - Successfully processed 3600 rows from API
+2025-05-11 19:27:44,091 - INFO - ================================================

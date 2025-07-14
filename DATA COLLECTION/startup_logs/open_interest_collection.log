@@ -1,0 +1,154 @@
+2025-06-10 10:26:25,683 - INFO - Connecting to database to get latest timestamp...
+2025-06-10 10:27:27,163 - INFO - Connecting to database to get latest timestamp...
+2025-06-10 10:27:27,168 - INFO - Found latest timestamp in database: 2025-05-11 19:25:00
+2025-06-10 10:27:27,169 - INFO - Fetching data from 2025-05-11 15:25:00+00:00 to 2025-06-10 06:27:27.169000+00:00
+2025-06-10 10:27:28,003 - INFO - Successfully appended 500 new rows
+2025-06-10 10:32:00,303 - INFO - Connecting to database to get latest timestamp...
+2025-06-10 10:32:00,308 - INFO - Found latest timestamp in database: 2025-05-11 19:25:00
+2025-06-10 10:32:00,308 - INFO - Fetching data from 2025-05-11 15:25:00+00:00 to 2025-06-10 06:32:00.308000+00:00
+2025-06-10 10:32:01,700 - INFO - Successfully appended 500 new rows
+2025-06-10 10:32:57,108 - INFO - Connecting to database to get latest timestamp...
+2025-06-10 10:32:57,111 - INFO - Found latest timestamp in database: 2025-05-11 19:25:00
+2025-06-10 10:32:57,112 - INFO - Fetching data from 2025-05-11 15:25:00+00:00 to 2025-06-10 06:32:57.112000+00:00
+2025-06-10 10:32:58,182 - INFO - Successfully appended 500 new rows
+2025-06-10 10:34:36,339 - INFO - Connecting to database to get latest timestamp...
+2025-06-10 10:34:36,344 - INFO - Found latest timestamp in database: 2025-05-11 19:25:00
+2025-06-10 10:34:36,345 - INFO - Fetching data from 2025-05-11 15:25:00+00:00 to 2025-06-10 06:34:36.345000+00:00
+2025-06-10 10:34:37,213 - INFO - Successfully appended 100 new rows
+2025-06-10 10:36:19,166 - INFO - Connecting to database to get latest timestamp...
+2025-06-10 10:36:19,172 - INFO - Found latest timestamp in database: 2025-05-11 19:25:00
+2025-06-10 10:36:19,174 - INFO - Fetching data from 2025-05-11 15:25:00+00:00 to 2025-06-10 06:36:19.174000+00:00
+2025-06-10 10:36:19,907 - INFO - Fetched chunk 1, total records: 500
+2025-06-10 10:36:20,012 - INFO - Total records fetched: 500
+2025-06-10 10:36:20,022 - INFO - Successfully appended 500 new rows
+2025-06-10 10:40:04,359 - INFO - Connecting to database to get latest timestamp...
+2025-06-10 10:40:04,363 - INFO - Found latest timestamp in database: 2025-05-11 19:25:00
+2025-06-10 10:40:04,364 - INFO - Starting from: 2025-05-13 19:25:00
+2025-06-10 10:40:04,364 - INFO - Fetching data from 2025-05-13 15:25:00+00:00 to 2025-06-10 06:40:04.364000+00:00
+2025-06-10 10:40:05,102 - INFO - Fetched chunk 1, total records: 500
+2025-06-10 10:40:05,206 - INFO - Total records fetched: 500
+2025-06-10 10:40:05,223 - INFO - Successfully appended 500 new rows
+2025-06-10 10:43:32,191 - INFO - Connecting to database to get latest timestamp...
+2025-06-10 10:43:32,195 - INFO - Found latest timestamp in database: 2025-05-11 19:25:00
+2025-06-10 10:43:32,195 - INFO - Starting from: 2025-05-26 19:25:00
+2025-06-10 10:43:32,196 - INFO - Fetching data from 2025-05-26 15:25:00+00:00 to 2025-06-10 06:43:32.196000+00:00
+2025-06-10 10:43:32,921 - INFO - Fetched chunk 1, total records: 500
+2025-06-10 10:43:33,026 - INFO - Total records fetched: 500
+2025-06-10 10:43:33,029 - INFO - Successfully appended 500 new rows
+2025-06-10 11:09:25,435 - INFO - Connecting to database to get latest timestamp...
+2025-06-10 11:09:25,439 - INFO - Found latest timestamp in database: 2025-05-11 19:25:00
+2025-06-10 11:09:25,439 - INFO - Starting from: 2025-05-26 19:25:00
+2025-06-10 11:09:25,439 - INFO - Fetching data from 2025-05-26 15:25:00+00:00 to 2025-06-10 07:09:25.439000+00:00
+2025-06-10 11:09:26,499 - INFO - Fetched chunk 1, total records: 500
+2025-06-10 11:09:26,604 - INFO - Total records fetched: 500
+2025-06-10 11:09:26,614 - INFO - Successfully appended 500 new rows
+2025-06-10 11:10:59,090 - INFO - Connecting to database to get latest timestamp...
+2025-06-10 11:10:59,093 - INFO - Found latest timestamp in database: 2025-05-11 19:25:00
+2025-06-10 11:10:59,093 - INFO - Starting from: 2025-05-26 19:25:00
+2025-06-10 11:10:59,093 - INFO - Fetching data from 2025-05-26 15:25:00+00:00 to 2025-06-10 07:10:59.093000+00:00
+2025-06-10 11:11:00,095 - INFO - Fetched chunk 1, total records: 500
+2025-06-10 11:11:00,508 - INFO - No more data available
+2025-06-10 11:11:00,508 - INFO - Total records fetched: 500
+2025-06-10 11:11:00,513 - INFO - Successfully appended 500 new rows
+2025-06-10 11:11:49,172 - INFO - Connecting to database to get latest timestamp...
+2025-06-10 11:11:49,174 - INFO - Found latest timestamp in database: 2025-05-11 19:25:00
+2025-06-10 11:11:49,175 - INFO - Starting from: 2025-05-11 19:25:00
+2025-06-10 11:11:49,175 - INFO - Fetching data from 2025-05-11 15:25:00+00:00 to 2025-06-10 07:11:49.175000+00:00
+2025-06-10 11:11:50,144 - INFO - Fetched chunk 1, total records: 500
+2025-06-10 11:11:50,248 - INFO - Total records fetched: 500
+2025-06-10 11:11:50,254 - INFO - Successfully appended 500 new rows
+2025-06-10 11:14:59,963 - INFO - Connecting to database to get latest timestamp...
+2025-06-10 11:14:59,971 - INFO - Found latest timestamp in database: 2025-05-11 19:25:00
+2025-06-10 11:14:59,972 - INFO - Starting from: 2025-05-11 19:25:00
+2025-06-10 11:14:59,972 - INFO - Fetching data from 2025-05-11 15:25:00+00:00 to 2025-06-10 07:14:59.972000+00:00
+2025-06-10 11:15:01,251 - INFO - Fetched chunk 1, total records: 500
+2025-06-10 11:15:01,251 - INFO - Next chunk will start from: 2025-05-13 09:10:00+00:00
+2025-06-10 11:15:01,675 - INFO - Fetched chunk 2, total records: 1000
+2025-06-10 11:15:01,675 - INFO - Next chunk will start from: 2025-05-15 02:55:00+00:00
+2025-06-10 11:15:02,174 - INFO - Fetched chunk 3, total records: 1500
+2025-06-10 11:15:02,174 - INFO - Next chunk will start from: 2025-05-16 20:40:00+00:00
+2025-06-10 11:15:02,593 - INFO - Fetched chunk 4, total records: 2000
+2025-06-10 11:15:02,594 - INFO - Next chunk will start from: 2025-05-18 14:25:00+00:00
+2025-06-10 11:15:03,100 - INFO - Fetched chunk 5, total records: 2500
+2025-06-10 11:15:03,100 - INFO - Next chunk will start from: 2025-05-20 08:10:00+00:00
+2025-06-10 11:15:03,524 - INFO - Fetched chunk 6, total records: 3000
+2025-06-10 11:15:03,524 - INFO - Next chunk will start from: 2025-05-22 01:55:00+00:00
+2025-06-10 11:15:04,019 - INFO - Fetched chunk 7, total records: 3500
+2025-06-10 11:15:04,020 - INFO - Next chunk will start from: 2025-05-23 19:40:00+00:00
+2025-06-10 11:15:04,469 - INFO - Fetched chunk 8, total records: 4000
+2025-06-10 11:15:04,469 - INFO - Next chunk will start from: 2025-05-25 13:25:00+00:00
+2025-06-10 11:15:04,937 - INFO - Fetched chunk 9, total records: 4500
+2025-06-10 11:15:04,938 - INFO - Next chunk will start from: 2025-05-27 07:10:00+00:00
+2025-06-10 11:15:05,356 - INFO - Fetched chunk 10, total records: 5000
+2025-06-10 11:15:05,356 - INFO - Next chunk will start from: 2025-05-29 00:55:00+00:00
+2025-06-10 11:15:05,781 - INFO - Fetched chunk 11, total records: 5500
+2025-06-10 11:15:05,781 - INFO - Next chunk will start from: 2025-05-30 18:40:00+00:00
+2025-06-10 11:15:06,268 - INFO - Fetched chunk 12, total records: 6000
+2025-06-10 11:15:06,268 - INFO - Next chunk will start from: 2025-06-01 12:25:00+00:00
+2025-06-10 11:15:06,694 - INFO - Fetched chunk 13, total records: 6500
+2025-06-10 11:15:06,694 - INFO - Next chunk will start from: 2025-06-03 06:10:00+00:00
+2025-06-10 11:15:07,192 - INFO - Fetched chunk 14, total records: 7000
+2025-06-10 11:15:07,192 - INFO - Next chunk will start from: 2025-06-04 23:55:00+00:00
+2025-06-10 11:15:07,611 - INFO - Fetched chunk 15, total records: 7500
+2025-06-10 11:15:07,611 - INFO - Next chunk will start from: 2025-06-06 17:40:00+00:00
+2025-06-10 11:15:08,034 - INFO - Fetched chunk 16, total records: 8000
+2025-06-10 11:15:08,034 - INFO - Next chunk will start from: 2025-06-08 11:25:00+00:00
+2025-06-10 11:15:08,458 - INFO - Fetched chunk 17, total records: 8500
+2025-06-10 11:15:08,459 - INFO - Next chunk will start from: 2025-06-10 05:10:00+00:00
+2025-06-10 11:15:08,870 - INFO - Fetched chunk 18, total records: 8525
+2025-06-10 11:15:08,871 - INFO - Next chunk will start from: 2025-06-10 07:15:00+00:00
+2025-06-10 11:15:08,973 - INFO - Total records fetched: 8525
+2025-06-10 11:15:09,027 - INFO - Successfully appended 8477 new rows
+2025-07-14 14:04:26,382 - INFO - Connecting to database to get latest timestamp...
+2025-07-14 14:04:26,389 - INFO - Found latest timestamp in database: 2025-06-10 07:10:00
+2025-07-14 14:04:26,390 - INFO - Starting from: 2025-06-10 07:10:00
+2025-07-14 14:04:26,390 - INFO - Fetching data from 2025-06-10 03:10:00+00:00 to 2025-07-14 10:04:26.390000+00:00
+2025-07-14 14:04:27,399 - ERROR - Error fetching data: APIError(code=-1130): parameter 'startTime' is invalid.
+2025-07-14 14:04:28,709 - ERROR - Error fetching data: APIError(code=-1130): parameter 'startTime' is invalid.
+2025-07-14 14:04:30,020 - ERROR - Error fetching data: APIError(code=-1130): parameter 'startTime' is invalid.
+2025-07-14 14:04:31,329 - ERROR - Error fetching data: APIError(code=-1130): parameter 'startTime' is invalid.
+2025-07-14 14:04:32,694 - ERROR - Error fetching data: APIError(code=-1130): parameter 'startTime' is invalid.
+2025-07-14 14:04:34,026 - ERROR - Error fetching data: APIError(code=-1130): parameter 'startTime' is invalid.
+2025-07-14 14:04:35,458 - ERROR - Error fetching data: APIError(code=-1130): parameter 'startTime' is invalid.
+2025-07-14 14:04:36,789 - ERROR - Error fetching data: APIError(code=-1130): parameter 'startTime' is invalid.
+2025-07-14 14:04:38,104 - ERROR - Error fetching data: APIError(code=-1130): parameter 'startTime' is invalid.
+2025-07-14 14:12:15,766 - INFO - Connecting to database to get latest timestamp...
+2025-07-14 14:12:15,777 - INFO - Found latest timestamp in database: 2025-06-15 20:30:00
+2025-07-14 14:12:15,778 - INFO - Starting from: 2025-06-15 20:30:00
+2025-07-14 14:12:15,778 - INFO - Fetching data from 2025-06-15 16:30:00+00:00 to 2025-07-14 10:12:15.778000+00:00
+2025-07-14 14:12:16,765 - INFO - Fetched chunk 1, total records: 500
+2025-07-14 14:12:16,765 - INFO - Next chunk will start from: 2025-06-17 10:15:00+00:00
+2025-07-14 14:12:17,191 - INFO - Fetched chunk 2, total records: 1000
+2025-07-14 14:12:17,192 - INFO - Next chunk will start from: 2025-06-19 04:00:00+00:00
+2025-07-14 14:12:17,617 - INFO - Fetched chunk 3, total records: 1500
+2025-07-14 14:12:17,617 - INFO - Next chunk will start from: 2025-06-20 21:45:00+00:00
+2025-07-14 14:12:18,041 - INFO - Fetched chunk 4, total records: 2000
+2025-07-14 14:12:18,041 - INFO - Next chunk will start from: 2025-06-22 15:30:00+00:00
+2025-07-14 14:12:18,466 - INFO - Fetched chunk 5, total records: 2500
+2025-07-14 14:12:18,467 - INFO - Next chunk will start from: 2025-06-24 09:15:00+00:00
+2025-07-14 14:12:18,891 - INFO - Fetched chunk 6, total records: 3000
+2025-07-14 14:12:18,891 - INFO - Next chunk will start from: 2025-06-26 03:00:00+00:00
+2025-07-14 14:12:19,318 - INFO - Fetched chunk 7, total records: 3500
+2025-07-14 14:12:19,319 - INFO - Next chunk will start from: 2025-06-27 20:45:00+00:00
+2025-07-14 14:12:19,747 - INFO - Fetched chunk 8, total records: 4000
+2025-07-14 14:12:19,747 - INFO - Next chunk will start from: 2025-06-29 14:30:00+00:00
+2025-07-14 14:12:20,172 - INFO - Fetched chunk 9, total records: 4500
+2025-07-14 14:12:20,172 - INFO - Next chunk will start from: 2025-07-01 08:15:00+00:00
+2025-07-14 14:12:20,598 - INFO - Fetched chunk 10, total records: 5000
+2025-07-14 14:12:20,598 - INFO - Next chunk will start from: 2025-07-03 02:00:00+00:00
+2025-07-14 14:12:21,019 - INFO - Fetched chunk 11, total records: 5500
+2025-07-14 14:12:21,020 - INFO - Next chunk will start from: 2025-07-04 19:45:00+00:00
+2025-07-14 14:12:21,443 - INFO - Fetched chunk 12, total records: 6000
+2025-07-14 14:12:21,443 - INFO - Next chunk will start from: 2025-07-06 13:30:00+00:00
+2025-07-14 14:12:21,868 - INFO - Fetched chunk 13, total records: 6500
+2025-07-14 14:12:21,868 - INFO - Next chunk will start from: 2025-07-08 07:15:00+00:00
+2025-07-14 14:12:22,316 - INFO - Fetched chunk 14, total records: 7000
+2025-07-14 14:12:22,317 - INFO - Next chunk will start from: 2025-07-10 01:00:00+00:00
+2025-07-14 14:12:22,831 - INFO - Fetched chunk 15, total records: 7500
+2025-07-14 14:12:22,831 - INFO - Next chunk will start from: 2025-07-11 18:45:00+00:00
+2025-07-14 14:12:23,342 - INFO - Fetched chunk 16, total records: 8000
+2025-07-14 14:12:23,342 - INFO - Next chunk will start from: 2025-07-13 12:30:00+00:00
+2025-07-14 14:12:23,856 - INFO - Fetched chunk 17, total records: 8261
+2025-07-14 14:12:23,856 - INFO - Next chunk will start from: 2025-07-14 10:15:00+00:00
+2025-07-14 14:12:23,958 - INFO - Total records fetched: 8261
+2025-07-14 14:12:23,999 - INFO - Successfully appended 8213 new rows
