@@ -4,11 +4,14 @@ import pandas as pd
 def engineer_features(btc_ohlcv, daily_oi, daily_funding_rate, df_newsdaily_sentiment):
     df_daily = (
         btc_ohlcv
-          .join(daily_oi, how='left')
-          .join(daily_funding_rate, how='left')
-          .join(df_newsdaily_sentiment, how='left')
+        #   .join(daily_oi, how='left')
+        #   .join(daily_funding_rate, how='left')
+        #   .join(df_newsdaily_sentiment, how='left')
     )
     df = df_daily.copy()
+    # Fix index type consistency
+    if not isinstance(df.index, pd.DatetimeIndex):
+        df.index = pd.to_datetime(df.index)
     if len(df) < 100:
         raise ValueError("Need at least 100 data points for proper LSTM training")
     df['high_close_ratio'] = df['high'] / df['close']
@@ -44,10 +47,10 @@ def engineer_features(btc_ohlcv, daily_oi, daily_funding_rate, df_newsdaily_sent
     df['volatility_20'] = df['returns_1d'].rolling(20).std()
     df['volume_sma_20'] = df['volume'].rolling(20).mean()
     df['volume_change'] = df['volume'].pct_change()
-    df['vader_ma_3'] = df['avg_vader_compound'].rolling(3).mean()
-    df['vader_ma_7'] = df['avg_vader_compound'].rolling(7).mean()
-    df['article_count_norm'] = df['article_count'] / df['article_count'].rolling(30).mean()
-    df['funding_rate_ma'] = df['funding_rate'].rolling(7).mean()
+    # df['vader_ma_3'] = df['avg_vader_compound'].rolling(3).mean()
+    # df['vader_ma_7'] = df['avg_vader_compound'].rolling(7).mean()
+    # df['article_count_norm'] = df['article_count'] / df['article_count'].rolling(30).mean()
+    # df['funding_rate_ma'] = df['funding_rate'].rolling(7).mean()
     df['momentum_5'] = df['close'].pct_change(5)
     df['momentum_10'] = df['close'].pct_change(10)
     df['day_of_week'] = df.index.dayofweek
@@ -57,6 +60,10 @@ def engineer_features(btc_ohlcv, daily_oi, daily_funding_rate, df_newsdaily_sent
     df['target_return'] = (df['next_close'] - df['close']) / df['close']
     df['target_direction'] = (df['target_return'] > 0).astype(int)
     df = df.replace([np.inf, -np.inf], np.nan)
+
+    for col in df.columns:
+        if df[col].dtype == 'object':
+            df[col] = pd.to_numeric(df[col], errors='coerce')
     df = df.dropna()
     if len(df) < 50:
         raise ValueError("Not enough clean data after preprocessing")

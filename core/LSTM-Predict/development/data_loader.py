@@ -14,7 +14,7 @@ def load_btc_ohlcv():
     conn.close()
     df['datetime'] = pd.to_datetime(df['datetime'])
     df.set_index('datetime', inplace=True)
-    df.index = df.index.date
+    # df.index = df.index.date
     return df
 
 def load_open_interest():
