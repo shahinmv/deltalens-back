@@ -86,15 +86,20 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':     os.getenv('DB_NAME'),
+        'USER':     os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT', '3306'),
+        'HOST':     os.getenv('DB_HOST'),
+        'PORT':     os.getenv('DB_PORT', '5432'),
+        # you can add any PG‑specific OPTIONS here, e.g. SSL or search_path:
         'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
+            # 'sslmode': 'require',
+            # 'options': '-c search_path=public'
+        },
+        # optional but often helpful:
+        # 'CONN_MAX_AGE': 600,        # persistent connections (seconds)
+        # 'ATOMIC_REQUESTS': True,    # wrap each request in a transaction
     }
 }
 
