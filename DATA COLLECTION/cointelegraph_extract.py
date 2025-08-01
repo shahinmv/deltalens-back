@@ -68,6 +68,9 @@ def get_all_news(latest_date=None):
     total_days = (today - CUTOFF_DATE).days
     earliest_date = today
     pbar = tqdm(total=total_days, desc="Collecting news by date", unit="days")
+    
+    print(f"Fetching news from {latest_date or 'beginning'} onwards (inclusive)...")
+    
     while not stop:
         data = fetch_news(offset, length)
         posts = data['data']['locale']['tag']['posts']['data']
@@ -84,17 +87,23 @@ def get_all_news(latest_date=None):
             except Exception:
                 pub_dt = None
                 pub_date_str = published[:10]
-            # Use latest_date as cutoff if provided
+            
+            # Modified logic: Stop when we encounter news OLDER than latest_date
+            # This ensures we include news FROM the latest_date
             if latest_date and pub_date_str < latest_date:
+                print(f"Reached cutoff date. Stopping at {pub_date_str} (before {latest_date})")
                 stop = True
                 break
-            if pub_date_str >= (latest_date or '0000-00-00'):
+            
+            # Include all news from latest_date onwards (or all news if no latest_date)
+            if not latest_date or pub_date_str >= latest_date:
                 all_news.append({
                     "title": title,
                     "time": published,
                     "description": description,
                     "date": pub_date_str
                 })
+            
             # Update progress bar
             if pub_dt and pub_dt < earliest_date:
                 days_covered = (today - pub_dt).days
@@ -111,24 +120,46 @@ def insert_news_to_db(news, db_path=DB_PATH):
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     inserted = 0
+    updated = 0
+    
     for item in news:
         try:
             date_str = item.get('date') or (item['time'][:10] if 'time' in item else None)
+            
+            # Check if record already exists
             cursor.execute(
-                "INSERT OR IGNORE INTO news (title, description, date) VALUES (?, ?, ?)",
-                (item['title'], item['description'], date_str)
+                "SELECT COUNT(*) FROM news WHERE title = ? AND date = ?",
+                (item['title'], date_str)
             )
-            if cursor.rowcount > 0:
-                inserted += 1
+            exists = cursor.fetchone()[0] > 0
+            
+            if exists:
+                # Update existing record
+                cursor.execute(
+                    "UPDATE news SET description = ? WHERE title = ? AND date = ?",
+                    (item['description'], item['title'], date_str)
+                )
+                if cursor.rowcount > 0:
+                    updated += 1
+            else:
+                # Insert new record
+                cursor.execute(
+                    "INSERT INTO news (title, description, date) VALUES (?, ?, ?)",
+                    (item['title'], item['description'], date_str)
+                )
+                if cursor.rowcount > 0:
+                    inserted += 1
+                    
         except Exception as e:
-            print(f"Error inserting: {item['title']}\n  {e}")
+            print(f"Error processing: {item['title']}\n  {e}")
+    
     conn.commit()
     conn.close()
-    print(f"Inserted {inserted} new news items into the database.")
+    print(f"Inserted {inserted} new news items and updated {updated} existing items in the database.")
 
 if __name__ == "__main__":
     latest_date = get_latest_news_date()
     print(f"Latest news date in DB: {latest_date}")
     news = get_all_news(latest_date=latest_date)
-    print(f"Total news to insert: {len(news)}")
+    print(f"Total news to process: {len(news)}")
     insert_news_to_db(news)

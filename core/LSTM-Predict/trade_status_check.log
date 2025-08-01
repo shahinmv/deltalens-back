@@ -1,0 +1,186 @@
+2025-08-01 16:15:31,748 - INFO - Trade status table created/verified successfully
+2025-08-01 16:15:31,748 - INFO - Starting trade status check...
+2025-08-01 16:15:31,748 - INFO - Latest OHLCV data available: 2025-07-31
+2025-08-01 16:15:31,749 - INFO - Found 44 signals to check
+2025-08-01 16:15:31,749 - INFO - Processing 44 signals
+2025-08-01 16:15:31,749 - INFO - Processing signal 74: LONG on 2025-08-01
+2025-08-01 16:15:31,749 - ERROR - Error checking expiry for 2025-08-02T09:39:43.210811: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,750 - WARNING - No OHLCV data available for signal 74 from 2025-08-01
+2025-08-01 16:15:31,751 - INFO - Updated signal 74: ACTIVE_PENDING_DATA (Entry: 2025-08-01, Price: $0.00, PnL: 0.00%, Days: 0)
+2025-08-01 16:15:31,751 - INFO - Processing signal 73: LONG on 2025-07-31
+2025-08-01 16:15:31,751 - ERROR - Error checking expiry for 2025-08-01T18:04:41.869318: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,754 - INFO - Found 1 days of OHLCV data for signal 73
+2025-08-01 16:15:31,755 - INFO - Updated signal 73: STOP_LOSS_HIT (Entry: 2025-07-31, Price: $115757.06, PnL: -1.77%, Days: 1)
+2025-08-01 16:15:31,755 - INFO - Processing signal 65: LONG on 2025-06-28
+2025-08-01 16:15:31,755 - ERROR - Error checking expiry for 2025-07-31T19:55:16.311213: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,756 - INFO - Found 34 days of OHLCV data for signal 65
+2025-08-01 16:15:31,756 - INFO - Updated signal 65: TARGET_HIT (Entry: 2025-06-28, Price: $109735.83, PnL: 2.61%, Days: 6)
+2025-08-01 16:15:31,756 - INFO - Processing signal 63: LONG on 2025-06-26
+2025-08-01 16:15:31,757 - ERROR - Error checking expiry for 2025-07-31T19:51:51.800053: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,757 - INFO - Found 36 days of OHLCV data for signal 63
+2025-08-01 16:15:31,758 - INFO - Updated signal 63: TARGET_HIT (Entry: 2025-06-26, Price: $108451.85, PnL: 2.23%, Days: 4)
+2025-08-01 16:15:31,758 - INFO - Processing signal 61: LONG on 2025-06-24
+2025-08-01 16:15:31,758 - ERROR - Error checking expiry for 2025-07-31T19:48:53.205911: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,759 - INFO - Found 38 days of OHLCV data for signal 61
+2025-08-01 16:15:31,759 - INFO - Updated signal 61: TARGET_HIT (Entry: 2025-06-24, Price: $103750.17, PnL: 2.76%, Days: 1)
+2025-08-01 16:15:31,759 - INFO - Processing signal 60: LONG on 2025-06-23
+2025-08-01 16:15:31,759 - ERROR - Error checking expiry for 2025-07-31T19:47:32.470317: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,760 - INFO - Found 39 days of OHLCV data for signal 60
+2025-08-01 16:15:31,762 - INFO - Updated signal 60: TARGET_HIT (Entry: 2025-06-23, Price: $104980.48, PnL: 2.80%, Days: 1)
+2025-08-01 16:15:31,762 - INFO - Processing signal 58: LONG on 2025-06-21
+2025-08-01 16:15:31,762 - ERROR - Error checking expiry for 2025-07-31T19:44:40.401850: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,762 - INFO - Found 41 days of OHLCV data for signal 58
+2025-08-01 16:15:31,763 - INFO - Updated signal 58: STOP_LOSS_HIT (Entry: 2025-06-21, Price: $102506.50, PnL: -2.06%, Days: 1)
+2025-08-01 16:15:31,763 - INFO - Processing signal 56: LONG on 2025-06-19
+2025-08-01 16:15:31,763 - ERROR - Error checking expiry for 2025-07-31T19:41:38.994820: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,763 - INFO - Found 43 days of OHLCV data for signal 56
+2025-08-01 16:15:31,764 - INFO - Updated signal 56: STOP_LOSS_HIT (Entry: 2025-06-19, Price: $102179.76, PnL: -2.27%, Days: 3)
+2025-08-01 16:15:31,764 - INFO - Processing signal 55: LONG on 2025-06-18
+2025-08-01 16:15:31,764 - ERROR - Error checking expiry for 2025-07-31T19:40:09.788713: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,765 - INFO - Found 44 days of OHLCV data for signal 55
+2025-08-01 16:15:31,765 - INFO - Updated signal 55: STOP_LOSS_HIT (Entry: 2025-06-18, Price: $104558.62, PnL: -2.09%, Days: 1)
+2025-08-01 16:15:31,765 - INFO - Processing signal 54: LONG on 2025-06-17
+2025-08-01 16:15:31,765 - ERROR - Error checking expiry for 2025-07-31T19:38:40.799309: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,766 - INFO - Found 45 days of OHLCV data for signal 54
+2025-08-01 16:15:31,766 - INFO - Updated signal 54: STOP_LOSS_HIT (Entry: 2025-06-17, Price: $103450.84, PnL: -2.03%, Days: 1)
+2025-08-01 16:15:31,767 - INFO - Processing signal 53: LONG on 2025-06-16
+2025-08-01 16:15:31,767 - ERROR - Error checking expiry for 2025-07-31T19:37:08.642573: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,767 - INFO - Found 46 days of OHLCV data for signal 53
+2025-08-01 16:15:31,768 - INFO - Updated signal 53: TARGET_HIT (Entry: 2025-06-16, Price: $107880.57, PnL: 2.34%, Days: 1)
+2025-08-01 16:15:31,768 - INFO - Processing signal 52: LONG on 2025-06-15
+2025-08-01 16:15:31,768 - ERROR - Error checking expiry for 2025-07-31T19:35:35.254030: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,768 - INFO - Found 47 days of OHLCV data for signal 52
+2025-08-01 16:15:31,769 - INFO - Updated signal 52: STOP_LOSS_HIT (Entry: 2025-06-15, Price: $103914.79, PnL: -2.03%, Days: 3)
+2025-08-01 16:15:31,769 - INFO - Processing signal 51: LONG on 2025-06-14
+2025-08-01 16:15:31,769 - ERROR - Error checking expiry for 2025-07-31T19:34:07.194470: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,770 - INFO - Found 48 days of OHLCV data for signal 51
+2025-08-01 16:15:31,770 - INFO - Updated signal 51: TARGET_HIT (Entry: 2025-06-14, Price: $108463.64, PnL: 2.64%, Days: 3)
+2025-08-01 16:15:31,770 - INFO - Processing signal 50: LONG on 2025-06-13
+2025-08-01 16:15:31,770 - ERROR - Error checking expiry for 2025-07-31T19:32:40.687737: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,771 - INFO - Found 49 days of OHLCV data for signal 50
+2025-08-01 16:15:31,771 - INFO - Updated signal 50: STOP_LOSS_HIT (Entry: 2025-06-13, Price: $106514.97, PnL: -1.96%, Days: 1)
+2025-08-01 16:15:31,771 - INFO - Processing signal 49: LONG on 2025-06-12
+2025-08-01 16:15:31,771 - ERROR - Error checking expiry for 2025-07-31T19:31:04.606107: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,772 - INFO - Found 50 days of OHLCV data for signal 49
+2025-08-01 16:15:31,772 - INFO - Updated signal 49: STOP_LOSS_HIT (Entry: 2025-06-12, Price: $108134.00, PnL: -1.94%, Days: 1)
+2025-08-01 16:15:31,772 - INFO - Processing signal 48: LONG on 2025-06-11
+2025-08-01 16:15:31,773 - ERROR - Error checking expiry for 2025-07-31T19:29:38.482710: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,773 - INFO - Found 51 days of OHLCV data for signal 48
+2025-08-01 16:15:31,774 - INFO - Updated signal 48: STOP_LOSS_HIT (Entry: 2025-06-11, Price: $108060.71, PnL: -2.00%, Days: 2)
+2025-08-01 16:15:31,774 - INFO - Processing signal 47: LONG on 2025-06-10
+2025-08-01 16:15:31,774 - ERROR - Error checking expiry for 2025-07-31T19:28:09.672871: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,775 - INFO - Found 52 days of OHLCV data for signal 47
+2025-08-01 16:15:31,775 - INFO - Updated signal 47: TARGET_HIT (Entry: 2025-06-10, Price: $108383.02, PnL: 2.51%, Days: 1)
+2025-08-01 16:15:31,775 - INFO - Processing signal 46: LONG on 2025-06-09
+2025-08-01 16:15:31,775 - ERROR - Error checking expiry for 2025-07-31T19:26:11.731743: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,776 - INFO - Found 53 days of OHLCV data for signal 46
+2025-08-01 16:15:31,776 - INFO - Updated signal 46: TARGET_HIT (Entry: 2025-06-09, Price: $108075.29, PnL: 2.39%, Days: 1)
+2025-08-01 16:15:31,776 - INFO - Processing signal 45: LONG on 2025-06-08
+2025-08-01 16:15:31,776 - ERROR - Error checking expiry for 2025-07-31T19:24:38.926960: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,777 - INFO - Found 54 days of OHLCV data for signal 45
+2025-08-01 16:15:31,777 - INFO - Updated signal 45: TARGET_HIT (Entry: 2025-06-08, Price: $107039.59, PnL: 2.64%, Days: 2)
+2025-08-01 16:15:31,777 - INFO - Processing signal 43: LONG on 2025-06-06
+2025-08-01 16:15:31,777 - ERROR - Error checking expiry for 2025-07-31T19:21:33.826973: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,778 - INFO - Found 56 days of OHLCV data for signal 43
+2025-08-01 16:15:31,778 - INFO - Updated signal 43: STOP_LOSS_HIT (Entry: 2025-06-06, Price: $102663.98, PnL: -1.94%, Days: 1)
+2025-08-01 16:15:31,778 - INFO - Processing signal 42: LONG on 2025-06-05
+2025-08-01 16:15:31,778 - ERROR - Error checking expiry for 2025-07-31T19:20:02.467263: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,779 - INFO - Found 57 days of OHLCV data for signal 42
+2025-08-01 16:15:31,779 - INFO - Updated signal 42: STOP_LOSS_HIT (Entry: 2025-06-05, Price: $103194.84, PnL: -2.07%, Days: 1)
+2025-08-01 16:15:31,779 - INFO - Processing signal 39: LONG on 2025-06-02
+2025-08-01 16:15:31,779 - ERROR - Error checking expiry for 2025-07-31T19:14:49.551119: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,780 - INFO - Found 60 days of OHLCV data for signal 39
+2025-08-01 16:15:31,780 - INFO - Updated signal 39: STOP_LOSS_HIT (Entry: 2025-06-02, Price: $102147.56, PnL: -2.34%, Days: 4)
+2025-08-01 16:15:31,780 - INFO - Processing signal 36: LONG on 2025-05-30
+2025-08-01 16:15:31,780 - ERROR - Error checking expiry for 2025-07-31T19:10:20.009373: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,781 - INFO - Found 63 days of OHLCV data for signal 36
+2025-08-01 16:15:31,781 - INFO - Updated signal 36: STOP_LOSS_HIT (Entry: 2025-05-30, Price: $105515.54, PnL: -2.10%, Days: 1)
+2025-08-01 16:15:31,781 - INFO - Processing signal 35: LONG on 2025-05-29
+2025-08-01 16:15:31,781 - ERROR - Error checking expiry for 2025-07-31T19:08:47.486549: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,782 - INFO - Found 64 days of OHLCV data for signal 35
+2025-08-01 16:15:31,782 - INFO - Updated signal 35: STOP_LOSS_HIT (Entry: 2025-05-29, Price: $106731.10, PnL: -2.03%, Days: 1)
+2025-08-01 16:15:31,782 - INFO - Processing signal 34: LONG on 2025-05-28
+2025-08-01 16:15:31,782 - ERROR - Error checking expiry for 2025-07-31T19:07:15.990744: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,783 - INFO - Found 65 days of OHLCV data for signal 34
+2025-08-01 16:15:31,783 - INFO - Updated signal 34: STOP_LOSS_HIT (Entry: 2025-05-28, Price: $106237.47, PnL: -2.92%, Days: 2)
+2025-08-01 16:15:31,784 - INFO - Processing signal 31: LONG on 2025-05-25
+2025-08-01 16:15:31,784 - ERROR - Error checking expiry for 2025-07-31T19:02:57.899225: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,784 - INFO - Found 68 days of OHLCV data for signal 31
+2025-08-01 16:15:31,785 - INFO - Updated signal 31: TARGET_HIT (Entry: 2025-05-25, Price: $110325.71, PnL: 2.80%, Days: 2)
+2025-08-01 16:15:31,785 - INFO - Processing signal 30: LONG on 2025-05-24
+2025-08-01 16:15:31,785 - ERROR - Error checking expiry for 2025-07-31T19:01:05.228982: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,786 - INFO - Found 69 days of OHLCV data for signal 30
+2025-08-01 16:15:31,786 - INFO - Updated signal 30: STOP_LOSS_HIT (Entry: 2025-05-24, Price: $109247.85, PnL: -2.19%, Days: 1)
+2025-08-01 16:15:31,786 - INFO - Processing signal 29: LONG on 2025-05-23
+2025-08-01 16:15:31,786 - ERROR - Error checking expiry for 2025-07-31T18:59:32.108955: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,787 - INFO - Found 70 days of OHLCV data for signal 29
+2025-08-01 16:15:31,787 - INFO - Updated signal 29: STOP_LOSS_HIT (Entry: 2025-05-23, Price: $106294.81, PnL: -3.05%, Days: 7)
+2025-08-01 16:15:31,787 - INFO - Processing signal 28: LONG on 2025-05-22
+2025-08-01 16:15:31,787 - ERROR - Error checking expiry for 2025-07-31T18:49:43.840601: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,788 - INFO - Found 71 days of OHLCV data for signal 28
+2025-08-01 16:15:31,788 - INFO - Updated signal 28: TARGET_HIT (Entry: 2025-05-22, Price: $109786.69, PnL: 2.75%, Days: 1)
+2025-08-01 16:15:31,788 - INFO - Processing signal 22: LONG on 2025-05-16
+2025-08-01 16:15:31,788 - ERROR - Error checking expiry for 2025-07-31T18:10:55.338555: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,789 - INFO - Found 77 days of OHLCV data for signal 22
+2025-08-01 16:15:31,789 - INFO - Updated signal 22: TARGET_HIT (Entry: 2025-05-16, Price: $106217.78, PnL: 2.62%, Days: 3)
+2025-08-01 16:15:31,789 - INFO - Processing signal 20: LONG on 2025-05-14
+2025-08-01 16:15:31,789 - ERROR - Error checking expiry for 2025-07-31T18:06:39.183591: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,790 - INFO - Found 79 days of OHLCV data for signal 20
+2025-08-01 16:15:31,790 - INFO - Updated signal 20: TARGET_HIT (Entry: 2025-05-14, Price: $105026.95, PnL: 2.17%, Days: 5)
+2025-08-01 16:15:31,790 - INFO - Processing signal 19: LONG on 2025-05-13
+2025-08-01 16:15:31,790 - ERROR - Error checking expiry for 2025-07-31T18:04:35.949430: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,791 - INFO - Found 80 days of OHLCV data for signal 19
+2025-08-01 16:15:31,791 - INFO - Updated signal 19: STOP_LOSS_HIT (Entry: 2025-05-13, Price: $101786.30, PnL: -2.24%, Days: 1)
+2025-08-01 16:15:31,791 - INFO - Processing signal 18: LONG on 2025-05-12
+2025-08-01 16:15:31,791 - ERROR - Error checking expiry for 2025-07-31T18:03:16.048535: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,792 - INFO - Found 81 days of OHLCV data for signal 18
+2025-08-01 16:15:31,792 - INFO - Updated signal 18: STOP_LOSS_HIT (Entry: 2025-05-12, Price: $102067.64, PnL: -2.62%, Days: 1)
+2025-08-01 16:15:31,792 - INFO - Processing signal 17: LONG on 2025-05-11
+2025-08-01 16:15:31,792 - ERROR - Error checking expiry for 2025-07-31T18:01:51.249231: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,793 - INFO - Found 82 days of OHLCV data for signal 17
+2025-08-01 16:15:31,794 - INFO - Updated signal 17: TARGET_HIT (Entry: 2025-05-11, Price: $105160.08, PnL: 2.12%, Days: 2)
+2025-08-01 16:15:31,794 - INFO - Processing signal 16: LONG on 2025-05-10
+2025-08-01 16:15:31,794 - ERROR - Error checking expiry for 2025-07-31T17:59:58.688077: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,795 - INFO - Found 83 days of OHLCV data for signal 16
+2025-08-01 16:15:31,795 - INFO - Updated signal 16: TARGET_HIT (Entry: 2025-05-10, Price: $106528.81, PnL: 3.16%, Days: 9)
+2025-08-01 16:15:31,795 - INFO - Processing signal 15: LONG on 2025-05-09
+2025-08-01 16:15:31,795 - ERROR - Error checking expiry for 2025-07-31T17:58:16.914145: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,796 - INFO - Found 84 days of OHLCV data for signal 15
+2025-08-01 16:15:31,796 - INFO - Updated signal 15: TARGET_HIT (Entry: 2025-05-09, Price: $98949.66, PnL: 2.48%, Days: 1)
+2025-08-01 16:15:31,797 - INFO - Processing signal 14: LONG on 2025-05-08
+2025-08-01 16:15:31,797 - ERROR - Error checking expiry for 2025-07-31T17:56:49.840471: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,797 - INFO - Found 85 days of OHLCV data for signal 14
+2025-08-01 16:15:31,798 - INFO - Updated signal 14: TARGET_HIT (Entry: 2025-05-08, Price: $99348.17, PnL: 2.60%, Days: 1)
+2025-08-01 16:15:31,798 - INFO - Processing signal 13: LONG on 2025-05-07
+2025-08-01 16:15:31,798 - ERROR - Error checking expiry for 2025-07-31T17:55:07.145249: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,798 - INFO - Found 86 days of OHLCV data for signal 13
+2025-08-01 16:15:31,799 - INFO - Updated signal 13: TARGET_HIT (Entry: 2025-05-07, Price: $98028.72, PnL: 3.48%, Days: 2)
+2025-08-01 16:15:31,799 - INFO - Processing signal 12: LONG on 2025-05-06
+2025-08-01 16:15:31,799 - ERROR - Error checking expiry for 2025-07-31T17:53:19.757409: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,799 - INFO - Found 87 days of OHLCV data for signal 12
+2025-08-01 16:15:31,800 - INFO - Updated signal 12: TARGET_HIT (Entry: 2025-05-06, Price: $97240.74, PnL: 3.14%, Days: 2)
+2025-08-01 16:15:31,800 - INFO - Processing signal 11: LONG on 2025-05-05
+2025-08-01 16:15:31,800 - ERROR - Error checking expiry for 2025-07-31T17:51:41.023084: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,800 - INFO - Found 88 days of OHLCV data for signal 11
+2025-08-01 16:15:31,801 - INFO - Updated signal 11: TARGET_HIT (Entry: 2025-05-05, Price: $98769.44, PnL: 3.04%, Days: 4)
+2025-08-01 16:15:31,801 - INFO - Processing signal 10: LONG on 2025-05-04
+2025-08-01 16:15:31,801 - ERROR - Error checking expiry for 2025-07-31T17:49:58.595202: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,802 - INFO - Found 89 days of OHLCV data for signal 10
+2025-08-01 16:15:31,802 - INFO - Updated signal 10: TARGET_HIT (Entry: 2025-05-04, Price: $100050.37, PnL: 3.26%, Days: 5)
+2025-08-01 16:15:31,802 - INFO - Processing signal 9: LONG on 2025-05-03
+2025-08-01 16:15:31,802 - ERROR - Error checking expiry for 2025-07-31T17:48:24.064485: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,803 - INFO - Found 90 days of OHLCV data for signal 9
+2025-08-01 16:15:31,803 - INFO - Updated signal 9: TARGET_HIT (Entry: 2025-05-03, Price: $98984.41, PnL: 2.59%, Days: 6)
+2025-08-01 16:15:31,803 - INFO - Processing signal 8: LONG on 2025-05-02
+2025-08-01 16:15:31,803 - ERROR - Error checking expiry for 2025-07-31T17:46:46.019419: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,804 - INFO - Found 91 days of OHLCV data for signal 8
+2025-08-01 16:15:31,804 - INFO - Updated signal 8: TARGET_HIT (Entry: 2025-05-02, Price: $96236.68, PnL: 2.19%, Days: 1)
+2025-08-01 16:15:31,804 - INFO - Processing signal 7: LONG on 2025-05-01
+2025-08-01 16:15:31,804 - ERROR - Error checking expiry for 2025-07-31T17:45:12.374077: can't compare offset-naive and offset-aware datetimes
+2025-08-01 16:15:31,805 - INFO - Found 92 days of OHLCV data for signal 7
+2025-08-01 16:15:31,806 - INFO - Updated signal 7: TARGET_HIT (Entry: 2025-05-01, Price: $98220.56, PnL: 3.43%, Days: 8)
+2025-08-01 16:15:31,806 - INFO - Trade status check completed. Checked: 44, Updated: 44
+2025-08-01 16:15:31,806 - INFO - === TRADE STATUS SUMMARY ===
+2025-08-01 16:15:31,806 - INFO - TARGET_HIT: 24 trades, Avg PnL: 2.70% (Range: 2.12% to 3.48%), Avg Days Active: 3.0
+2025-08-01 16:15:31,806 - INFO - STOP_LOSS_HIT: 19 trades, Avg PnL: -2.19% (Range: -3.05% to -1.77%), Avg Days Active: 1.8
+2025-08-01 16:15:31,806 - INFO - ACTIVE_PENDING_DATA: 1 trades, Avg PnL: 0.00% (Range: 0.00% to 0.00%), Avg Days Active: 0.0

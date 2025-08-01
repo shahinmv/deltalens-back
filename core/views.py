@@ -247,6 +247,115 @@ def get_latest_trading_signal(request):
         return JsonResponse({"error": "Failed to fetch trading signal"}, status=500)
 
 
+def get_iterative_trading_signals(request):
+    """Get all trading signals from the iterative_trading_signals table"""
+    db_path = 'db.sqlite3'
+    try:
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+        
+        # Get all iterative trading signals with required fields
+        cursor.execute("""
+            SELECT id, prediction_date, symbol, signal_type, entry_price, 
+                   target_price, stop_loss, confidence, predicted_return,
+                   position_size, timestamp, expires_at, status,
+                   dynamic_stop_pct, market_volatility, trend_strength, 
+                   momentum, fear_index
+            FROM iterative_trading_signals 
+            ORDER BY prediction_date DESC, timestamp DESC
+        """)
+        
+        rows = cursor.fetchall()
+        conn.close()
+        
+        if not rows:
+            return JsonResponse({"signals": [], "message": "No iterative trading signals found."})
+        
+        # Parse the data
+        signals_data = []
+        for row in rows:
+            signal_data = {
+                "id": row[0],
+                "prediction_date": row[1],
+                "symbol": row[2],
+                "signal_type": row[3],
+                "entry_price": row[4],
+                "target_price": row[5],
+                "stop_loss": row[6],
+                "confidence": row[7],
+                "predicted_return": row[8],
+                "position_size": row[9],
+                "timestamp": row[10],
+                "expires_at": row[11],
+                "status": row[12],
+                "dynamic_stop_pct": row[13],
+                "market_volatility": row[14],
+                "trend_strength": row[15],
+                "momentum": row[16],
+                "fear_index": row[17],
+                "is_active": datetime.fromisoformat(row[11]) > datetime.now() if row[11] else False
+            }
+            signals_data.append(signal_data)
+        
+        return JsonResponse({"signals": signals_data})
+        
+    except Exception as e:
+        print(f"Error in get_iterative_trading_signals: {e}")
+        return JsonResponse({"error": "Failed to fetch iterative trading signals"}, status=500)
+
+
+def get_signal_performance(request):
+    """Get signal performance data from the new table"""
+    db_path = 'db.sqlite3'
+    try:
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+        
+        # Get all signal performance data
+        cursor.execute("""
+            SELECT signal_id, status, entry_date, current_price, hit_target, 
+                   hit_stop_loss, is_expired, pnl_percentage, exit_reason, 
+                   exit_date, exit_timestamp, days_active, last_checked, 
+                   created_at, updated_at
+            FROM trade_status 
+            ORDER BY created_at DESC
+        """)
+        
+        rows = cursor.fetchall()
+        conn.close()
+        
+        if not rows:
+            return JsonResponse({"performances": [], "message": "No signal performance data found."})
+        
+        # Parse the data
+        performances_data = []
+        for row in rows:
+            performance_data = {
+                "signal_id": row[0],
+                "status": row[1],
+                "entry_date": row[2],
+                "current_price": row[3],
+                "hit_target": row[4],
+                "hit_stop_loss": row[5],
+                "is_expired": row[6],
+                "pnl_percentage": row[7],
+                "exit_reason": row[8],
+                "exit_date": row[9],
+                "exit_timestamp": row[10],
+                "days_active": row[11],
+                "last_checked": row[12],
+                "created_at": row[13],
+                "updated_at": row[14]
+            }
+            performances_data.append(performance_data)
+        
+        return JsonResponse({"performances": performances_data})
+        
+    except Exception as e:
+        print(f"Error in get_signal_performance: {e}")
+        return JsonResponse({"error": "Failed to fetch signal performance"}, status=500)
+
+
 @csrf_exempt
 def stream_llm_response(request):
     if request.method != "POST":

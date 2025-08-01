@@ -5,6 +5,7 @@ from langchain.tools import BaseTool
 from pydantic import BaseModel, Field, PrivateAttr
 import pandas as pd
 from django.views.decorators.csrf import csrf_exempt
+import requests
 
 class BTCOHLCVInput(BaseModel):
     """Input schema for BTC OHLCV data retrieval"""
@@ -46,6 +47,41 @@ class BTCOHLCVTool(BaseTool):
         super().__init__()
         self._db_path = db_path
     
+    def _fetch_today_btc_data(self) -> Optional[pd.DataFrame]:
+        """Fetch today's BTC OHLCV data from Binance API"""
+        try:
+            # Get today's date in UTC
+            today = datetime.utcnow().date()
+            today_start = datetime.combine(today, datetime.min.time())
+            
+            # Binance API endpoint for 24hr ticker
+            url = "https://api.binance.com/api/v3/ticker/24hr"
+            params = {"symbol": "BTCUSDT"}
+            
+            response = requests.get(url, params=params, timeout=10)
+            response.raise_for_status()
+            
+            data = response.json()
+            
+            # Create a DataFrame with today's data
+            today_data = pd.DataFrame({
+                'datetime': [today_start],
+                'open': [float(data['openPrice'])],
+                'high': [float(data['highPrice'])],
+                'low': [float(data['lowPrice'])],
+                'close': [float(data['lastPrice'])],
+                'volume': [float(data['volume'])]
+            })
+            
+            today_data['datetime'] = pd.to_datetime(today_data['datetime'])
+            today_data.set_index('datetime', inplace=True)
+            
+            return today_data
+            
+        except Exception as e:
+            print(f"[BTCOHLCVTool] Error fetching today's data: {str(e)}")
+            return None
+    
     def _run(self, start_datetime: Optional[str] = None, end_datetime: Optional[str] = None, 
              limit: int = 1000, only_non_imputed: bool = False, interval: Optional[str] = None) -> str:
         print(f"[BTCOHLCVTool] Called with start_datetime={start_datetime}, end_datetime={end_datetime}, limit={limit}, only_non_imputed={only_non_imputed}, interval={interval}")
@@ -80,6 +116,30 @@ class BTCOHLCVTool(BaseTool):
                 df['datetime'] = pd.to_datetime(df['datetime'])
                 df = df.sort_values('datetime')
                 df.set_index('datetime', inplace=True)
+                
+                # Check if we're doing daily aggregation and need today's data
+                is_daily_interval = interval.lower() in ['1d', '1day', 'daily', 'd']
+                need_today_data = False
+                
+                if is_daily_interval and not df.empty:
+                    # Check if the latest data is from yesterday or earlier
+                    latest_date = df.index[-1].date()
+                    today = datetime.utcnow().date()
+                    yesterday = today - timedelta(days=1)
+                    
+                    if latest_date <= yesterday:
+                        need_today_data = True
+                        print(f"[BTCOHLCVTool] Latest data is from {latest_date}, fetching today's data ({today})")
+                
+                # Fetch and append today's data if needed
+                if need_today_data:
+                    today_data = self._fetch_today_btc_data()
+                    if today_data is not None:
+                        # Combine historical and today's data
+                        df = pd.concat([df, today_data])
+                        df = df.sort_index()
+                        print(f"[BTCOHLCVTool] Successfully appended today's data")
+                
                 agg_df = df.resample(interval).agg({
                     'open': 'first',
                     'high': 'max',

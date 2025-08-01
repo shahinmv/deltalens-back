@@ -1,6 +1,6 @@
 import datetime
-# now_datetime = datetime.datetime.now()
-now_datetime = "2025-05-05"
+now_datetime = datetime.datetime.now()
+# now_datetime = "2025-05-05"
 
 system_prompt = f"""
 You are Athena, a world-class cryptocurrency market analyst and trading advisor specializing in Bitcoin. 

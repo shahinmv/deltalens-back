@@ -152,3 +152,31 @@
 2025-07-14 14:12:23,856 - INFO - Next chunk will start from: 2025-07-14 10:15:00+00:00
 2025-07-14 14:12:23,958 - INFO - Total records fetched: 8261
 2025-07-14 14:12:23,999 - INFO - Successfully appended 8213 new rows
+2025-08-01 14:37:04,949 - INFO - Connecting to database to get latest timestamp...
+2025-08-01 14:37:04,955 - INFO - Found latest timestamp in database: 2025-07-14 10:10:00
+2025-08-01 14:37:04,956 - INFO - Starting from: 2025-07-14 10:10:00
+2025-08-01 14:37:04,957 - INFO - Fetching data from 2025-07-14 06:10:00+00:00 to 2025-08-01 10:37:04.957000+00:00
+2025-08-01 14:37:05,966 - INFO - Fetched chunk 1, total records: 500
+2025-08-01 14:37:05,966 - INFO - Next chunk will start from: 2025-07-15 23:55:00+00:00
+2025-08-01 14:37:06,390 - INFO - Fetched chunk 2, total records: 1000
+2025-08-01 14:37:06,391 - INFO - Next chunk will start from: 2025-07-17 17:40:00+00:00
+2025-08-01 14:37:06,820 - INFO - Fetched chunk 3, total records: 1500
+2025-08-01 14:37:06,821 - INFO - Next chunk will start from: 2025-07-19 11:25:00+00:00
+2025-08-01 14:37:07,248 - INFO - Fetched chunk 4, total records: 2000
+2025-08-01 14:37:07,248 - INFO - Next chunk will start from: 2025-07-21 05:10:00+00:00
+2025-08-01 14:37:07,676 - INFO - Fetched chunk 5, total records: 2491
+2025-08-01 14:37:07,677 - INFO - Next chunk will start from: 2025-07-22 22:55:00+00:00
+2025-08-01 14:37:08,146 - INFO - Fetched chunk 6, total records: 2991
+2025-08-01 14:37:08,146 - INFO - Next chunk will start from: 2025-07-24 16:40:00+00:00
+2025-08-01 14:37:08,577 - INFO - Fetched chunk 7, total records: 3491
+2025-08-01 14:37:08,577 - INFO - Next chunk will start from: 2025-07-26 10:25:00+00:00
+2025-08-01 14:37:09,002 - INFO - Fetched chunk 8, total records: 3991
+2025-08-01 14:37:09,002 - INFO - Next chunk will start from: 2025-07-28 04:10:00+00:00
+2025-08-01 14:37:09,431 - INFO - Fetched chunk 9, total records: 4491
+2025-08-01 14:37:09,431 - INFO - Next chunk will start from: 2025-07-29 21:55:00+00:00
+2025-08-01 14:37:09,861 - INFO - Fetched chunk 10, total records: 4991
+2025-08-01 14:37:09,861 - INFO - Next chunk will start from: 2025-07-31 15:40:00+00:00
+2025-08-01 14:37:10,340 - INFO - Fetched chunk 11, total records: 5219
+2025-08-01 14:37:10,340 - INFO - Next chunk will start from: 2025-08-01 10:40:00+00:00
+2025-08-01 14:37:10,445 - INFO - Total records fetched: 5219
+2025-08-01 14:37:10,504 - INFO - Successfully appended 5171 new rows

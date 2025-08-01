@@ -929,6 +929,11 @@ class IterativeTradingSystem:
     def save_signal_to_database(self, signal: TradeSignal, prediction_date: str) -> bool:
         """Save enhanced trading signal to database with dynamic stop loss data"""
         try:
+            # Skip saving HOLD signals
+            if signal.signal_type == 'HOLD':
+                logging.info(f"Skipping HOLD signal - not saved to database")
+                return True
+            
             conn = sqlite3.connect(self.db_path)
             cursor = conn.cursor()
             
