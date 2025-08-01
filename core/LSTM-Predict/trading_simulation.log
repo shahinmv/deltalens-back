@@ -1,0 +1,221 @@
+2025-07-31 17:11:49,942 - INFO - Loaded 42 trading signals
+2025-07-31 17:11:49,946 - INFO - Loaded 2905 price records
+2025-07-31 17:11:49,946 - INFO - Starting trading simulation with $10,000.00
+2025-07-31 17:11:49,946 - INFO - Processing 42 signals...
+2025-07-31 17:11:49,950 - INFO - Simulation period: 2025-05-01 to 2025-07-28
+2025-07-31 17:11:49,952 - INFO - Opened LONG position on 2025-05-01: $343.07 at $96489.90, target: $98220.56, stop: $91618.67
+2025-07-31 17:11:49,953 - INFO - Opened LONG position on 2025-05-02: $211.72 at $96887.13, target: $96236.68, stop: $90822.73
+2025-07-31 17:11:49,953 - INFO - Closed LONG position: P&L: $-1.63 (-0.77%), Exit reason: TP, Days held: 1
+2025-07-31 17:11:49,953 - INFO - Opened LONG position on 2025-05-03: $249.61 at $95856.42, target: $98984.41, stop: $92963.02
+2025-07-31 17:11:49,954 - INFO - Opened LONG position on 2025-05-04: $307.08 at $94277.61, target: $100050.37, stop: $93328.30
+2025-07-31 17:11:49,954 - INFO - Opened LONG position on 2025-05-05: $276.50 at $94733.68, target: $98769.44, stop: $92291.18
+2025-07-31 17:11:49,955 - INFO - Opened LONG position on 2025-05-06: $277.28 at $96834.02, target: $97240.74, stop: $90597.24
+2025-07-31 17:11:49,955 - INFO - Opened LONG position on 2025-05-07: $297.21 at $97030.50, target: $98028.72, stop: $92279.79
+2025-07-31 17:11:49,955 - INFO - Closed LONG position: P&L: $0.89 (0.32%), Exit reason: TP, Days held: 2
+2025-07-31 17:11:49,956 - INFO - Opened LONG position on 2025-05-08: $221.36 at $103261.61, target: $99348.17, stop: $94331.84
+2025-07-31 17:11:49,956 - INFO - Closed LONG position: P&L: $5.80 (1.69%), Exit reason: TP, Days held: 8
+2025-07-31 17:11:49,956 - INFO - Closed LONG position: P&L: $7.88 (3.16%), Exit reason: TP, Days held: 6
+2025-07-31 17:11:49,956 - INFO - Closed LONG position: P&L: $18.46 (6.01%), Exit reason: TP, Days held: 5
+2025-07-31 17:11:49,956 - INFO - Closed LONG position: P&L: $11.48 (4.15%), Exit reason: TP, Days held: 4
+2025-07-31 17:11:49,956 - INFO - Closed LONG position: P&L: $2.75 (0.93%), Exit reason: TP, Days held: 2
+2025-07-31 17:11:49,956 - INFO - Closed LONG position: P&L: $-8.59 (-3.88%), Exit reason: TP, Days held: 1
+2025-07-31 17:11:49,956 - INFO - Opened LONG position on 2025-05-09: $248.68 at $102971.99, target: $98949.66, stop: $94149.79
+2025-07-31 17:11:49,956 - INFO - Closed LONG position: P&L: $-9.94 (-4.00%), Exit reason: TP, Days held: 1
+2025-07-31 17:11:49,957 - INFO - Opened LONG position on 2025-05-10: $317.26 at $104809.53, target: $106528.81, stop: $99855.45
+2025-07-31 17:11:49,957 - INFO - Opened LONG position on 2025-05-11: $206.33 at $104118.00, target: $105160.08, stop: $100966.90
+2025-07-31 17:11:49,958 - INFO - Opened LONG position on 2025-05-12: $220.05 at $102791.32, target: $107236.34, stop: $102067.64
+2025-07-31 17:11:49,958 - INFO - Closed LONG position: P&L: $1.85 (0.90%), Exit reason: TP, Days held: 2
+2025-07-31 17:11:49,958 - INFO - Closed LONG position: P&L: $-1.77 (-0.80%), Exit reason: SL, Days held: 1
+2025-07-31 17:11:49,958 - INFO - Opened LONG position on 2025-05-13: $287.75 at $104103.72, target: $107203.48, stop: $101786.30
+2025-07-31 17:11:49,958 - INFO - Closed LONG position: P&L: $-6.68 (-2.32%), Exit reason: SL, Days held: 1
+2025-07-31 17:11:49,958 - INFO - Opened LONG position on 2025-05-14: $211.04 at $103507.83, target: $105026.95, stop: $100360.16
+2025-07-31 17:11:49,959 - INFO - Opened LONG position on 2025-05-16: $248.52 at $103463.90, target: $106217.78, stop: $101686.33
+2025-07-31 17:11:49,959 - INFO - Closed LONG position: P&L: $4.88 (1.54%), Exit reason: TP, Days held: 9
+2025-07-31 17:11:49,959 - INFO - Closed LONG position: P&L: $2.88 (1.36%), Exit reason: TP, Days held: 5
+2025-07-31 17:11:49,959 - INFO - Closed LONG position: P&L: $6.35 (2.56%), Exit reason: TP, Days held: 3
+2025-07-31 17:11:49,960 - INFO - Opened LONG position on 2025-05-22: $275.79 at $111696.22, target: $109786.69, stop: $103736.44
+2025-07-31 17:11:49,960 - INFO - Closed LONG position: P&L: $-4.98 (-1.81%), Exit reason: TP, Days held: 1
+2025-07-31 17:11:49,960 - INFO - Opened LONG position on 2025-05-23: $265.90 at $107318.30, target: $112550.83, stop: $106294.81
+2025-07-31 17:11:49,961 - INFO - Opened LONG position on 2025-05-24: $271.49 at $107761.90, target: $114802.02, stop: $109247.85
+2025-07-31 17:11:49,961 - INFO - Closed LONG position: P&L: $3.46 (1.28%), Exit reason: SL, Days held: 1
+2025-07-31 17:11:49,961 - INFO - Opened LONG position on 2025-05-25: $273.71 at $109004.20, target: $110325.71, stop: $104955.74
+2025-07-31 17:11:49,961 - INFO - Closed LONG position: P&L: $3.04 (1.11%), Exit reason: TP, Days held: 2
+2025-07-31 17:11:49,962 - INFO - Opened LONG position on 2025-05-28: $226.32 at $107781.78, target: $111969.81, stop: $106237.47
+2025-07-31 17:11:49,962 - INFO - Opened LONG position on 2025-05-29: $229.39 at $105589.75, target: $111556.48, stop: $106731.10
+2025-07-31 17:11:49,962 - INFO - Closed LONG position: P&L: $-2.80 (-1.05%), Exit reason: SL, Days held: 7
+2025-07-31 17:11:49,962 - INFO - Closed LONG position: P&L: $-3.46 (-1.53%), Exit reason: SL, Days held: 2
+2025-07-31 17:11:49,962 - INFO - Closed LONG position: P&L: $2.25 (0.98%), Exit reason: SL, Days held: 1
+2025-07-31 17:11:49,963 - INFO - Opened LONG position on 2025-05-30: $244.91 at $103423.24, target: $110413.02, stop: $105515.54
+2025-07-31 17:11:49,963 - INFO - Closed LONG position: P&L: $4.70 (1.92%), Exit reason: SL, Days held: 1
+2025-07-31 17:11:49,963 - INFO - Opened LONG position on 2025-06-02: $213.03 at $105858.00, target: $106811.85, stop: $102147.56
+2025-07-31 17:11:49,964 - INFO - Opened LONG position on 2025-06-05: $211.14 at $101508.69, target: $107641.76, stop: $103194.84
+2025-07-31 17:11:49,964 - INFO - Closed LONG position: P&L: $-7.66 (-3.60%), Exit reason: SL, Days held: 4
+2025-07-31 17:11:49,964 - INFO - Closed LONG position: P&L: $3.29 (1.56%), Exit reason: SL, Days held: 1
+2025-07-31 17:11:49,964 - INFO - Opened LONG position on 2025-06-06: $232.22 at $104288.43, target: $107120.29, stop: $102663.98
+2025-07-31 17:11:49,964 - INFO - Closed LONG position: P&L: $-3.84 (-1.65%), Exit reason: SL, Days held: 1
+2025-07-31 17:11:49,965 - INFO - Opened LONG position on 2025-06-08: $264.56 at $105734.01, target: $107039.59, stop: $101044.50
+2025-07-31 17:11:49,966 - INFO - Opened LONG position on 2025-06-09: $233.40 at $110263.02, target: $108075.29, stop: $102584.45
+2025-07-31 17:11:49,966 - INFO - Closed LONG position: P&L: $3.00 (1.13%), Exit reason: TP, Days held: 2
+2025-07-31 17:11:49,966 - INFO - Closed LONG position: P&L: $-4.85 (-2.08%), Exit reason: TP, Days held: 1
+2025-07-31 17:11:49,966 - INFO - Opened LONG position on 2025-06-10: $251.21 at $110274.39, target: $108383.02, stop: $102858.11
+2025-07-31 17:11:49,966 - INFO - Closed LONG position: P&L: $-4.55 (-1.81%), Exit reason: TP, Days held: 1
+2025-07-31 17:11:49,966 - INFO - Opened LONG position on 2025-06-11: $275.86 at $108645.13, target: $113297.95, stop: $108060.71
+2025-07-31 17:11:49,967 - INFO - Opened LONG position on 2025-06-12: $203.66 at $105671.74, target: $112578.69, stop: $108134.00
+2025-07-31 17:11:49,967 - INFO - Closed LONG position: P&L: $-1.76 (-0.64%), Exit reason: SL, Days held: 2
+2025-07-31 17:11:49,967 - INFO - Closed LONG position: P&L: $4.53 (2.23%), Exit reason: SL, Days held: 1
+2025-07-31 17:11:49,967 - INFO - Opened LONG position on 2025-06-13: $247.34 at $106066.59, target: $111325.68, stop: $106514.97
+2025-07-31 17:11:49,967 - INFO - Closed LONG position: P&L: $0.80 (0.32%), Exit reason: SL, Days held: 1
+2025-07-31 17:11:49,968 - INFO - Opened LONG position on 2025-06-14: $264.89 at $105414.63, target: $108463.64, stop: $103564.93
+2025-07-31 17:11:49,968 - INFO - Opened LONG position on 2025-06-15: $300.39 at $105594.02, target: $109330.79, stop: $103914.79
+2025-07-31 17:11:49,968 - INFO - Opened LONG position on 2025-06-16: $221.31 at $106794.53, target: $107880.57, stop: $103245.21
+2025-07-31 17:11:49,968 - INFO - Closed LONG position: P&L: $7.38 (2.79%), Exit reason: TP, Days held: 3
+2025-07-31 17:11:49,968 - INFO - Closed LONG position: P&L: $2.02 (0.92%), Exit reason: TP, Days held: 1
+2025-07-31 17:11:49,969 - INFO - Opened LONG position on 2025-06-17: $284.44 at $104551.17, target: $108679.35, stop: $103450.84
+2025-07-31 17:11:49,969 - INFO - Closed LONG position: P&L: $-5.07 (-1.69%), Exit reason: SL, Days held: 3
+2025-07-31 17:11:49,969 - INFO - Closed LONG position: P&L: $-3.27 (-1.15%), Exit reason: SL, Days held: 1
+2025-07-31 17:11:49,969 - INFO - Opened LONG position on 2025-06-18: $270.51 at $104886.79, target: $109675.70, stop: $104558.62
+2025-07-31 17:11:49,969 - INFO - Closed LONG position: P&L: $-1.11 (-0.41%), Exit reason: SL, Days held: 1
+2025-07-31 17:11:49,970 - INFO - Opened LONG position on 2025-06-19: $318.14 at $104658.59, target: $107868.80, stop: $102179.76
+2025-07-31 17:11:49,970 - INFO - Opened LONG position on 2025-06-21: $300.99 at $102120.02, target: $107903.65, stop: $102506.50
+2025-07-31 17:11:49,970 - INFO - Closed LONG position: P&L: $-7.84 (-2.46%), Exit reason: SL, Days held: 3
+2025-07-31 17:11:49,970 - INFO - Closed LONG position: P&L: $0.84 (0.28%), Exit reason: SL, Days held: 1
+2025-07-31 17:11:49,971 - INFO - Opened LONG position on 2025-06-23: $280.63 at $105333.94, target: $104980.48, stop: $99910.06
+2025-07-31 17:11:49,971 - INFO - Closed LONG position: P&L: $-1.22 (-0.43%), Exit reason: TP, Days held: 1
+2025-07-31 17:11:49,971 - INFO - Opened LONG position on 2025-06-24: $276.45 at $106083.00, target: $103750.17, stop: $98552.96
+2025-07-31 17:11:49,971 - INFO - Closed LONG position: P&L: $-6.34 (-2.29%), Exit reason: TP, Days held: 1
+2025-07-31 17:11:49,972 - INFO - Opened LONG position on 2025-06-26: $223.55 at $106947.06, target: $108451.85, stop: $103625.72
+2025-07-31 17:11:49,972 - INFO - Opened LONG position on 2025-06-28: $255.22 at $107296.79, target: $109735.83, stop: $104568.10
+2025-07-31 17:11:49,972 - INFO - Closed LONG position: P&L: $2.92 (1.30%), Exit reason: TP, Days held: 4
+2025-07-31 17:11:49,973 - INFO - Closed LONG position: P&L: $5.54 (2.17%), Exit reason: TP, Days held: 6
+2025-07-31 17:11:49,976 - INFO - Trading simulation completed!
+2025-07-31 17:11:49,999 - INFO - Simulation results saved to database
+2025-07-31 17:12:00,747 - INFO - Performance plots saved as 'trading_simulation_performance.png'
+2025-08-01 11:00:12,395 - INFO - Loaded 44 trading signals
+2025-08-01 11:00:12,401 - INFO - Loaded 2906 price records
+2025-08-01 11:00:12,402 - INFO - Starting trading simulation with $10,000.00
+2025-08-01 11:00:12,402 - INFO - Processing 44 signals...
+2025-08-01 11:00:12,405 - INFO - Simulation period: 2025-05-01 to 2025-08-31
+2025-08-01 11:00:12,407 - INFO - Opened LONG position on 2025-05-01: $343.07 at $96489.90, target: $98220.56, stop: $91618.67
+2025-08-01 11:00:12,408 - INFO - Opened LONG position on 2025-05-02: $211.72 at $96887.13, target: $96236.68, stop: $90822.73
+2025-08-01 11:00:12,408 - INFO - Closed LONG position: P&L: $-1.63 (-0.77%), Exit reason: TP, Days held: 1
+2025-08-01 11:00:12,409 - INFO - Opened LONG position on 2025-05-03: $249.61 at $95856.42, target: $98984.41, stop: $92963.02
+2025-08-01 11:00:12,409 - INFO - Opened LONG position on 2025-05-04: $307.08 at $94277.61, target: $100050.37, stop: $93328.30
+2025-08-01 11:00:12,409 - INFO - Opened LONG position on 2025-05-05: $276.50 at $94733.68, target: $98769.44, stop: $92291.18
+2025-08-01 11:00:12,410 - INFO - Opened LONG position on 2025-05-06: $277.28 at $96834.02, target: $97240.74, stop: $90597.24
+2025-08-01 11:00:12,410 - INFO - Opened LONG position on 2025-05-07: $297.21 at $97030.50, target: $98028.72, stop: $92279.79
+2025-08-01 11:00:12,410 - INFO - Closed LONG position: P&L: $0.89 (0.32%), Exit reason: TP, Days held: 2
+2025-08-01 11:00:12,411 - INFO - Opened LONG position on 2025-05-08: $221.36 at $103261.61, target: $99348.17, stop: $94331.84
+2025-08-01 11:00:12,411 - INFO - Closed LONG position: P&L: $5.80 (1.69%), Exit reason: TP, Days held: 8
+2025-08-01 11:00:12,411 - INFO - Closed LONG position: P&L: $7.88 (3.16%), Exit reason: TP, Days held: 6
+2025-08-01 11:00:12,411 - INFO - Closed LONG position: P&L: $18.46 (6.01%), Exit reason: TP, Days held: 5
+2025-08-01 11:00:12,411 - INFO - Closed LONG position: P&L: $11.48 (4.15%), Exit reason: TP, Days held: 4
+2025-08-01 11:00:12,411 - INFO - Closed LONG position: P&L: $2.75 (0.93%), Exit reason: TP, Days held: 2
+2025-08-01 11:00:12,411 - INFO - Closed LONG position: P&L: $-8.59 (-3.88%), Exit reason: TP, Days held: 1
+2025-08-01 11:00:12,411 - INFO - Opened LONG position on 2025-05-09: $248.68 at $102971.99, target: $98949.66, stop: $94149.79
+2025-08-01 11:00:12,411 - INFO - Closed LONG position: P&L: $-9.94 (-4.00%), Exit reason: TP, Days held: 1
+2025-08-01 11:00:12,411 - INFO - Opened LONG position on 2025-05-10: $317.26 at $104809.53, target: $106528.81, stop: $99855.45
+2025-08-01 11:00:12,412 - INFO - Opened LONG position on 2025-05-11: $206.33 at $104118.00, target: $105160.08, stop: $100966.90
+2025-08-01 11:00:12,412 - INFO - Opened LONG position on 2025-05-12: $220.05 at $102791.32, target: $107236.34, stop: $102067.64
+2025-08-01 11:00:12,412 - INFO - Closed LONG position: P&L: $1.85 (0.90%), Exit reason: TP, Days held: 2
+2025-08-01 11:00:12,412 - INFO - Closed LONG position: P&L: $-1.77 (-0.80%), Exit reason: SL, Days held: 1
+2025-08-01 11:00:12,413 - INFO - Opened LONG position on 2025-05-13: $287.75 at $104103.72, target: $107203.48, stop: $101786.30
+2025-08-01 11:00:12,413 - INFO - Closed LONG position: P&L: $-6.68 (-2.32%), Exit reason: SL, Days held: 1
+2025-08-01 11:00:12,413 - INFO - Opened LONG position on 2025-05-14: $211.04 at $103507.83, target: $105026.95, stop: $100360.16
+2025-08-01 11:00:12,414 - INFO - Opened LONG position on 2025-05-16: $248.52 at $103463.90, target: $106217.78, stop: $101686.33
+2025-08-01 11:00:12,414 - INFO - Closed LONG position: P&L: $4.88 (1.54%), Exit reason: TP, Days held: 9
+2025-08-01 11:00:12,414 - INFO - Closed LONG position: P&L: $2.88 (1.36%), Exit reason: TP, Days held: 5
+2025-08-01 11:00:12,414 - INFO - Closed LONG position: P&L: $6.35 (2.56%), Exit reason: TP, Days held: 3
+2025-08-01 11:00:12,415 - INFO - Opened LONG position on 2025-05-22: $275.79 at $111696.22, target: $109786.69, stop: $103736.44
+2025-08-01 11:00:12,415 - INFO - Closed LONG position: P&L: $-4.98 (-1.81%), Exit reason: TP, Days held: 1
+2025-08-01 11:00:12,415 - INFO - Opened LONG position on 2025-05-23: $265.90 at $107318.30, target: $112550.83, stop: $106294.81
+2025-08-01 11:00:12,416 - INFO - Opened LONG position on 2025-05-24: $271.49 at $107761.90, target: $114802.02, stop: $109247.85
+2025-08-01 11:00:12,416 - INFO - Closed LONG position: P&L: $3.46 (1.28%), Exit reason: SL, Days held: 1
+2025-08-01 11:00:12,416 - INFO - Opened LONG position on 2025-05-25: $273.71 at $109004.20, target: $110325.71, stop: $104955.74
+2025-08-01 11:00:12,416 - INFO - Closed LONG position: P&L: $3.04 (1.11%), Exit reason: TP, Days held: 2
+2025-08-01 11:00:12,417 - INFO - Opened LONG position on 2025-05-28: $226.32 at $107781.78, target: $111969.81, stop: $106237.47
+2025-08-01 11:00:12,417 - INFO - Opened LONG position on 2025-05-29: $229.39 at $105589.75, target: $111556.48, stop: $106731.10
+2025-08-01 11:00:12,417 - INFO - Closed LONG position: P&L: $-2.80 (-1.05%), Exit reason: SL, Days held: 7
+2025-08-01 11:00:12,417 - INFO - Closed LONG position: P&L: $-3.46 (-1.53%), Exit reason: SL, Days held: 2
+2025-08-01 11:00:12,417 - INFO - Closed LONG position: P&L: $2.25 (0.98%), Exit reason: SL, Days held: 1
+2025-08-01 11:00:12,418 - INFO - Opened LONG position on 2025-05-30: $244.91 at $103423.24, target: $110413.02, stop: $105515.54
+2025-08-01 11:00:12,418 - INFO - Closed LONG position: P&L: $4.70 (1.92%), Exit reason: SL, Days held: 1
+2025-08-01 11:00:12,418 - INFO - Opened LONG position on 2025-06-02: $213.03 at $105858.00, target: $106811.85, stop: $102147.56
+2025-08-01 11:00:12,419 - INFO - Opened LONG position on 2025-06-05: $211.14 at $101508.69, target: $107641.76, stop: $103194.84
+2025-08-01 11:00:12,419 - INFO - Closed LONG position: P&L: $-7.66 (-3.60%), Exit reason: SL, Days held: 4
+2025-08-01 11:00:12,419 - INFO - Closed LONG position: P&L: $3.29 (1.56%), Exit reason: SL, Days held: 1
+2025-08-01 11:00:12,420 - INFO - Opened LONG position on 2025-06-06: $232.22 at $104288.43, target: $107120.29, stop: $102663.98
+2025-08-01 11:00:12,420 - INFO - Closed LONG position: P&L: $-3.84 (-1.65%), Exit reason: SL, Days held: 1
+2025-08-01 11:00:12,420 - INFO - Opened LONG position on 2025-06-08: $264.56 at $105734.01, target: $107039.59, stop: $101044.50
+2025-08-01 11:00:12,421 - INFO - Opened LONG position on 2025-06-09: $233.40 at $110263.02, target: $108075.29, stop: $102584.45
+2025-08-01 11:00:12,421 - INFO - Closed LONG position: P&L: $3.00 (1.13%), Exit reason: TP, Days held: 2
+2025-08-01 11:00:12,421 - INFO - Closed LONG position: P&L: $-4.85 (-2.08%), Exit reason: TP, Days held: 1
+2025-08-01 11:00:12,421 - INFO - Opened LONG position on 2025-06-10: $251.21 at $110274.39, target: $108383.02, stop: $102858.11
+2025-08-01 11:00:12,421 - INFO - Closed LONG position: P&L: $-4.55 (-1.81%), Exit reason: TP, Days held: 1
+2025-08-01 11:00:12,421 - INFO - Opened LONG position on 2025-06-11: $275.86 at $108645.13, target: $113297.95, stop: $108060.71
+2025-08-01 11:00:12,422 - INFO - Opened LONG position on 2025-06-12: $203.66 at $105671.74, target: $112578.69, stop: $108134.00
+2025-08-01 11:00:12,422 - INFO - Closed LONG position: P&L: $-1.76 (-0.64%), Exit reason: SL, Days held: 2
+2025-08-01 11:00:12,422 - INFO - Closed LONG position: P&L: $4.53 (2.23%), Exit reason: SL, Days held: 1
+2025-08-01 11:00:12,422 - INFO - Opened LONG position on 2025-06-13: $247.34 at $106066.59, target: $111325.68, stop: $106514.97
+2025-08-01 11:00:12,422 - INFO - Closed LONG position: P&L: $0.80 (0.32%), Exit reason: SL, Days held: 1
+2025-08-01 11:00:12,423 - INFO - Opened LONG position on 2025-06-14: $264.89 at $105414.63, target: $108463.64, stop: $103564.93
+2025-08-01 11:00:12,423 - INFO - Opened LONG position on 2025-06-15: $300.39 at $105594.02, target: $109330.79, stop: $103914.79
+2025-08-01 11:00:12,423 - INFO - Opened LONG position on 2025-06-16: $221.31 at $106794.53, target: $107880.57, stop: $103245.21
+2025-08-01 11:00:12,423 - INFO - Closed LONG position: P&L: $7.38 (2.79%), Exit reason: TP, Days held: 3
+2025-08-01 11:00:12,423 - INFO - Closed LONG position: P&L: $2.02 (0.92%), Exit reason: TP, Days held: 1
+2025-08-01 11:00:12,424 - INFO - Opened LONG position on 2025-06-17: $284.44 at $104551.17, target: $108679.35, stop: $103450.84
+2025-08-01 11:00:12,424 - INFO - Closed LONG position: P&L: $-5.07 (-1.69%), Exit reason: SL, Days held: 3
+2025-08-01 11:00:12,424 - INFO - Closed LONG position: P&L: $-3.27 (-1.15%), Exit reason: SL, Days held: 1
+2025-08-01 11:00:12,424 - INFO - Opened LONG position on 2025-06-18: $270.51 at $104886.79, target: $109675.70, stop: $104558.62
+2025-08-01 11:00:12,424 - INFO - Closed LONG position: P&L: $-1.11 (-0.41%), Exit reason: SL, Days held: 1
+2025-08-01 11:00:12,425 - INFO - Opened LONG position on 2025-06-19: $318.14 at $104658.59, target: $107868.80, stop: $102179.76
+2025-08-01 11:00:12,425 - INFO - Opened LONG position on 2025-06-21: $300.99 at $102120.02, target: $107903.65, stop: $102506.50
+2025-08-01 11:00:12,425 - INFO - Closed LONG position: P&L: $-7.84 (-2.46%), Exit reason: SL, Days held: 3
+2025-08-01 11:00:12,425 - INFO - Closed LONG position: P&L: $0.84 (0.28%), Exit reason: SL, Days held: 1
+2025-08-01 11:00:12,426 - INFO - Opened LONG position on 2025-06-23: $280.63 at $105333.94, target: $104980.48, stop: $99910.06
+2025-08-01 11:00:12,426 - INFO - Closed LONG position: P&L: $-1.22 (-0.43%), Exit reason: TP, Days held: 1
+2025-08-01 11:00:12,426 - INFO - Opened LONG position on 2025-06-24: $276.45 at $106083.00, target: $103750.17, stop: $98552.96
+2025-08-01 11:00:12,426 - INFO - Closed LONG position: P&L: $-6.34 (-2.29%), Exit reason: TP, Days held: 1
+2025-08-01 11:00:12,427 - INFO - Opened LONG position on 2025-06-26: $223.55 at $106947.06, target: $108451.85, stop: $103625.72
+2025-08-01 11:00:12,427 - INFO - Opened LONG position on 2025-06-28: $255.22 at $107296.79, target: $109735.83, stop: $104568.10
+2025-08-01 11:00:12,427 - INFO - Closed LONG position: P&L: $2.92 (1.30%), Exit reason: TP, Days held: 4
+2025-08-01 11:00:12,428 - INFO - Closed LONG position: P&L: $5.54 (2.17%), Exit reason: TP, Days held: 6
+2025-08-01 11:00:12,432 - WARNING - Date 2025-08-01 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,432 - INFO - Opened LONG position on 2025-07-31: $250.38 at $117840.29, target: $120784.98, stop: $115757.06
+2025-08-01 11:00:12,432 - INFO - Closed LONG position: P&L: $-4.67 (-1.86%), Exit reason: SL, Days held: 1
+2025-08-01 11:00:12,433 - WARNING - Date 2025-08-01 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,434 - WARNING - Date 2025-08-02 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,434 - INFO - Opened LONG position on 2025-08-01: $222.29 at $117840.29, target: $118333.61, stop: $113687.55
+2025-08-01 11:00:12,434 - INFO - Closed LONG position: P&L: $0.71 (0.32%), Exit reason: TP, Days held: 1
+2025-08-01 11:00:12,435 - WARNING - Date 2025-08-02 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,435 - WARNING - Date 2025-08-03 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,436 - WARNING - Date 2025-08-04 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,437 - WARNING - Date 2025-08-05 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,438 - WARNING - Date 2025-08-06 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,439 - WARNING - Date 2025-08-07 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,440 - WARNING - Date 2025-08-08 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,441 - WARNING - Date 2025-08-09 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,442 - WARNING - Date 2025-08-10 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,442 - WARNING - Date 2025-08-11 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,443 - WARNING - Date 2025-08-12 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,444 - WARNING - Date 2025-08-13 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,445 - WARNING - Date 2025-08-14 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,445 - WARNING - Date 2025-08-15 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,446 - WARNING - Date 2025-08-16 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,447 - WARNING - Date 2025-08-17 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,449 - WARNING - Date 2025-08-18 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,450 - WARNING - Date 2025-08-19 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,451 - WARNING - Date 2025-08-20 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,452 - WARNING - Date 2025-08-21 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,452 - WARNING - Date 2025-08-22 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,453 - WARNING - Date 2025-08-23 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,454 - WARNING - Date 2025-08-24 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,455 - WARNING - Date 2025-08-25 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,456 - WARNING - Date 2025-08-26 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,457 - WARNING - Date 2025-08-27 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,457 - WARNING - Date 2025-08-28 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,458 - WARNING - Date 2025-08-29 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,459 - WARNING - Date 2025-08-30 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,460 - WARNING - Date 2025-08-31 not found, using closest date 2025-07-31
+2025-08-01 11:00:12,460 - INFO - Trading simulation completed!
+2025-08-01 11:00:12,466 - INFO - Simulation results saved to database
+2025-08-01 11:00:29,899 - INFO - Performance plots saved as 'trading_simulation_performance.png'

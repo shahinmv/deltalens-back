@@ -201,6 +201,52 @@ def get_news(request):
         return JsonResponse({"error": "Failed to fetch news"}, status=500)
 
 
+def get_latest_trading_signal(request):
+    """Get the latest trading signal from the database"""
+    db_path = 'db.sqlite3'
+    try:
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+        
+        # Get the latest trading signal
+        cursor.execute("""
+            SELECT symbol, signal_type, confidence, predicted_return, 
+                   entry_price, target_price, stop_loss, position_size, 
+                   timestamp, expires_at, status 
+            FROM trading_signals 
+            ORDER BY timestamp DESC 
+            LIMIT 1
+        """)
+        
+        row = cursor.fetchone()
+        conn.close()
+        
+        if not row:
+            return JsonResponse({"signal": None, "message": "No trading signals found."})
+        
+        # Parse the data
+        signal_data = {
+            "symbol": row[0],
+            "signal_type": row[1],
+            "confidence": row[2],
+            "predicted_return": row[3],
+            "entry_price": row[4],
+            "target_price": row[5],
+            "stop_loss": row[6],
+            "position_size": row[7],
+            "timestamp": row[8],
+            "expires_at": row[9],
+            "status": row[10],
+            "is_active": datetime.fromisoformat(row[9]) > datetime.now() if row[9] else False
+        }
+        
+        return JsonResponse({"signal": signal_data})
+        
+    except Exception as e:
+        print(f"Error in get_latest_trading_signal: {e}")
+        return JsonResponse({"error": "Failed to fetch trading signal"}, status=500)
+
+
 @csrf_exempt
 def stream_llm_response(request):
     if request.method != "POST":

@@ -297,11 +297,29 @@ class AutomatedTradingSystem:
                 logging.error("Model not trained yet")
                 return None
             
-            # Get prediction using the same logic as benchmark
-            prediction_result = self.predictor.predict_next_30d(data)
+            # Use the same prediction method as benchmark: prepare features and predict_ensemble
+            df_proc = self.predictor.engineer_30day_target(data)
+            features, _ = self.predictor.prepare_features(df_proc)
             
-            predicted_return = prediction_result['predicted_return']
-            base_confidence = prediction_result['confidence']
+            # Create sequences like benchmark
+            X, _, _ = self.predictor.create_sequences(features, np.zeros(len(features)))
+            
+            if len(X) == 0:
+                logging.error("No sequences created for prediction")
+                return None
+            
+            # Get prediction using ensemble method (same as benchmark approach)
+            # To match benchmark exactly, we need to use the same sequence selection logic
+            ensemble_pred, _, _ = self.predictor.predict_ensemble(X)
+            
+            # Take the last prediction (most recent) - matches benchmark's X_test approach
+            predicted_return = ensemble_pred[-1][0]
+            
+            logging.info(f"Total sequences created: {len(X)}")
+            logging.info(f"Using prediction from sequence index: {len(X)-1}")
+            
+            # Calculate confidence like benchmark (Kelly criterion approximation)
+            base_confidence = min(abs(predicted_return), 0.1)
             
             # Get current price for signal generation
             current_price = float(data['close'].iloc[-1])
@@ -357,13 +375,13 @@ class AutomatedTradingSystem:
                 stop_loss=stop_loss,
                 position_size=position_size,
                 timestamp=datetime.now(),
-                expires_at=datetime.now() + timedelta(hours=self.signal_validity_hours)
+                expires_at=datetime.now() + timedelta(days=30)
             )
             
-            logging.info(f"Generated signal: {signal_type} with confidence {final_confidence:.3f}")
-            logging.info(f"Predicted return: {predicted_return:.3f} (adjusted: {adjusted_predicted_return:.3f})")
-            logging.info(f"Position size: {position_size:.3f} (Kelly criterion)")
-            logging.info(f"Transaction costs included: {total_transaction_cost:.3f}" if signal_type != 'HOLD' else "No transaction costs (HOLD)")
+            logging.info(f"Generated signal: {signal_type} with confidence {final_confidence}")
+            logging.info(f"Predicted return: {predicted_return} (adjusted: {adjusted_predicted_return})")
+            logging.info(f"Position size: {position_size} (Kelly criterion)")
+            logging.info(f"Transaction costs included: {total_transaction_cost}" if signal_type != 'HOLD' else "No transaction costs (HOLD)")
             
             return signal
             

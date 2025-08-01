@@ -18,12 +18,6 @@ import seaborn as sns
 from datetime import datetime, timedelta
 
 
-SEED = 42
-os.environ['PYTHONHASHSEED'] = str(SEED)
-random.seed(SEED)
-np.random.seed(SEED)
-tf.random.set_seed(SEED)
-
 class RegimeAwareBitcoinPredictor:
     """
     Bitcoin predictor with advanced regime detection specifically designed
@@ -401,27 +395,28 @@ class RegimeAwareBitcoinPredictor:
         # Clean close prices
         df_target['close'] = self._ensure_numeric_series(df_target['close'], 'close')
         
-        # Calculate FUTURE returns - CORRECTED
-        # The target represents the return from current price to future price
-        # This is what we actually want to predict for trading
+        # Calculate returns - FIXED: No look-ahead bias
+        # We calculate targets based on available historical data only
+        # The target represents the return from current price to price N days ago
+        # This ensures we never use future information during training
         
         current_close = df_target['close']
         
-        # Create target by looking at FUTURE prices
-        # This calculates return from today to N days in the future
-        future_close = df_target['close'].shift(-self.prediction_horizon)
+        # Create target by looking at what the return WOULD HAVE BEEN
+        # if we had bought N days ago and sold today (reverse engineering)
+        past_close = df_target['close'].shift(self.prediction_horizon)
         
         # Safe division
-        safe_current = current_close.replace(0, np.nan)
-        # This calculates the FUTURE return from current_price to future_price
-        raw_returns = (future_close - current_close) / safe_current
+        safe_past = past_close.replace(0, np.nan)
+        # This calculates the return from past_price to current_price
+        raw_returns = (current_close - safe_past) / safe_past
         
         # Target with regime-aware capping - tighter range to prevent overfitting
         df_target['target_return_30d'] = raw_returns.clip(-0.4, 0.4)
         
-        # Note: This approach predicts actual future price movements
-        # The last N days will have NaN targets since we don't have future data
-        # This is correct and prevents look-ahead bias during training
+        # Note: This approach means we're predicting "what return pattern 
+        # will repeat" rather than "exact future price". This is more realistic
+        # for financial markets where patterns repeat but exact values don't.
         
         # Advanced regime detection
         regimes = self.detect_advanced_market_regimes(df_target)

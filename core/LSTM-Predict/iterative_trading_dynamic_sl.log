@@ -1,0 +1,484 @@
+2025-07-31 17:29:55,185 - INFO - ============================================================
+2025-07-31 17:29:55,185 - INFO - Starting PRODUCTION prediction with DYNAMIC STOP LOSS
+2025-07-31 17:29:55,185 - INFO - Generating signal for 2025-07-31
+2025-07-31 17:29:55,185 - INFO - Step 1: Fetching latest daily data from Binance...
+2025-07-31 17:29:55,185 - INFO - Fetching latest daily data from Binance...
+2025-07-31 17:29:55,195 - INFO - Fetching data since 2025-07-30
+2025-07-31 17:29:55,850 - INFO - Successfully inserted 1 new daily records into btc_daily_ohlcv
+2025-07-31 17:29:55,850 - INFO - Date range: 2025-07-31 to 2025-07-31
+2025-07-31 17:29:55,850 - INFO - Step 2: Loading and preparing data...
+2025-07-31 17:29:55,850 - INFO - Loading and preparing data using load_all_data function for production...
+2025-07-31 17:29:56,193 - INFO - Loaded 2874 OHLCV records from btc_daily_ohlcv
+2025-07-31 17:29:56,193 - INFO - Processing 26873 news records for sentiment...
+2025-07-31 17:30:00,758 - INFO - Aggregated sentiment data: 1890 records
+2025-07-31 17:30:00,769 - INFO - Successfully engineered features for 2853 records
+2025-07-31 17:30:00,769 - INFO - Feature columns: 44 features
+2025-07-31 17:30:00,770 - INFO - Loaded data with 2853 records for training
+2025-07-31 17:30:00,770 - INFO - Step 3: Training model...
+2025-07-31 17:30:00,770 - INFO - Training ML model...
+2025-07-31 17:32:59,913 - INFO - ============================================================
+2025-07-31 17:32:59,914 - INFO - Starting PRODUCTION prediction with DYNAMIC STOP LOSS
+2025-07-31 17:32:59,914 - INFO - Generating signal for 2025-07-31
+2025-07-31 17:32:59,914 - INFO - Step 1: Fetching yesterday's daily data from Binance...
+2025-07-31 17:32:59,914 - INFO - Fetching yesterday's data (2025-07-30) from Binance...
+2025-07-31 17:33:00,492 - INFO - Successfully inserted yesterday's data (2025-07-30) into btc_daily_ohlcv
+2025-07-31 17:33:00,493 - INFO - OHLCV data: O=117950.75, H=118792.00, L=115796.23, C=117840.30, V=15587
+2025-07-31 17:33:00,493 - INFO - Step 2: Loading and preparing data...
+2025-07-31 17:33:00,493 - INFO - Loading and preparing data using load_all_data function for production...
+2025-07-31 17:33:00,822 - INFO - Loaded 2874 OHLCV records from btc_daily_ohlcv
+2025-07-31 17:33:00,822 - INFO - Processing 26873 news records for sentiment...
+2025-07-31 17:33:05,529 - INFO - Aggregated sentiment data: 1890 records
+2025-07-31 17:33:05,540 - INFO - Successfully engineered features for 2853 records
+2025-07-31 17:33:05,540 - INFO - Feature columns: 44 features
+2025-07-31 17:33:05,542 - INFO - Loaded data with 2853 records for training
+2025-07-31 17:33:05,542 - INFO - Step 3: Training model...
+2025-07-31 17:33:05,542 - INFO - Training ML model...
+2025-07-31 17:34:34,772 - INFO - Initializing dynamic stop loss calculator...
+2025-07-31 17:34:34,790 - INFO - Dynamic stop loss calculator initialized successfully
+2025-07-31 17:34:34,977 - INFO - Model training completed successfully
+2025-07-31 17:34:34,977 - INFO - Model performance - MAE: 0.0903, Direction Accuracy: 0.555
+2025-07-31 17:34:34,977 - INFO - Step 4: Generating trading signal...
+2025-07-31 17:34:34,977 - INFO - Generating trading signal with dynamic stop loss...
+2025-07-31 17:34:36,578 - INFO - Generated prediction: 0.0287 (2.9%)
+2025-07-31 17:34:36,579 - INFO - Dynamic Stop Loss Calculation:
+2025-07-31 17:34:36,579 - INFO -   Base: 0.030, ATR: 1.34x, Vol: 0.60x, Trend: 0.70x
+2025-07-31 17:34:36,579 - INFO -   Confidence: 1.50x, Momentum: 1.00x, Fear: 0.90x, Magnitude: 0.90x
+2025-07-31 17:34:36,579 - INFO -   Final Dynamic Stop: 0.020 (2.0%)
+2025-07-31 17:34:36,579 - INFO - Market Regime Analysis:
+2025-07-31 17:34:36,579 - INFO -   Volatility: 0.267 | Trend: 0.010
+2025-07-31 17:34:36,579 - INFO -   Momentum: 56.3 | Fear: 10.4
+2025-07-31 17:34:36,579 - INFO -   ATR: 2.68%
+2025-07-31 17:34:36,579 - INFO - Generated signal: LONG with confidence 0.0287
+2025-07-31 17:34:36,579 - INFO - Predicted return: 0.0287 (adjusted: 0.0267)
+2025-07-31 17:34:36,579 - INFO - Position size: 0.0287 (Kelly criterion)
+2025-07-31 17:34:36,579 - INFO - Dynamic stop loss: 2.05% (vs base: 3.0%)
+2025-07-31 17:34:36,580 - INFO - Step 5: Saving signal to database...
+2025-07-31 17:34:36,582 - INFO - Enhanced signal saved to database for prediction date 2025-07-31
+2025-07-31 17:34:36,582 - INFO - ========================================
+2025-07-31 17:34:36,582 - INFO - 🚀 PRODUCTION SIGNAL GENERATED FOR 2025-07-31:
+2025-07-31 17:34:36,582 - INFO -    Signal Type: LONG
+2025-07-31 17:34:36,582 - INFO -    Predicted Return: 0.0267 (2.67%)
+2025-07-31 17:34:36,582 - INFO -    Confidence: 0.0287
+2025-07-31 17:34:36,582 - INFO -    Position Size: 0.0287
+2025-07-31 17:34:36,582 - INFO -    Entry Price: $107296.79
+2025-07-31 17:34:36,582 - INFO -    Target Price: $110381.29
+2025-07-31 17:34:36,582 - INFO -    Stop Loss: $105099.49
+2025-07-31 17:34:36,582 - INFO -    Dynamic Stop %: 2.05%
+2025-07-31 17:34:36,582 - INFO -    Market Volatility: 0.267
+2025-07-31 17:34:36,582 - INFO -    Trend Strength: 0.010
+2025-07-31 17:34:36,582 - INFO -    Momentum: 56.3
+2025-07-31 17:34:36,582 - INFO -    Fear Index: 10.4
+2025-07-31 17:34:36,582 - INFO - ========================================
+2025-07-31 17:34:36,582 - INFO - ✅ Production signal generated successfully!
+2025-07-31 17:35:55,455 - INFO - ============================================================
+2025-07-31 17:35:55,455 - INFO - Starting PRODUCTION prediction with DYNAMIC STOP LOSS
+2025-07-31 17:35:55,455 - INFO - Generating signal for 2025-07-31
+2025-07-31 17:35:55,455 - INFO - Step 1: Fetching yesterday's daily data from Binance...
+2025-07-31 17:35:55,455 - INFO - Fetching yesterday's data (2025-07-30) from Binance...
+2025-07-31 17:35:55,460 - INFO - Yesterday's data (2025-07-30) already exists in database
+2025-07-31 17:35:55,460 - INFO - Step 2: Loading and preparing data...
+2025-07-31 17:35:55,460 - INFO - Loading and preparing data using load_all_data function for production...
+2025-07-31 17:35:55,891 - INFO - Loaded 2905 OHLCV records from btc_daily_ohlcv
+2025-07-31 17:35:55,892 - INFO - Processing 26873 news records for sentiment...
+2025-07-31 17:36:00,715 - INFO - Aggregated sentiment data: 1890 records
+2025-07-31 17:36:00,727 - INFO - Successfully engineered features for 2884 records
+2025-07-31 17:36:00,727 - INFO - Feature columns: 44 features
+2025-07-31 17:36:00,731 - INFO - Loaded data with 2884 records for training
+2025-07-31 17:36:00,731 - INFO - Step 3: Training model...
+2025-07-31 17:36:00,731 - INFO - Training ML model...
+2025-07-31 17:37:30,145 - INFO - Initializing dynamic stop loss calculator...
+2025-07-31 17:37:30,160 - INFO - Dynamic stop loss calculator initialized successfully
+2025-07-31 17:37:30,352 - INFO - Model training completed successfully
+2025-07-31 17:37:30,352 - INFO - Model performance - MAE: 0.0889, Direction Accuracy: 0.569
+2025-07-31 17:37:30,352 - INFO - Step 4: Generating trading signal...
+2025-07-31 17:37:30,352 - INFO - Generating trading signal with dynamic stop loss...
+2025-07-31 17:37:31,985 - INFO - Generated prediction: 0.0295 (3.0%)
+2025-07-31 17:37:31,986 - INFO - Dynamic Stop Loss Calculation:
+2025-07-31 17:37:31,986 - INFO -   Base: 0.030, ATR: 1.16x, Vol: 0.60x, Trend: 0.70x
+2025-07-31 17:37:31,986 - INFO -   Confidence: 1.50x, Momentum: 1.00x, Fear: 0.90x, Magnitude: 0.90x
+2025-07-31 17:37:31,986 - INFO -   Final Dynamic Stop: 0.018 (1.8%)
+2025-07-31 17:37:31,986 - INFO - Market Regime Analysis:
+2025-07-31 17:37:31,986 - INFO -   Volatility: 0.220 | Trend: 0.112
+2025-07-31 17:37:31,986 - INFO -   Momentum: 50.8 | Fear: 1.4
+2025-07-31 17:37:31,986 - INFO -   ATR: 2.31%
+2025-07-31 17:37:31,986 - INFO - Generated signal: LONG with confidence 0.0295
+2025-07-31 17:37:31,986 - INFO - Predicted return: 0.0295 (adjusted: 0.0275)
+2025-07-31 17:37:31,986 - INFO - Position size: 0.0295 (Kelly criterion)
+2025-07-31 17:37:31,986 - INFO - Dynamic stop loss: 1.77% (vs base: 3.0%)
+2025-07-31 17:37:31,987 - INFO - Step 5: Saving signal to database...
+2025-07-31 17:37:31,987 - INFO - Enhanced signal saved to database for prediction date 2025-07-31
+2025-07-31 17:37:31,987 - INFO - ========================================
+2025-07-31 17:37:31,988 - INFO - 🚀 PRODUCTION SIGNAL GENERATED FOR 2025-07-31:
+2025-07-31 17:37:31,988 - INFO -    Signal Type: LONG
+2025-07-31 17:37:31,988 - INFO -    Predicted Return: 0.0275 (2.75%)
+2025-07-31 17:37:31,988 - INFO -    Confidence: 0.0295
+2025-07-31 17:37:31,988 - INFO -    Position Size: 0.0295
+2025-07-31 17:37:31,988 - INFO -    Entry Price: $117950.76
+2025-07-31 17:37:31,988 - INFO -    Target Price: $121434.88
+2025-07-31 17:37:31,988 - INFO -    Stop Loss: $115864.74
+2025-07-31 17:37:31,988 - INFO -    Dynamic Stop %: 1.77%
+2025-07-31 17:37:31,988 - INFO -    Market Volatility: 0.220
+2025-07-31 17:37:31,988 - INFO -    Trend Strength: 0.112
+2025-07-31 17:37:31,988 - INFO -    Momentum: 50.8
+2025-07-31 17:37:31,988 - INFO -    Fear Index: 1.4
+2025-07-31 17:37:31,988 - INFO - ========================================
+2025-07-31 17:37:31,988 - INFO - ✅ Production signal generated successfully!
+2025-07-31 17:41:59,911 - INFO - ============================================================
+2025-07-31 17:41:59,911 - INFO - Starting PRODUCTION prediction with DYNAMIC STOP LOSS
+2025-07-31 17:41:59,911 - INFO - Generating signal for 2025-07-31
+2025-07-31 17:41:59,911 - INFO - Step 1: Fetching yesterday's daily data from Binance...
+2025-07-31 17:41:59,911 - INFO - Fetching yesterday's data (2025-07-30) from Binance...
+2025-07-31 17:41:59,915 - INFO - Yesterday's data (2025-07-30) already exists in database
+2025-07-31 17:41:59,915 - INFO - Step 2: Loading and preparing data...
+2025-07-31 17:41:59,915 - INFO - Loading and preparing data using load_all_data function for production...
+2025-07-31 17:42:00,294 - INFO - Loaded 2905 OHLCV records from btc_daily_ohlcv
+2025-07-31 17:42:00,295 - INFO - Processing 26873 news records for sentiment...
+2025-07-31 17:42:04,974 - INFO - Aggregated sentiment data: 1890 records
+2025-07-31 17:42:04,987 - INFO - Successfully engineered features for 2884 records
+2025-07-31 17:42:04,987 - INFO - Feature columns: 44 features
+2025-07-31 17:42:04,990 - INFO - Loaded data with 2884 records for training
+2025-07-31 17:42:04,990 - INFO - Step 3: Training model...
+2025-07-31 17:42:04,990 - INFO - Training ML model...
+2025-07-31 17:43:35,230 - INFO - Initializing dynamic stop loss calculator...
+2025-07-31 17:43:35,245 - INFO - Dynamic stop loss calculator initialized successfully
+2025-07-31 17:43:35,434 - INFO - Model training completed successfully
+2025-07-31 17:43:35,434 - INFO - Model performance - MAE: 0.0889, Direction Accuracy: 0.569
+2025-07-31 17:43:35,434 - INFO - Step 4: Generating trading signal...
+2025-07-31 17:43:35,434 - INFO - Generating trading signal with dynamic stop loss...
+2025-07-31 17:43:35,434 - WARNING - Using last available close price: $117950.76 from 2025-07-29 00:00:00
+2025-07-31 17:43:37,343 - INFO - Generated prediction: 0.0295 (3.0%)
+2025-07-31 17:43:37,343 - INFO - Dynamic Stop Loss Calculation:
+2025-07-31 17:43:37,343 - INFO -   Base: 0.030, ATR: 1.16x, Vol: 0.60x, Trend: 0.70x
+2025-07-31 17:43:37,343 - INFO -   Confidence: 1.50x, Momentum: 1.00x, Fear: 0.90x, Magnitude: 0.90x
+2025-07-31 17:43:37,343 - INFO -   Final Dynamic Stop: 0.018 (1.8%)
+2025-07-31 17:43:37,344 - INFO - Market Regime Analysis:
+2025-07-31 17:43:37,344 - INFO -   Volatility: 0.220 | Trend: 0.112
+2025-07-31 17:43:37,344 - INFO -   Momentum: 50.8 | Fear: 1.4
+2025-07-31 17:43:37,344 - INFO -   ATR: 2.31%
+2025-07-31 17:43:37,344 - INFO - Generated signal: LONG with confidence 0.0295
+2025-07-31 17:43:37,344 - INFO - Predicted return: 0.0295 (adjusted: 0.0275)
+2025-07-31 17:43:37,344 - INFO - Position size: 0.0295 (Kelly criterion)
+2025-07-31 17:43:37,344 - INFO - Dynamic stop loss: 1.77% (vs base: 3.0%)
+2025-07-31 17:43:37,345 - INFO - Step 5: Saving signal to database...
+2025-07-31 17:43:37,346 - INFO - Enhanced signal saved to database for prediction date 2025-07-31
+2025-07-31 17:43:37,346 - INFO - ========================================
+2025-07-31 17:43:37,346 - INFO - 🚀 PRODUCTION SIGNAL GENERATED FOR 2025-07-31:
+2025-07-31 17:43:37,346 - INFO -    Signal Type: LONG
+2025-07-31 17:43:37,346 - INFO -    Predicted Return: 0.0275 (2.75%)
+2025-07-31 17:43:37,346 - INFO -    Confidence: 0.0295
+2025-07-31 17:43:37,346 - INFO -    Position Size: 0.0295
+2025-07-31 17:43:37,346 - INFO -    Entry Price: $117950.76
+2025-07-31 17:43:37,346 - INFO -    Target Price: $121434.88
+2025-07-31 17:43:37,346 - INFO -    Stop Loss: $115864.74
+2025-07-31 17:43:37,346 - INFO -    Dynamic Stop %: 1.77%
+2025-07-31 17:43:37,346 - INFO -    Market Volatility: 0.220
+2025-07-31 17:43:37,346 - INFO -    Trend Strength: 0.112
+2025-07-31 17:43:37,346 - INFO -    Momentum: 50.8
+2025-07-31 17:43:37,346 - INFO -    Fear Index: 1.4
+2025-07-31 17:43:37,346 - INFO - ========================================
+2025-07-31 17:43:37,346 - INFO - ✅ Production signal generated successfully!
+2025-07-31 17:46:49,278 - INFO - ============================================================
+2025-07-31 17:46:49,278 - INFO - Starting PRODUCTION prediction with DYNAMIC STOP LOSS
+2025-07-31 17:46:49,278 - INFO - Generating signal for 2025-07-31
+2025-07-31 17:46:49,278 - INFO - Step 1: Fetching yesterday's daily data from Binance...
+2025-07-31 17:46:49,278 - INFO - Fetching yesterday's data (2025-07-30) from Binance...
+2025-07-31 17:46:49,283 - INFO - Yesterday's data (2025-07-30) already exists in database
+2025-07-31 17:46:49,283 - INFO - Step 2: Loading and preparing data...
+2025-07-31 17:46:49,283 - INFO - Loading and preparing data using load_all_data function for production...
+2025-07-31 17:46:49,616 - INFO - Loaded 2905 OHLCV records from btc_daily_ohlcv
+2025-07-31 17:46:49,616 - INFO - Processing 26873 news records for sentiment...
+2025-07-31 17:46:54,285 - INFO - Aggregated sentiment data: 1890 records
+2025-07-31 17:46:54,296 - INFO - Successfully engineered features for 2884 records
+2025-07-31 17:46:54,296 - INFO - Feature columns: 44 features
+2025-07-31 17:46:54,298 - INFO - Loaded data with 2884 records for training
+2025-07-31 17:46:54,298 - INFO - Step 3: Training model...
+2025-07-31 17:46:54,298 - INFO - Training ML model...
+2025-07-31 17:48:20,463 - INFO - Initializing dynamic stop loss calculator...
+2025-07-31 17:48:20,478 - INFO - Dynamic stop loss calculator initialized successfully
+2025-07-31 17:48:20,658 - INFO - Model training completed successfully
+2025-07-31 17:48:20,659 - INFO - Model performance - MAE: 0.0889, Direction Accuracy: 0.569
+2025-07-31 17:48:20,659 - INFO - Step 4: Generating trading signal...
+2025-07-31 17:48:20,659 - INFO - Generating trading signal with dynamic stop loss...
+2025-07-31 17:48:20,659 - WARNING - Using last available close price: $117950.76 from 2025-07-29 00:00:00
+2025-07-31 17:48:22,278 - INFO - Generated prediction: 0.0295 (3.0%)
+2025-07-31 17:48:22,278 - INFO - Dynamic Stop Loss Calculation:
+2025-07-31 17:48:22,278 - INFO -   Base: 0.030, ATR: 1.16x, Vol: 0.60x, Trend: 0.70x
+2025-07-31 17:48:22,278 - INFO -   Confidence: 1.50x, Momentum: 1.00x, Fear: 0.90x, Magnitude: 0.90x
+2025-07-31 17:48:22,278 - INFO -   Final Dynamic Stop: 0.018 (1.8%)
+2025-07-31 17:48:22,278 - INFO - Market Regime Analysis:
+2025-07-31 17:48:22,278 - INFO -   Volatility: 0.220 | Trend: 0.112
+2025-07-31 17:48:22,278 - INFO -   Momentum: 50.8 | Fear: 1.4
+2025-07-31 17:48:22,278 - INFO -   ATR: 2.31%
+2025-07-31 17:48:22,278 - INFO - Generated signal: LONG with confidence 0.0295
+2025-07-31 17:48:22,278 - INFO - Predicted return: 0.0295 (adjusted: 0.0275)
+2025-07-31 17:48:22,278 - INFO - Position size: 0.0295 (Kelly criterion)
+2025-07-31 17:48:22,278 - INFO - Dynamic stop loss: 1.77% (vs base: 3.0%)
+2025-07-31 17:48:22,279 - INFO - Step 5: Saving signal to database...
+2025-07-31 17:48:22,281 - INFO - Enhanced signal saved to database for prediction date 2025-07-31
+2025-07-31 17:48:22,281 - INFO - ========================================
+2025-07-31 17:48:22,281 - INFO - 🚀 PRODUCTION SIGNAL GENERATED FOR 2025-07-31:
+2025-07-31 17:48:22,281 - INFO -    Signal Type: LONG
+2025-07-31 17:48:22,281 - INFO -    Predicted Return: 0.0275 (2.75%)
+2025-07-31 17:48:22,281 - INFO -    Confidence: 0.0295
+2025-07-31 17:48:22,281 - INFO -    Position Size: 0.0295
+2025-07-31 17:48:22,281 - INFO -    Entry Price: $117950.76
+2025-07-31 17:48:22,281 - INFO -    Target Price: $121434.88
+2025-07-31 17:48:22,281 - INFO -    Stop Loss: $115864.74
+2025-07-31 17:48:22,281 - INFO -    Dynamic Stop %: 1.77%
+2025-07-31 17:48:22,281 - INFO -    Market Volatility: 0.220
+2025-07-31 17:48:22,281 - INFO -    Trend Strength: 0.112
+2025-07-31 17:48:22,281 - INFO -    Momentum: 50.8
+2025-07-31 17:48:22,281 - INFO -    Fear Index: 1.4
+2025-07-31 17:48:22,281 - INFO - ========================================
+2025-07-31 17:48:22,281 - INFO - ✅ Production signal generated successfully!
+2025-07-31 17:50:44,268 - INFO - ============================================================
+2025-07-31 17:50:44,268 - INFO - Starting PRODUCTION prediction with DYNAMIC STOP LOSS
+2025-07-31 17:50:44,268 - INFO - Generating signal for 2025-07-31
+2025-07-31 17:50:44,268 - INFO - Step 1: Fetching yesterday's daily data from Binance...
+2025-07-31 17:50:44,268 - INFO - Fetching yesterday's data (2025-07-30) from Binance...
+2025-07-31 17:50:44,273 - INFO - Yesterday's data (2025-07-30) already exists in database
+2025-07-31 17:50:44,273 - INFO - Step 2: Loading and preparing data...
+2025-07-31 17:50:44,273 - INFO - Loading and preparing data using load_all_data function for production...
+2025-07-31 17:50:44,600 - INFO - Loaded 2905 OHLCV records from btc_daily_ohlcv
+2025-07-31 17:50:44,601 - INFO - Processing 26873 news records for sentiment...
+2025-07-31 17:50:49,247 - INFO - Aggregated sentiment data: 1890 records
+2025-07-31 17:50:49,258 - INFO - Successfully engineered features for 2884 records
+2025-07-31 17:50:49,259 - INFO - Feature columns: 44 features
+2025-07-31 17:50:49,261 - INFO - Loaded data with 2884 records for training
+2025-07-31 17:50:49,261 - INFO - Step 3: Training model...
+2025-07-31 17:50:49,261 - INFO - Training ML model...
+2025-07-31 17:52:15,078 - INFO - Initializing dynamic stop loss calculator...
+2025-07-31 17:52:15,096 - INFO - Dynamic stop loss calculator initialized successfully
+2025-07-31 17:52:15,290 - INFO - Model training completed successfully
+2025-07-31 17:52:15,290 - INFO - Model performance - MAE: 0.0889, Direction Accuracy: 0.569
+2025-07-31 17:52:15,290 - INFO - Step 4: Generating trading signal...
+2025-07-31 17:52:15,290 - INFO - Generating trading signal with dynamic stop loss...
+2025-07-31 17:52:15,291 - ERROR - Error generating trading signal: "['datetime'] not in index"
+2025-07-31 17:52:15,291 - ERROR - Failed to generate production signal
+2025-07-31 17:52:15,291 - ERROR - ❌ Failed to generate production signal
+2025-07-31 17:54:18,573 - INFO - ============================================================
+2025-07-31 17:54:18,573 - INFO - Starting PRODUCTION prediction with DYNAMIC STOP LOSS
+2025-07-31 17:54:18,573 - INFO - Generating signal for 2025-07-31
+2025-07-31 17:54:18,574 - INFO - Step 1: Fetching yesterday's daily data from Binance...
+2025-07-31 17:54:18,574 - INFO - Fetching yesterday's data (2025-07-30) from Binance...
+2025-07-31 17:54:18,579 - INFO - Yesterday's data (2025-07-30) already exists in database
+2025-07-31 17:54:18,579 - INFO - Step 2: Loading and preparing data...
+2025-07-31 17:54:18,579 - INFO - Loading and preparing data using load_all_data function for production...
+2025-07-31 17:54:18,911 - INFO - Loaded 2905 OHLCV records from btc_daily_ohlcv
+2025-07-31 17:54:18,911 - INFO - Processing 26873 news records for sentiment...
+2025-07-31 17:54:23,543 - INFO - Aggregated sentiment data: 1890 records
+2025-07-31 17:54:23,555 - INFO - Successfully engineered features for 2884 records
+2025-07-31 17:54:23,555 - INFO - Feature columns: 44 features
+2025-07-31 17:54:23,557 - INFO - Loaded data with 2884 records for training
+2025-07-31 17:54:23,557 - INFO - Step 3: Training model...
+2025-07-31 17:54:23,557 - INFO - Training ML model...
+2025-07-31 17:55:51,941 - INFO - Initializing dynamic stop loss calculator...
+2025-07-31 17:55:51,959 - INFO - Dynamic stop loss calculator initialized successfully
+2025-07-31 17:55:52,149 - INFO - Model training completed successfully
+2025-07-31 17:55:52,149 - INFO - Model performance - MAE: 0.0889, Direction Accuracy: 0.569
+2025-07-31 17:55:52,149 - INFO - Step 4: Generating trading signal...
+2025-07-31 17:55:52,149 - INFO - Generating trading signal with dynamic stop loss...
+2025-07-31 17:55:52,157 - WARNING - Using last available close price: $117950.76 from 2025-07-29 00:00:00
+2025-07-31 17:55:53,817 - INFO - Generated prediction: 0.0295 (3.0%)
+2025-07-31 17:55:53,818 - INFO - Dynamic Stop Loss Calculation:
+2025-07-31 17:55:53,818 - INFO -   Base: 0.030, ATR: 1.16x, Vol: 0.60x, Trend: 0.70x
+2025-07-31 17:55:53,818 - INFO -   Confidence: 1.50x, Momentum: 1.00x, Fear: 0.90x, Magnitude: 0.90x
+2025-07-31 17:55:53,818 - INFO -   Final Dynamic Stop: 0.018 (1.8%)
+2025-07-31 17:55:53,818 - INFO - Market Regime Analysis:
+2025-07-31 17:55:53,818 - INFO -   Volatility: 0.220 | Trend: 0.112
+2025-07-31 17:55:53,818 - INFO -   Momentum: 50.8 | Fear: 1.4
+2025-07-31 17:55:53,818 - INFO -   ATR: 2.31%
+2025-07-31 17:55:53,818 - INFO - Generated signal: LONG with confidence 0.0295
+2025-07-31 17:55:53,818 - INFO - Predicted return: 0.0295 (adjusted: 0.0275)
+2025-07-31 17:55:53,818 - INFO - Position size: 0.0295 (Kelly criterion)
+2025-07-31 17:55:53,818 - INFO - Dynamic stop loss: 1.77% (vs base: 3.0%)
+2025-07-31 17:55:53,819 - INFO - Step 5: Saving signal to database...
+2025-07-31 17:55:53,821 - INFO - Enhanced signal saved to database for prediction date 2025-07-31
+2025-07-31 17:55:53,821 - INFO - ========================================
+2025-07-31 17:55:53,821 - INFO - 🚀 PRODUCTION SIGNAL GENERATED FOR 2025-07-31:
+2025-07-31 17:55:53,821 - INFO -    Signal Type: LONG
+2025-07-31 17:55:53,821 - INFO -    Predicted Return: 0.0275 (2.75%)
+2025-07-31 17:55:53,821 - INFO -    Confidence: 0.0295
+2025-07-31 17:55:53,821 - INFO -    Position Size: 0.0295
+2025-07-31 17:55:53,821 - INFO -    Entry Price: $117950.76
+2025-07-31 17:55:53,821 - INFO -    Target Price: $121434.88
+2025-07-31 17:55:53,821 - INFO -    Stop Loss: $115864.74
+2025-07-31 17:55:53,821 - INFO -    Dynamic Stop %: 1.77%
+2025-07-31 17:55:53,821 - INFO -    Market Volatility: 0.220
+2025-07-31 17:55:53,821 - INFO -    Trend Strength: 0.112
+2025-07-31 17:55:53,821 - INFO -    Momentum: 50.8
+2025-07-31 17:55:53,821 - INFO -    Fear Index: 1.4
+2025-07-31 17:55:53,821 - INFO - ========================================
+2025-07-31 17:55:53,821 - INFO - ✅ Production signal generated successfully!
+2025-07-31 17:58:07,860 - INFO - ============================================================
+2025-07-31 17:58:07,860 - INFO - Starting PRODUCTION prediction with DYNAMIC STOP LOSS
+2025-07-31 17:58:07,860 - INFO - Generating signal for 2025-07-31
+2025-07-31 17:58:07,860 - INFO - Step 1: Fetching yesterday's daily data from Binance...
+2025-07-31 17:58:07,860 - INFO - Fetching yesterday's data (2025-07-30) from Binance...
+2025-07-31 17:58:07,865 - INFO - Yesterday's data (2025-07-30) already exists in database
+2025-07-31 17:58:07,865 - INFO - Step 2: Loading and preparing data...
+2025-07-31 17:58:08,212 - ERROR - Error in production prediction: "['datetime'] not in index"
+2025-07-31 17:58:08,213 - ERROR - ❌ Failed to generate production signal
+2025-07-31 17:58:45,323 - INFO - ============================================================
+2025-07-31 17:58:45,323 - INFO - Starting PRODUCTION prediction with DYNAMIC STOP LOSS
+2025-07-31 17:58:45,323 - INFO - Generating signal for 2025-07-31
+2025-07-31 17:58:45,323 - INFO - Step 1: Fetching yesterday's daily data from Binance...
+2025-07-31 17:58:45,323 - INFO - Fetching yesterday's data (2025-07-30) from Binance...
+2025-07-31 17:58:45,328 - INFO - Yesterday's data (2025-07-30) already exists in database
+2025-07-31 17:58:45,329 - INFO - Step 2: Loading and preparing data...
+2025-07-31 17:58:45,674 - INFO - Loading and preparing data using load_all_data function for production...
+2025-07-31 17:58:45,971 - INFO - Loaded 2905 OHLCV records from btc_daily_ohlcv
+2025-07-31 17:58:45,971 - INFO - Processing 26873 news records for sentiment...
+2025-07-31 17:58:50,642 - INFO - Aggregated sentiment data: 1890 records
+2025-07-31 17:58:50,653 - INFO - Successfully engineered features for 2884 records
+2025-07-31 17:58:50,653 - INFO - Feature columns: 44 features
+2025-07-31 17:58:50,656 - INFO - Loaded data with 2884 records for training
+2025-07-31 17:58:50,656 - INFO - Step 3: Training model...
+2025-07-31 17:58:50,656 - INFO - Training ML model...
+2025-07-31 18:00:18,654 - INFO - Initializing dynamic stop loss calculator...
+2025-07-31 18:00:18,670 - INFO - Dynamic stop loss calculator initialized successfully
+2025-07-31 18:00:18,855 - INFO - Model training completed successfully
+2025-07-31 18:00:18,855 - INFO - Model performance - MAE: 0.0889, Direction Accuracy: 0.569
+2025-07-31 18:00:18,855 - INFO - Step 4: Generating trading signal...
+2025-07-31 18:00:18,855 - INFO - Generating trading signal with dynamic stop loss...
+2025-07-31 18:00:18,859 - WARNING - Using last available close price: $117950.76 from 2025-07-29 00:00:00
+2025-07-31 18:00:20,669 - INFO - Generated prediction: 0.0295 (3.0%)
+2025-07-31 18:00:20,669 - INFO - Dynamic Stop Loss Calculation:
+2025-07-31 18:00:20,669 - INFO -   Base: 0.030, ATR: 1.16x, Vol: 0.60x, Trend: 0.70x
+2025-07-31 18:00:20,670 - INFO -   Confidence: 1.50x, Momentum: 1.00x, Fear: 0.90x, Magnitude: 0.90x
+2025-07-31 18:00:20,670 - INFO -   Final Dynamic Stop: 0.018 (1.8%)
+2025-07-31 18:00:20,670 - INFO - Market Regime Analysis:
+2025-07-31 18:00:20,670 - INFO -   Volatility: 0.220 | Trend: 0.112
+2025-07-31 18:00:20,670 - INFO -   Momentum: 50.8 | Fear: 1.4
+2025-07-31 18:00:20,670 - INFO -   ATR: 2.31%
+2025-07-31 18:00:20,670 - INFO - Generated signal: LONG with confidence 0.0295
+2025-07-31 18:00:20,670 - INFO - Predicted return: 0.0295 (adjusted: 0.0275)
+2025-07-31 18:00:20,670 - INFO - Position size: 0.0295 (Kelly criterion)
+2025-07-31 18:00:20,670 - INFO - Dynamic stop loss: 1.77% (vs base: 3.0%)
+2025-07-31 18:00:20,671 - INFO - Step 5: Saving signal to database...
+2025-07-31 18:00:20,673 - INFO - Enhanced signal saved to database for prediction date 2025-07-31
+2025-07-31 18:00:20,673 - INFO - ========================================
+2025-07-31 18:00:20,673 - INFO - 🚀 PRODUCTION SIGNAL GENERATED FOR 2025-07-31:
+2025-07-31 18:00:20,673 - INFO -    Signal Type: LONG
+2025-07-31 18:00:20,673 - INFO -    Predicted Return: 0.0275 (2.75%)
+2025-07-31 18:00:20,673 - INFO -    Confidence: 0.0295
+2025-07-31 18:00:20,673 - INFO -    Position Size: 0.0295
+2025-07-31 18:00:20,673 - INFO -    Entry Price: $117950.76
+2025-07-31 18:00:20,673 - INFO -    Target Price: $121434.88
+2025-07-31 18:00:20,673 - INFO -    Stop Loss: $115864.74
+2025-07-31 18:00:20,673 - INFO -    Dynamic Stop %: 1.77%
+2025-07-31 18:00:20,673 - INFO -    Market Volatility: 0.220
+2025-07-31 18:00:20,673 - INFO -    Trend Strength: 0.112
+2025-07-31 18:00:20,673 - INFO -    Momentum: 50.8
+2025-07-31 18:00:20,673 - INFO -    Fear Index: 1.4
+2025-07-31 18:00:20,673 - INFO - ========================================
+2025-07-31 18:00:20,676 - INFO - ✅ Production signal generated successfully!
+2025-07-31 18:03:08,407 - INFO - ============================================================
+2025-07-31 18:03:08,408 - INFO - Starting PRODUCTION prediction with DYNAMIC STOP LOSS
+2025-07-31 18:03:08,408 - INFO - Generating signal for 2025-07-31
+2025-07-31 18:03:08,408 - INFO - Step 1: Fetching yesterday's daily data from Binance...
+2025-07-31 18:03:08,408 - INFO - Fetching yesterday's data (2025-07-30) from Binance...
+2025-07-31 18:03:08,413 - INFO - Yesterday's data (2025-07-30) already exists in database
+2025-07-31 18:03:08,413 - INFO - Step 2: Loading and preparing data...
+2025-07-31 18:03:08,731 - INFO - Loading and preparing data using load_all_data function for production...
+2025-07-31 18:03:08,961 - INFO - Loaded 2905 OHLCV records from btc_daily_ohlcv
+2025-07-31 18:03:08,961 - INFO - Processing 26873 news records for sentiment...
+2025-07-31 18:03:13,645 - INFO - Aggregated sentiment data: 1890 records
+2025-07-31 18:03:13,658 - INFO - Successfully engineered features for 2885 records
+2025-07-31 18:03:13,658 - INFO - Feature columns: 44 features
+2025-07-31 18:03:13,659 - INFO - Loaded data with 2885 records for training
+2025-07-31 18:03:13,659 - INFO - Step 3: Training model...
+2025-07-31 18:03:13,659 - INFO - Training ML model...
+2025-07-31 18:04:40,050 - INFO - Initializing dynamic stop loss calculator...
+2025-07-31 18:04:40,066 - INFO - Dynamic stop loss calculator initialized successfully
+2025-07-31 18:04:40,249 - INFO - Model training completed successfully
+2025-07-31 18:04:40,249 - INFO - Model performance - MAE: 0.0890, Direction Accuracy: 0.569
+2025-07-31 18:04:40,249 - INFO - Step 4: Generating trading signal...
+2025-07-31 18:04:40,249 - INFO - Generating trading signal with dynamic stop loss...
+2025-07-31 18:04:40,253 - INFO - Found yesterday's (2025-07-30) close price: $117840.30
+2025-07-31 18:04:41,868 - INFO - Generated prediction: 0.0250 (2.5%)
+2025-07-31 18:04:41,869 - INFO - Dynamic Stop Loss Calculation:
+2025-07-31 18:04:41,869 - INFO -   Base: 0.030, ATR: 1.15x, Vol: 0.60x, Trend: 0.70x
+2025-07-31 18:04:41,869 - INFO -   Confidence: 1.50x, Momentum: 1.00x, Fear: 0.90x, Magnitude: 0.90x
+2025-07-31 18:04:41,869 - INFO -   Final Dynamic Stop: 0.018 (1.8%)
+2025-07-31 18:04:41,869 - INFO - Market Regime Analysis:
+2025-07-31 18:04:41,869 - INFO -   Volatility: 0.216 | Trend: 0.230
+2025-07-31 18:04:41,869 - INFO -   Momentum: 46.4 | Fear: 0.5
+2025-07-31 18:04:41,869 - INFO -   ATR: 2.31%
+2025-07-31 18:04:41,869 - INFO - Generated signal: LONG with confidence 0.0250
+2025-07-31 18:04:41,869 - INFO - Predicted return: 0.0250 (adjusted: 0.0230)
+2025-07-31 18:04:41,869 - INFO - Position size: 0.0250 (Kelly criterion)
+2025-07-31 18:04:41,869 - INFO - Dynamic stop loss: 1.77% (vs base: 3.0%)
+2025-07-31 18:04:41,870 - INFO - Step 5: Saving signal to database...
+2025-07-31 18:04:41,871 - INFO - Enhanced signal saved to database for prediction date 2025-07-31
+2025-07-31 18:04:41,871 - INFO - ========================================
+2025-07-31 18:04:41,871 - INFO - 🚀 PRODUCTION SIGNAL GENERATED FOR 2025-07-31:
+2025-07-31 18:04:41,871 - INFO -    Signal Type: LONG
+2025-07-31 18:04:41,871 - INFO -    Predicted Return: 0.0230 (2.30%)
+2025-07-31 18:04:41,871 - INFO -    Confidence: 0.0250
+2025-07-31 18:04:41,871 - INFO -    Position Size: 0.0250
+2025-07-31 18:04:41,871 - INFO -    Entry Price: $117840.30
+2025-07-31 18:04:41,871 - INFO -    Target Price: $120784.98
+2025-07-31 18:04:41,871 - INFO -    Stop Loss: $115757.06
+2025-07-31 18:04:41,871 - INFO -    Dynamic Stop %: 1.77%
+2025-07-31 18:04:41,871 - INFO -    Market Volatility: 0.216
+2025-07-31 18:04:41,871 - INFO -    Trend Strength: 0.230
+2025-07-31 18:04:41,871 - INFO -    Momentum: 46.4
+2025-07-31 18:04:41,871 - INFO -    Fear Index: 0.5
+2025-07-31 18:04:41,871 - INFO - ========================================
+2025-07-31 18:04:41,873 - INFO - ✅ Production signal generated successfully!
+2025-08-01 09:38:27,696 - INFO - ============================================================
+2025-08-01 09:38:27,696 - INFO - Starting PRODUCTION prediction with DYNAMIC STOP LOSS
+2025-08-01 09:38:27,696 - INFO - Generating signal for 2025-08-01
+2025-08-01 09:38:27,696 - INFO - Step 1: Fetching yesterday's daily data from Binance...
+2025-08-01 09:38:27,696 - INFO - Fetching yesterday's data (2025-07-31) from Binance...
+2025-08-01 09:38:28,243 - INFO - Successfully inserted yesterday's data (2025-07-31) into btc_daily_ohlcv
+2025-08-01 09:38:28,243 - INFO - OHLCV data: O=117840.29, H=118922.45, L=115500.00, C=115764.08, V=17010
+2025-08-01 09:38:28,244 - INFO - Step 2: Loading and preparing data...
+2025-08-01 09:38:28,586 - INFO - Loading and preparing data using load_all_data function for production...
+2025-08-01 09:38:28,805 - INFO - Loaded 2906 OHLCV records from btc_daily_ohlcv
+2025-08-01 09:38:28,805 - INFO - Processing 26873 news records for sentiment...
+2025-08-01 09:38:33,137 - INFO - Aggregated sentiment data: 1890 records
+2025-08-01 09:38:33,148 - INFO - Successfully engineered features for 2886 records
+2025-08-01 09:38:33,149 - INFO - Feature columns: 44 features
+2025-08-01 09:38:33,150 - INFO - Loaded data with 2886 records for training
+2025-08-01 09:38:33,150 - INFO - Step 3: Training model...
+2025-08-01 09:38:33,150 - INFO - Training ML model...
+2025-08-01 09:39:41,447 - INFO - Initializing dynamic stop loss calculator...
+2025-08-01 09:39:41,465 - INFO - Dynamic stop loss calculator initialized successfully
+2025-08-01 09:39:41,641 - INFO - Model training completed successfully
+2025-08-01 09:39:41,642 - INFO - Model performance - MAE: 0.0886, Direction Accuracy: 0.571
+2025-08-01 09:39:41,642 - INFO - Step 4: Generating trading signal...
+2025-08-01 09:39:41,642 - INFO - Generating trading signal with dynamic stop loss...
+2025-08-01 09:39:41,645 - INFO - Found yesterday's (2025-07-31) close price: $115764.08
+2025-08-01 09:39:43,210 - INFO - Generated prediction: 0.0222 (2.2%)
+2025-08-01 09:39:43,210 - INFO - Dynamic Stop Loss Calculation:
+2025-08-01 09:39:43,210 - INFO -   Base: 0.030, ATR: 1.17x, Vol: 0.60x, Trend: 0.70x
+2025-08-01 09:39:43,210 - INFO -   Confidence: 1.50x, Momentum: 1.00x, Fear: 0.90x, Magnitude: 0.90x
+2025-08-01 09:39:43,210 - INFO -   Final Dynamic Stop: 0.018 (1.8%)
+2025-08-01 09:39:43,210 - INFO - Market Regime Analysis:
+2025-08-01 09:39:43,210 - INFO -   Volatility: 0.219 | Trend: 0.379
+2025-08-01 09:39:43,210 - INFO -   Momentum: 36.2 | Fear: 1.2
+2025-08-01 09:39:43,210 - INFO -   ATR: 2.34%
+2025-08-01 09:39:43,210 - INFO - Generated signal: LONG with confidence 0.0222
+2025-08-01 09:39:43,210 - INFO - Predicted return: 0.0222 (adjusted: 0.0202)
+2025-08-01 09:39:43,210 - INFO - Position size: 0.0222 (Kelly criterion)
+2025-08-01 09:39:43,210 - INFO - Dynamic stop loss: 1.79% (vs base: 3.0%)
+2025-08-01 09:39:43,211 - INFO - Step 5: Saving signal to database...
+2025-08-01 09:39:43,222 - INFO - Enhanced signal saved to database for prediction date 2025-08-01
+2025-08-01 09:39:43,222 - INFO - ========================================
+2025-08-01 09:39:43,222 - INFO - 🚀 PRODUCTION SIGNAL GENERATED FOR 2025-08-01:
+2025-08-01 09:39:43,222 - INFO -    Signal Type: LONG
+2025-08-01 09:39:43,222 - INFO -    Predicted Return: 0.0202 (2.02%)
+2025-08-01 09:39:43,222 - INFO -    Confidence: 0.0222
+2025-08-01 09:39:43,222 - INFO -    Position Size: 0.0222
+2025-08-01 09:39:43,222 - INFO -    Entry Price: $115764.08
+2025-08-01 09:39:43,222 - INFO -    Target Price: $118333.61
+2025-08-01 09:39:43,222 - INFO -    Stop Loss: $113687.55
+2025-08-01 09:39:43,222 - INFO -    Dynamic Stop %: 1.79%
+2025-08-01 09:39:43,222 - INFO -    Market Volatility: 0.219
+2025-08-01 09:39:43,222 - INFO -    Trend Strength: 0.379
+2025-08-01 09:39:43,222 - INFO -    Momentum: 36.2
+2025-08-01 09:39:43,222 - INFO -    Fear Index: 1.2
+2025-08-01 09:39:43,222 - INFO - ========================================
+2025-08-01 09:39:43,225 - INFO - ✅ Production signal generated successfully!

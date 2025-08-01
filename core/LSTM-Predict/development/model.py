@@ -17,13 +17,6 @@ from scipy import stats
 import seaborn as sns
 from datetime import datetime, timedelta
 
-
-SEED = 42
-os.environ['PYTHONHASHSEED'] = str(SEED)
-random.seed(SEED)
-np.random.seed(SEED)
-tf.random.set_seed(SEED)
-
 class RegimeAwareBitcoinPredictor:
     """
     Bitcoin predictor with advanced regime detection specifically designed
