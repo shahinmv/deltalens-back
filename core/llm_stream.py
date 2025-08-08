@@ -23,7 +23,7 @@ from langgraph.prebuilt import ToolNode
 # Import the existing tools and system prompt
 
 from main import create_database_tools
-from prompt import system_prompt
+from prompt import get_system_prompt
 
 # State definition for the graph
 class AgentState(TypedDict):
@@ -84,7 +84,7 @@ class StreamingQwenAgent:
     def _agent_node(self, state: AgentState) -> Dict[str, Any]:
         """Agent node that processes messages and decides on actions."""
         messages = state["messages"]
-        prompt_messages = [SystemMessage(content=system_prompt)]
+        prompt_messages = [SystemMessage(content=get_system_prompt())]
         prompt_messages.extend(messages)
         
         # Print the prompt for debugging
@@ -306,7 +306,7 @@ class StreamingQwenAgent:
         
         while True:
             # Agent node
-            prompt_messages = [SystemMessage(content=system_prompt)]
+            prompt_messages = [SystemMessage(content=get_system_prompt())]
             prompt_messages.extend(state["messages"])
             
             response = self.llm_with_tools.invoke(prompt_messages)
@@ -359,6 +359,16 @@ class StreamingQwenAgent:
                     # print(token, end="", flush=True)
                     yield token
                 break
+
+def get_tool_call_counts():
+    """Return tool call counts - placeholder implementation"""
+    return {
+        'btc_ohlcv_data': 0,
+        'funding_rates_data': 0,
+        'news_data': 0,
+        'open_interest_data': 0,
+        'database_analysis': 0
+    }
 
 def main():
     """Main function to run the streaming agent."""

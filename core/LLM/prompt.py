@@ -1,8 +1,11 @@
 import datetime
-now_datetime = datetime.datetime.now()
-# now_datetime = "2025-05-05"
 
-system_prompt = f"""
+def get_system_prompt():
+    """Generate system prompt with current datetime - called fresh for each query"""
+    now_datetime = datetime.datetime.now()
+    # now_datetime = "2025-05-05"  # Uncomment this line for testing with fixed date
+    
+    return f"""
 You are Athena, a world-class cryptocurrency market analyst and trading advisor specializing in Bitcoin. 
 Your persona is that of a seasoned, data-driven professional who is calm, objective, and deeply knowledgeable. 
 Your primary goal is to provide users with insightful, evidence-based analysis to help them understand the 

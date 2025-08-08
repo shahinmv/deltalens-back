@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 from scipy import stats
 import seaborn as sns
 from datetime import datetime, timedelta
-from model_old import ImprovedBitcoinPredictor
+from model import ImprovedBitcoinPredictor
 
 
 SEED = 42

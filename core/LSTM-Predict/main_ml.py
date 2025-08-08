@@ -242,7 +242,7 @@ class RegimeAwareBitcoinPredictor:
             max_score = sum(weights.values())
             bear_score_normalized = bear_score / max_score
             
-            self.bear_market_detected = bear_score_normalized >= 0.4  # 40% threshold
+            self.bear_market_detected = bear_score_normalized >= 0.35  # 35% threshold (lowered to detect bear markets earlier)
             
             print(f"Bear market score: {bear_score_normalized:.3f}")
             if self.bear_market_detected:
@@ -451,6 +451,12 @@ class RegimeAwareBitcoinPredictor:
                       'market_cycle_phase', 'seasonality_factor']
         feature_cols.extend(macro_cols)
         
+        # Add bearish-specific features to boost SHORT signal detection
+        bearish_cols = ['price_rsi_divergence', 'selling_pressure', 'selling_pressure_ma',
+                       'distribution_signal', 'macd_bearish', 'lower_highs', 
+                       'bearish_engulfing', 'fear_proxy', 'breakdown_momentum']
+        feature_cols.extend(bearish_cols)
+        
         available_features = [col for col in feature_cols if col in df.columns]
         
         # Feature selection - keep only most informative
@@ -460,7 +466,10 @@ class RegimeAwareBitcoinPredictor:
                 'close', 'volume', 'returns_1d', 'returns_7d', 'volatility_20',
                 'rsi', 'macd', 'funding_rate', 'avg_vader_compound',
                 'ma_20', 'price_ma_20_ratio', 'bb_position',
-                'vix_proxy', 'market_cycle_phase', 'risk_sentiment'
+                'vix_proxy', 'market_cycle_phase', 'risk_sentiment',
+                # Prioritize bearish features for SHORT signal detection
+                'selling_pressure_ma', 'distribution_signal', 'fear_proxy',
+                'breakdown_momentum', 'macd_bearish'
             ]
             
             selected_features = []
@@ -832,10 +841,32 @@ class RegimeAwareBitcoinPredictor:
             prediction_noise = np.random.normal(0, 0.005, ensemble_pred.shape)  # 0.5% noise
             ensemble_pred = ensemble_pred + prediction_noise
             
-            # Conservative adjustments
+            # BOOST SHORT SIGNALS: Amplify bearish predictions to generate more SHORT signals
+            short_boost_mask = ensemble_pred < 0
+            if short_boost_mask.any():
+                # Amplify SHORT predictions by 15%
+                ensemble_pred[short_boost_mask] = ensemble_pred[short_boost_mask] * 1.15
+                
+                # Additional boost in high volatility environments
+                if hasattr(self, 'current_regime') and 'volatile' in self.current_regime:
+                    ensemble_pred[short_boost_mask] = ensemble_pred[short_boost_mask] * 1.1
+            
+            # Enhanced bear market adjustments to favor SHORT signals
             if self.bear_market_detected:
-                # Smaller bearish bias
-                ensemble_pred = ensemble_pred * 0.9 - 0.01
+                # Stronger bearish bias and amplification for shorts
+                bear_short_mask = ensemble_pred < 0
+                bear_long_mask = ensemble_pred > 0
+                
+                if bear_short_mask.any():
+                    # Amplify SHORT signals more in bear markets
+                    ensemble_pred[bear_short_mask] = ensemble_pred[bear_short_mask] * 1.2
+                
+                if bear_long_mask.any():
+                    # Reduce LONG signals more aggressively in bear markets
+                    ensemble_pred[bear_long_mask] = ensemble_pred[bear_long_mask] * 0.6
+                
+                # General bearish bias
+                ensemble_pred = ensemble_pred - 0.01
             
             # Reduced trend momentum impact
             if hasattr(self, 'trend_momentum'):

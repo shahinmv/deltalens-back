@@ -507,3 +507,47 @@
 2025-08-01 14:43:18,058 - INFO - Retrieved funding rate 1.549e-05 for time 2025-08-01 08:00:00.003000+00:00
 2025-08-01 14:43:18,061 - INFO - Successfully stored funding rate for BTCUSDT at 2025-08-01 08:00:00 UTC
 2025-08-01 14:43:18,167 - INFO - Funding rate collection process completed successfully
+2025-08-04 10:25:37,776 - INFO - Starting funding rate collection process
+2025-08-04 10:25:37,780 - INFO - Found latest funding time in database: 2025-08-01 08:00:00+00:00
+2025-08-04 10:25:37,780 - INFO - Latest funding time in database: 2025-08-01 08:00:00+00:00
+2025-08-04 10:25:37,780 - INFO - Collecting funding rates from 2025-08-01 16:00:00+00:00 to 2025-08-04 06:25:37.780242+00:00
+2025-08-04 10:25:38,723 - INFO - Retrieved funding rate 5.681e-05 for time 2025-08-01 16:00:00+00:00
+2025-08-04 10:25:38,728 - INFO - Successfully stored funding rate for BTCUSDT at 2025-08-01 16:00:00 UTC
+2025-08-04 10:25:39,773 - INFO - Retrieved funding rate 4.81e-05 for time 2025-08-02 00:00:00.004000+00:00
+2025-08-04 10:25:39,776 - INFO - Successfully stored funding rate for BTCUSDT at 2025-08-02 00:00:00 UTC
+2025-08-04 10:25:40,836 - INFO - Retrieved funding rate 8.94e-06 for time 2025-08-02 08:00:00+00:00
+2025-08-04 10:25:40,839 - INFO - Successfully stored funding rate for BTCUSDT at 2025-08-02 08:00:00 UTC
+2025-08-04 10:25:41,905 - INFO - Retrieved funding rate 4.437e-05 for time 2025-08-02 16:00:00+00:00
+2025-08-04 10:25:41,909 - INFO - Successfully stored funding rate for BTCUSDT at 2025-08-02 16:00:00 UTC
+2025-08-04 10:25:42,938 - INFO - Retrieved funding rate 5.633e-05 for time 2025-08-03 00:00:00+00:00
+2025-08-04 10:25:42,941 - INFO - Successfully stored funding rate for BTCUSDT at 2025-08-03 00:00:00 UTC
+2025-08-04 10:25:43,976 - INFO - Retrieved funding rate 4.533e-05 for time 2025-08-03 08:00:00+00:00
+2025-08-04 10:25:43,979 - INFO - Successfully stored funding rate for BTCUSDT at 2025-08-03 08:00:00 UTC
+2025-08-04 10:25:45,019 - INFO - Retrieved funding rate 7.504e-05 for time 2025-08-03 16:00:00.003000+00:00
+2025-08-04 10:25:45,021 - INFO - Successfully stored funding rate for BTCUSDT at 2025-08-03 16:00:00 UTC
+2025-08-04 10:25:46,127 - INFO - Retrieved funding rate 4.188e-05 for time 2025-08-04 00:00:00.004000+00:00
+2025-08-04 10:25:46,128 - INFO - Successfully stored funding rate for BTCUSDT at 2025-08-04 00:00:00 UTC
+2025-08-04 10:25:46,234 - INFO - Funding rate collection process completed successfully
+2025-08-07 11:41:15,598 - INFO - Starting funding rate collection process
+2025-08-07 11:41:15,601 - INFO - Found latest funding time in database: 2025-08-04 00:00:00+00:00
+2025-08-07 11:41:15,601 - INFO - Latest funding time in database: 2025-08-04 00:00:00+00:00
+2025-08-07 11:41:15,602 - INFO - Collecting funding rates from 2025-08-04 08:00:00+00:00 to 2025-08-07 07:41:15.601944+00:00
+2025-08-07 11:41:16,672 - INFO - Retrieved funding rate 5.719e-05 for time 2025-08-04 08:00:00+00:00
+2025-08-07 11:41:16,673 - INFO - Successfully stored funding rate for BTCUSDT at 2025-08-04 08:00:00 UTC
+2025-08-07 11:41:17,698 - INFO - Retrieved funding rate 3.912e-05 for time 2025-08-04 16:00:00.002000+00:00
+2025-08-07 11:41:17,699 - INFO - Successfully stored funding rate for BTCUSDT at 2025-08-04 16:00:00 UTC
+2025-08-07 11:41:18,708 - INFO - Retrieved funding rate 7.101e-05 for time 2025-08-05 00:00:00+00:00
+2025-08-07 11:41:18,709 - INFO - Successfully stored funding rate for BTCUSDT at 2025-08-05 00:00:00 UTC
+2025-08-07 11:41:19,722 - INFO - Retrieved funding rate 8.589e-05 for time 2025-08-05 08:00:00+00:00
+2025-08-07 11:41:19,723 - INFO - Successfully stored funding rate for BTCUSDT at 2025-08-05 08:00:00 UTC
+2025-08-07 11:41:20,757 - INFO - Retrieved funding rate 4.784e-05 for time 2025-08-05 16:00:00+00:00
+2025-08-07 11:41:20,757 - INFO - Successfully stored funding rate for BTCUSDT at 2025-08-05 16:00:00 UTC
+2025-08-07 11:41:21,792 - INFO - Retrieved funding rate 5.172e-05 for time 2025-08-06 00:00:00.005000+00:00
+2025-08-07 11:41:21,793 - INFO - Successfully stored funding rate for BTCUSDT at 2025-08-06 00:00:00 UTC
+2025-08-07 11:41:22,817 - INFO - Retrieved funding rate 9.275e-05 for time 2025-08-06 08:00:00+00:00
+2025-08-07 11:41:22,819 - INFO - Successfully stored funding rate for BTCUSDT at 2025-08-06 08:00:00 UTC
+2025-08-07 11:41:23,840 - INFO - Retrieved funding rate 8.288e-05 for time 2025-08-06 16:00:00+00:00
+2025-08-07 11:41:23,841 - INFO - Successfully stored funding rate for BTCUSDT at 2025-08-06 16:00:00 UTC
+2025-08-07 11:41:24,865 - INFO - Retrieved funding rate 4.843e-05 for time 2025-08-07 00:00:00.003000+00:00
+2025-08-07 11:41:24,866 - INFO - Successfully stored funding rate for BTCUSDT at 2025-08-07 00:00:00 UTC
+2025-08-07 11:41:24,971 - INFO - Funding rate collection process completed successfully

@@ -117,7 +117,7 @@ class TradeStatusChecker:
                        its.entry_price, its.target_price, its.stop_loss, 
                        its.expires_at, its.status as signal_status,
                        ts.status as trade_status, ts.id as trade_status_id
-                FROM iterative_trading_signals its
+                FROM benchmark_trading_signals its
                 LEFT JOIN trade_status ts ON its.id = ts.signal_id
                 WHERE (ts.status IS NULL 
                        OR ts.status IN ('ACTIVE', 'ACTIVE_PENDING_DATA'))

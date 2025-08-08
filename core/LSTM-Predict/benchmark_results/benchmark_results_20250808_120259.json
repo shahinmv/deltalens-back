@@ -1,0 +1,907 @@
+{
+  "results": {
+    "walk_forward": {
+      "avg_mae": 0.09417800011698507,
+      "std_mae": 0.010230812408835492,
+      "min_mae": 0.07800000218913083,
+      "max_mae": 0.10785515336024483,
+      "median_mae": 0.09703862808731437,
+      "avg_mse": 0.012865699429362741,
+      "std_mse": 0.002299151223720124,
+      "min_mse": 0.008974841406327231,
+      "max_mse": 0.016511010630333924,
+      "median_mse": 0.01354677502175852,
+      "avg_r2": -0.007476610826319498,
+      "std_r2": 0.014353523701849757,
+      "min_r2": -0.03081588647833211,
+      "max_r2": 0.015330551717011476,
+      "median_r2": -0.005729994739855471,
+      "avg_direction_accuracy": 0.5765696655205738,
+      "std_direction_accuracy": 0.04646354191539161,
+      "min_direction_accuracy": 0.47766323024054985,
+      "max_direction_accuracy": 0.6382252559726962,
+      "median_direction_accuracy": 0.5890079232228547,
+      "avg_sharpe_ratio": 0.8820187854057485,
+      "std_sharpe_ratio": 0.41972221417013006,
+      "min_sharpe_ratio": 0.2308339462421475,
+      "max_sharpe_ratio": 1.4793868986825214,
+      "median_sharpe_ratio": 1.015237186598714,
+      "avg_win_rate": 0.5765696655205738,
+      "std_win_rate": 0.04646354191539161,
+      "min_win_rate": 0.47766323024054985,
+      "max_win_rate": 0.6382252559726962,
+      "median_win_rate": 0.5890079232228547,
+      "avg_profit_factor": 1.6461449211420531,
+      "std_profit_factor": 0.3372929035783704,
+      "min_profit_factor": 1.1026952482968524,
+      "max_profit_factor": 2.1765400701355295,
+      "median_profit_factor": 1.5660652849368268,
+      "avg_max_drawdown": 6.839739769434444,
+      "std_max_drawdown": 8.442201225971917,
+      "min_max_drawdown": 0.16006202980033235,
+      "max_max_drawdown": 27.01038017240351,
+      "median_max_drawdown": 2.8474093686582163,
+      "avg_var_95": -0.004750506872273264,
+      "std_var_95": 0.002533937280720567,
+      "min_var_95": -0.008827313355625588,
+      "max_var_95": -0.0014674206787855626,
+      "median_var_95": -0.0046305173187994346,
+      "avg_stability_ratio": 0.047576666876050305,
+      "std_stability_ratio": 0.005359327772395582,
+      "min_stability_ratio": 0.038775714814778456,
+      "max_stability_ratio": 0.05685211823549836,
+      "median_stability_ratio": 0.047814758695002735,
+      "condition_performance": {
+        "bull_stable": [
+          {
+            "period": 0,
+            "mae": 0.08155946302494053,
+            "mse": 0.010445130919325647,
+            "r2": -0.026589007742568338,
+            "direction_accuracy": 0.6012658227848101,
+            "sharpe_ratio": 0.7319665789365181,
+            "win_rate": 0.6012658227848101,
+            "profit_factor": 1.347318282472118,
+            "max_drawdown": 2.105508813957317,
+            "var_95": -0.0014674206787855626,
+            "stability_ratio": 0.04852583007273405,
+            "avg_win": 0.0009712768093744708,
+            "avg_loss": -0.0007208963331161291,
+            "n_predictions": 316,
+            "test_start_date": "2025-06-05T00:00:00",
+            "test_end_date": "2025-08-03T00:00:00",
+            "market_conditions": "bull_stable"
+          },
+          {
+            "period": 1,
+            "mae": 0.08117432331770509,
+            "mse": 0.00965274452557652,
+            "r2": 0.007925448813658309,
+            "direction_accuracy": 0.5096153846153846,
+            "sharpe_ratio": 0.2745251232700763,
+            "win_rate": 0.5096153846153846,
+            "profit_factor": 1.2750385176484935,
+            "max_drawdown": 3.5893099233591155,
+            "var_95": -0.0015406239482712374,
+            "stability_ratio": 0.05194119373092186,
+            "avg_win": 0.0008618914380153391,
+            "avg_loss": -0.0006759728636315189,
+            "n_predictions": 312,
+            "test_start_date": "2025-04-06T00:00:00",
+            "test_end_date": "2025-06-04T00:00:00",
+            "market_conditions": "bull_stable"
+          },
+          {
+            "period": 4,
+            "mae": 0.08716998417550376,
+            "mse": 0.011383896644847987,
+            "r2": 0.006471410554244605,
+            "direction_accuracy": 0.598705501618123,
+            "sharpe_ratio": 0.9521309750478526,
+            "win_rate": 0.598705501618123,
+            "profit_factor": 1.5534825032668018,
+            "max_drawdown": 0.35204318401267515,
+            "var_95": -0.0030177791045211183,
+            "stability_ratio": 0.0540349940822279,
+            "avg_win": 0.0026374671795637798,
+            "avg_loss": -0.0016977772031660982,
+            "n_predictions": 309,
+            "test_start_date": "2024-10-08T00:00:00",
+            "test_end_date": "2024-12-06T00:00:00",
+            "market_conditions": "bull_stable"
+          },
+          {
+            "period": 8,
+            "mae": 0.1025268297930946,
+            "mse": 0.014038823141880536,
+            "r2": -0.004077086733452084,
+            "direction_accuracy": 0.576271186440678,
+            "sharpe_ratio": 1.2096197686605146,
+            "win_rate": 0.576271186440678,
+            "profit_factor": 2.1765400701355295,
+            "max_drawdown": 9.31807822507134,
+            "var_95": -0.007140063904128197,
+            "stability_ratio": 0.04235505947899286,
+            "avg_win": 0.008118966512704627,
+            "avg_loss": -0.0037302168814190833,
+            "n_predictions": 295,
+            "test_start_date": "2024-02-11T00:00:00",
+            "test_end_date": "2024-04-10T00:00:00",
+            "market_conditions": "bull_stable"
+          },
+          {
+            "period": 10,
+            "mae": 0.09506172930221786,
+            "mse": 0.013130436090846966,
+            "r2": 0.003925115231409593,
+            "direction_accuracy": 0.5793103448275863,
+            "sharpe_ratio": 1.0912630801446497,
+            "win_rate": 0.5793103448275863,
+            "profit_factor": 1.9800174209370176,
+            "max_drawdown": 4.2493409461723886,
+            "var_95": -0.004431831511800993,
+            "stability_ratio": 0.04657849132329101,
+            "avg_win": 0.004479509907540028,
+            "avg_loss": -0.0022623588359238565,
+            "n_predictions": 290,
+            "test_start_date": "2023-10-14T00:00:00",
+            "test_end_date": "2023-12-12T00:00:00",
+            "market_conditions": "bull_stable"
+          }
+        ],
+        "bear_stable": [
+          {
+            "period": 2,
+            "mae": 0.07800000218913083,
+            "mse": 0.008974841406327231,
+            "r2": -0.0020512822230818184,
+            "direction_accuracy": 0.5275080906148867,
+            "sharpe_ratio": 0.2308339462421475,
+            "win_rate": 0.5275080906148867,
+            "profit_factor": 1.1026952482968524,
+            "max_drawdown": 16.061066582246895,
+            "var_95": -0.001948700112556814,
+            "stability_ratio": 0.05205454203489183,
+            "avg_win": 0.0011334927059638076,
+            "avg_loss": -0.001027929255807099,
+            "n_predictions": 309,
+            "test_start_date": "2025-02-05T00:00:00",
+            "test_end_date": "2025-04-05T00:00:00",
+            "market_conditions": "bear_stable"
+          }
+        ],
+        "sideways": [
+          {
+            "period": 3,
+            "mae": 0.08695073111005272,
+            "mse": 0.011765193826821136,
+            "r2": -0.007382902746258857,
+            "direction_accuracy": 0.5681818181818182,
+            "sharpe_ratio": 0.7312023710933472,
+            "win_rate": 0.5681818181818182,
+            "profit_factor": 1.47707732460262,
+            "max_drawdown": 27.01038017240351,
+            "var_95": -0.003092105319816815,
+            "stability_ratio": 0.048944560788591523,
+            "avg_win": 0.00223355614933694,
+            "avg_loss": -0.0015121457164998702,
+            "n_predictions": 308,
+            "test_start_date": "2024-12-07T00:00:00",
+            "test_end_date": "2025-02-04T00:00:00",
+            "market_conditions": "sideways"
+          },
+          {
+            "period": 5,
+            "mae": 0.10413906985974322,
+            "mse": 0.015278679610658267,
+            "r2": 0.015330551717011476,
+            "direction_accuracy": 0.6086956521739131,
+            "sharpe_ratio": 1.2112204181906592,
+            "win_rate": 0.6086956521739131,
+            "profit_factor": 1.8857518499286159,
+            "max_drawdown": 0.18564554039868195,
+            "var_95": -0.008064383690162281,
+            "stability_ratio": 0.05685211823549836,
+            "avg_win": 0.008821324991720213,
+            "avg_loss": -0.0046778821890346494,
+            "n_predictions": 299,
+            "test_start_date": "2024-08-09T00:00:00",
+            "test_end_date": "2024-10-07T00:00:00",
+            "market_conditions": "sideways"
+          },
+          {
+            "period": 6,
+            "mae": 0.10785515336024483,
+            "mse": 0.016511010630333924,
+            "r2": -0.02188745802239178,
+            "direction_accuracy": 0.6156462585034014,
+            "sharpe_ratio": 1.0783433981495754,
+            "win_rate": 0.6156462585034014,
+            "profit_factor": 1.5786480666068519,
+            "max_drawdown": 0.16006202980033235,
+            "var_95": -0.008827313355625588,
+            "stability_ratio": 0.038775714814778456,
+            "avg_win": 0.008516430610716217,
+            "avg_loss": -0.00539476200608882,
+            "n_predictions": 294,
+            "test_start_date": "2024-06-10T00:00:00",
+            "test_end_date": "2024-08-08T00:00:00",
+            "market_conditions": "sideways"
+          },
+          {
+            "period": 7,
+            "mae": 0.10621578248383337,
+            "mse": 0.015243907336041229,
+            "r2": -0.00787618407850843,
+            "direction_accuracy": 0.6177474402730375,
+            "sharpe_ratio": 1.3452096055470615,
+            "win_rate": 0.6177474402730375,
+            "profit_factor": 1.9932865682882563,
+            "max_drawdown": 1.044585744275453,
+            "var_95": -0.007737169985598808,
+            "stability_ratio": 0.04043890880291458,
+            "avg_win": 0.008775208279010646,
+            "avg_loss": -0.004402381683907294,
+            "n_predictions": 293,
+            "test_start_date": "2024-04-11T00:00:00",
+            "test_end_date": "2024-06-09T00:00:00",
+            "market_conditions": "sideways"
+          },
+          {
+            "period": 9,
+            "mae": 0.10046740591494303,
+            "mse": 0.013963113952670076,
+            "r2": -0.02269204820756454,
+            "direction_accuracy": 0.6382252559726962,
+            "sharpe_ratio": 1.4793868986825214,
+            "win_rate": 0.6382252559726962,
+            "profit_factor": 2.0282553139484247,
+            "max_drawdown": 0.5262100160163297,
+            "var_95": -0.004909487730213873,
+            "stability_ratio": 0.04331490183048973,
+            "avg_win": 0.005591908300923298,
+            "avg_loss": -0.0027570041416716297,
+            "n_predictions": 293,
+            "test_start_date": "2023-12-13T00:00:00",
+            "test_end_date": "2024-02-10T00:00:00",
+            "market_conditions": "sideways"
+          },
+          {
+            "period": 11,
+            "mae": 0.09901552687241089,
+            "mse": 0.01400061506702337,
+            "r2": -0.03081588647833211,
+            "direction_accuracy": 0.47766323024054985,
+            "sharpe_ratio": 0.2485232609040594,
+            "win_rate": 0.47766323024054985,
+            "profit_factor": 1.3556278875730572,
+            "max_drawdown": 17.474646055499296,
+            "var_95": -0.004829203125797876,
+            "stability_ratio": 0.04710368731727143,
+            "avg_win": 0.0032796865806239885,
+            "avg_loss": -0.002419311826415374,
+            "n_predictions": 291,
+            "test_start_date": "2023-08-15T00:00:00",
+            "test_end_date": "2023-10-13T00:00:00",
+            "market_conditions": "sideways"
+          }
+        ]
+      },
+      "n_periods": 12,
+      "detailed_results": [
+        {
+          "period": 0,
+          "mae": 0.08155946302494053,
+          "mse": 0.010445130919325647,
+          "r2": -0.026589007742568338,
+          "direction_accuracy": 0.6012658227848101,
+          "sharpe_ratio": 0.7319665789365181,
+          "win_rate": 0.6012658227848101,
+          "profit_factor": 1.347318282472118,
+          "max_drawdown": 2.105508813957317,
+          "var_95": -0.0014674206787855626,
+          "stability_ratio": 0.04852583007273405,
+          "avg_win": 0.0009712768093744708,
+          "avg_loss": -0.0007208963331161291,
+          "n_predictions": 316,
+          "test_start_date": "2025-06-05T00:00:00",
+          "test_end_date": "2025-08-03T00:00:00",
+          "market_conditions": "bull_stable"
+        },
+        {
+          "period": 1,
+          "mae": 0.08117432331770509,
+          "mse": 0.00965274452557652,
+          "r2": 0.007925448813658309,
+          "direction_accuracy": 0.5096153846153846,
+          "sharpe_ratio": 0.2745251232700763,
+          "win_rate": 0.5096153846153846,
+          "profit_factor": 1.2750385176484935,
+          "max_drawdown": 3.5893099233591155,
+          "var_95": -0.0015406239482712374,
+          "stability_ratio": 0.05194119373092186,
+          "avg_win": 0.0008618914380153391,
+          "avg_loss": -0.0006759728636315189,
+          "n_predictions": 312,
+          "test_start_date": "2025-04-06T00:00:00",
+          "test_end_date": "2025-06-04T00:00:00",
+          "market_conditions": "bull_stable"
+        },
+        {
+          "period": 2,
+          "mae": 0.07800000218913083,
+          "mse": 0.008974841406327231,
+          "r2": -0.0020512822230818184,
+          "direction_accuracy": 0.5275080906148867,
+          "sharpe_ratio": 0.2308339462421475,
+          "win_rate": 0.5275080906148867,
+          "profit_factor": 1.1026952482968524,
+          "max_drawdown": 16.061066582246895,
+          "var_95": -0.001948700112556814,
+          "stability_ratio": 0.05205454203489183,
+          "avg_win": 0.0011334927059638076,
+          "avg_loss": -0.001027929255807099,
+          "n_predictions": 309,
+          "test_start_date": "2025-02-05T00:00:00",
+          "test_end_date": "2025-04-05T00:00:00",
+          "market_conditions": "bear_stable"
+        },
+        {
+          "period": 3,
+          "mae": 0.08695073111005272,
+          "mse": 0.011765193826821136,
+          "r2": -0.007382902746258857,
+          "direction_accuracy": 0.5681818181818182,
+          "sharpe_ratio": 0.7312023710933472,
+          "win_rate": 0.5681818181818182,
+          "profit_factor": 1.47707732460262,
+          "max_drawdown": 27.01038017240351,
+          "var_95": -0.003092105319816815,
+          "stability_ratio": 0.048944560788591523,
+          "avg_win": 0.00223355614933694,
+          "avg_loss": -0.0015121457164998702,
+          "n_predictions": 308,
+          "test_start_date": "2024-12-07T00:00:00",
+          "test_end_date": "2025-02-04T00:00:00",
+          "market_conditions": "sideways"
+        },
+        {
+          "period": 4,
+          "mae": 0.08716998417550376,
+          "mse": 0.011383896644847987,
+          "r2": 0.006471410554244605,
+          "direction_accuracy": 0.598705501618123,
+          "sharpe_ratio": 0.9521309750478526,
+          "win_rate": 0.598705501618123,
+          "profit_factor": 1.5534825032668018,
+          "max_drawdown": 0.35204318401267515,
+          "var_95": -0.0030177791045211183,
+          "stability_ratio": 0.0540349940822279,
+          "avg_win": 0.0026374671795637798,
+          "avg_loss": -0.0016977772031660982,
+          "n_predictions": 309,
+          "test_start_date": "2024-10-08T00:00:00",
+          "test_end_date": "2024-12-06T00:00:00",
+          "market_conditions": "bull_stable"
+        },
+        {
+          "period": 5,
+          "mae": 0.10413906985974322,
+          "mse": 0.015278679610658267,
+          "r2": 0.015330551717011476,
+          "direction_accuracy": 0.6086956521739131,
+          "sharpe_ratio": 1.2112204181906592,
+          "win_rate": 0.6086956521739131,
+          "profit_factor": 1.8857518499286159,
+          "max_drawdown": 0.18564554039868195,
+          "var_95": -0.008064383690162281,
+          "stability_ratio": 0.05685211823549836,
+          "avg_win": 0.008821324991720213,
+          "avg_loss": -0.0046778821890346494,
+          "n_predictions": 299,
+          "test_start_date": "2024-08-09T00:00:00",
+          "test_end_date": "2024-10-07T00:00:00",
+          "market_conditions": "sideways"
+        },
+        {
+          "period": 6,
+          "mae": 0.10785515336024483,
+          "mse": 0.016511010630333924,
+          "r2": -0.02188745802239178,
+          "direction_accuracy": 0.6156462585034014,
+          "sharpe_ratio": 1.0783433981495754,
+          "win_rate": 0.6156462585034014,
+          "profit_factor": 1.5786480666068519,
+          "max_drawdown": 0.16006202980033235,
+          "var_95": -0.008827313355625588,
+          "stability_ratio": 0.038775714814778456,
+          "avg_win": 0.008516430610716217,
+          "avg_loss": -0.00539476200608882,
+          "n_predictions": 294,
+          "test_start_date": "2024-06-10T00:00:00",
+          "test_end_date": "2024-08-08T00:00:00",
+          "market_conditions": "sideways"
+        },
+        {
+          "period": 7,
+          "mae": 0.10621578248383337,
+          "mse": 0.015243907336041229,
+          "r2": -0.00787618407850843,
+          "direction_accuracy": 0.6177474402730375,
+          "sharpe_ratio": 1.3452096055470615,
+          "win_rate": 0.6177474402730375,
+          "profit_factor": 1.9932865682882563,
+          "max_drawdown": 1.044585744275453,
+          "var_95": -0.007737169985598808,
+          "stability_ratio": 0.04043890880291458,
+          "avg_win": 0.008775208279010646,
+          "avg_loss": -0.004402381683907294,
+          "n_predictions": 293,
+          "test_start_date": "2024-04-11T00:00:00",
+          "test_end_date": "2024-06-09T00:00:00",
+          "market_conditions": "sideways"
+        },
+        {
+          "period": 8,
+          "mae": 0.1025268297930946,
+          "mse": 0.014038823141880536,
+          "r2": -0.004077086733452084,
+          "direction_accuracy": 0.576271186440678,
+          "sharpe_ratio": 1.2096197686605146,
+          "win_rate": 0.576271186440678,
+          "profit_factor": 2.1765400701355295,
+          "max_drawdown": 9.31807822507134,
+          "var_95": -0.007140063904128197,
+          "stability_ratio": 0.04235505947899286,
+          "avg_win": 0.008118966512704627,
+          "avg_loss": -0.0037302168814190833,
+          "n_predictions": 295,
+          "test_start_date": "2024-02-11T00:00:00",
+          "test_end_date": "2024-04-10T00:00:00",
+          "market_conditions": "bull_stable"
+        },
+        {
+          "period": 9,
+          "mae": 0.10046740591494303,
+          "mse": 0.013963113952670076,
+          "r2": -0.02269204820756454,
+          "direction_accuracy": 0.6382252559726962,
+          "sharpe_ratio": 1.4793868986825214,
+          "win_rate": 0.6382252559726962,
+          "profit_factor": 2.0282553139484247,
+          "max_drawdown": 0.5262100160163297,
+          "var_95": -0.004909487730213873,
+          "stability_ratio": 0.04331490183048973,
+          "avg_win": 0.005591908300923298,
+          "avg_loss": -0.0027570041416716297,
+          "n_predictions": 293,
+          "test_start_date": "2023-12-13T00:00:00",
+          "test_end_date": "2024-02-10T00:00:00",
+          "market_conditions": "sideways"
+        },
+        {
+          "period": 10,
+          "mae": 0.09506172930221786,
+          "mse": 0.013130436090846966,
+          "r2": 0.003925115231409593,
+          "direction_accuracy": 0.5793103448275863,
+          "sharpe_ratio": 1.0912630801446497,
+          "win_rate": 0.5793103448275863,
+          "profit_factor": 1.9800174209370176,
+          "max_drawdown": 4.2493409461723886,
+          "var_95": -0.004431831511800993,
+          "stability_ratio": 0.04657849132329101,
+          "avg_win": 0.004479509907540028,
+          "avg_loss": -0.0022623588359238565,
+          "n_predictions": 290,
+          "test_start_date": "2023-10-14T00:00:00",
+          "test_end_date": "2023-12-12T00:00:00",
+          "market_conditions": "bull_stable"
+        },
+        {
+          "period": 11,
+          "mae": 0.09901552687241089,
+          "mse": 0.01400061506702337,
+          "r2": -0.03081588647833211,
+          "direction_accuracy": 0.47766323024054985,
+          "sharpe_ratio": 0.2485232609040594,
+          "win_rate": 0.47766323024054985,
+          "profit_factor": 1.3556278875730572,
+          "max_drawdown": 17.474646055499296,
+          "var_95": -0.004829203125797876,
+          "stability_ratio": 0.04710368731727143,
+          "avg_win": 0.0032796865806239885,
+          "avg_loss": -0.002419311826415374,
+          "n_predictions": 291,
+          "test_start_date": "2023-08-15T00:00:00",
+          "test_end_date": "2023-10-13T00:00:00",
+          "market_conditions": "sideways"
+        }
+      ],
+      "statistical_analysis": {
+        "direction_accuracy_significance": {
+          "metric_tested": "direction_accuracy",
+          "sample_size": 12,
+          "tests_performed": [
+            {
+              "test_name": "One-sample t-test vs random",
+              "null_hypothesis": "direction_accuracy = 0.5",
+              "statistic": -5.465636935668719,
+              "p_value": 1.719504596750306e-05,
+              "significant": true,
+              "effect_size": 0.07656966552057376
+            },
+            {
+              "test_name": "Shapiro-Wilk normality test",
+              "null_hypothesis": "Data is normally distributed",
+              "statistic": 0.9138630078415475,
+              "p_value": 0.2390445141368364,
+              "significant": false,
+              "normally_distributed": true
+            },
+            {
+              "test_name": "Mann-Whitney U (first vs second half)",
+              "null_hypothesis": "No difference between periods",
+              "statistic": 12.0,
+              "p_value": 0.3939393939393939,
+              "significant": false,
+              "first_half_median": 0.5834436598999706,
+              "second_half_median": 0.5974783016654939
+            },
+            {
+              "test_name": "Levene test for equal variances",
+              "null_hypothesis": "Equal variances across periods",
+              "statistic": 1.4964256153573419,
+              "p_value": 0.2747516339372724,
+              "significant": false,
+              "homoscedastic": true
+            }
+          ],
+          "significant_results": [
+            "direction_accuracy significantly different from random (p=0.0000)"
+          ],
+          "interpretation": "1 out of 4 tests show significance. Mixed evidence for statistical significance.",
+          "confidence_interval_95": {
+            "lower": 0.5457354371393432,
+            "upper": 0.6074038939018043,
+            "mean": 0.5765696655205738
+          }
+        },
+        "sharpe_ratio_significance": {
+          "metric_tested": "sharpe_ratio",
+          "sample_size": 12,
+          "tests_performed": [
+            {
+              "test_name": "Shapiro-Wilk normality test",
+              "null_hypothesis": "Data is normally distributed",
+              "statistic": 0.9021119782292962,
+              "p_value": 0.16889104718062875,
+              "significant": false,
+              "normally_distributed": true
+            },
+            {
+              "test_name": "Mann-Whitney U (first vs second half)",
+              "null_hypothesis": "No difference between periods",
+              "statistic": 8.0,
+              "p_value": 0.13203463203463203,
+              "significant": false,
+              "first_half_median": 0.7315844750149326,
+              "second_half_median": 1.1504414244025822
+            },
+            {
+              "test_name": "Levene test for equal variances",
+              "null_hypothesis": "Equal variances across periods",
+              "statistic": 0.7756034951272267,
+              "p_value": 0.4889130720126477,
+              "significant": false,
+              "homoscedastic": true
+            }
+          ],
+          "significant_results": [],
+          "interpretation": "No statistically significant results found in 3 tests. Performance may be due to chance or sample size is too small.",
+          "confidence_interval_95": {
+            "lower": 0.603481892287181,
+            "upper": 1.160555678524316,
+            "mean": 0.8820187854057485
+          }
+        },
+        "win_rate_significance": {
+          "metric_tested": "win_rate",
+          "sample_size": 12,
+          "tests_performed": [
+            {
+              "test_name": "One-sample t-test vs random",
+              "null_hypothesis": "win_rate = 0.5",
+              "statistic": -5.465636935668719,
+              "p_value": 1.719504596750306e-05,
+              "significant": true,
+              "effect_size": 0.07656966552057376
+            },
+            {
+              "test_name": "Shapiro-Wilk normality test",
+              "null_hypothesis": "Data is normally distributed",
+              "statistic": 0.9138630078415475,
+              "p_value": 0.2390445141368364,
+              "significant": false,
+              "normally_distributed": true
+            },
+            {
+              "test_name": "Mann-Whitney U (first vs second half)",
+              "null_hypothesis": "No difference between periods",
+              "statistic": 12.0,
+              "p_value": 0.3939393939393939,
+              "significant": false,
+              "first_half_median": 0.5834436598999706,
+              "second_half_median": 0.5974783016654939
+            },
+            {
+              "test_name": "Levene test for equal variances",
+              "null_hypothesis": "Equal variances across periods",
+              "statistic": 1.4964256153573419,
+              "p_value": 0.2747516339372724,
+              "significant": false,
+              "homoscedastic": true
+            }
+          ],
+          "significant_results": [
+            "win_rate significantly different from random (p=0.0000)"
+          ],
+          "interpretation": "1 out of 4 tests show significance. Mixed evidence for statistical significance.",
+          "confidence_interval_95": {
+            "lower": 0.5457354371393432,
+            "upper": 0.6074038939018043,
+            "mean": 0.5765696655205738
+          }
+        },
+        "mae_significance": {
+          "metric_tested": "mae",
+          "sample_size": 12,
+          "tests_performed": [
+            {
+              "test_name": "Shapiro-Wilk normality test",
+              "null_hypothesis": "Data is normally distributed",
+              "statistic": 0.9090842032114324,
+              "p_value": 0.20765484928757363,
+              "significant": false,
+              "normally_distributed": true
+            },
+            {
+              "test_name": "Mann-Whitney U (first vs second half)",
+              "null_hypothesis": "No difference between periods",
+              "statistic": 4.0,
+              "p_value": 0.025974025974025976,
+              "significant": true,
+              "first_half_median": 0.08425509706749662,
+              "second_half_median": 0.10149711785401883
+            },
+            {
+              "test_name": "Levene test for equal variances",
+              "null_hypothesis": "Equal variances across periods",
+              "statistic": 0.5920300472614669,
+              "p_value": 0.5733858911123638,
+              "significant": false,
+              "homoscedastic": true
+            }
+          ],
+          "significant_results": [
+            "Significant difference between early and late periods (p=0.0260)"
+          ],
+          "interpretation": "1 out of 3 tests show significance. Mixed evidence for statistical significance.",
+          "confidence_interval_95": {
+            "lower": 0.08738860797563693,
+            "upper": 0.10096739225833322,
+            "mean": 0.09417800011698507
+          }
+        },
+        "performance_trend": {
+          "metric_analyzed": "direction_accuracy",
+          "sample_size": 12,
+          "trend_direction": "stable",
+          "trend_significance": false,
+          "slope": 0.000514578828727795,
+          "r_squared": 0.0014616183731450943,
+          "interpretation": "No statistically significant trend detected (p=0.9061). Performance appears stable over time.",
+          "p_value": 0.9060987213219837
+        }
+      }
+    },
+    "regime_specific": {
+      "bull_markets": {
+        "regime": "bull",
+        "avg_mae": 0.14052405168553145,
+        "std_mae": 0.05038044721661925,
+        "avg_direction_accuracy": 0.6728723404255319,
+        "std_direction_accuracy": 0.0771276595744681,
+        "avg_sharpe_ratio": 0.978108140322258,
+        "std_sharpe_ratio": 0.7500120704635647,
+        "avg_win_rate": 0.6728723404255319,
+        "std_win_rate": 0.0771276595744681,
+        "avg_max_drawdown": 3.104787622446202,
+        "std_max_drawdown": 1.3690718098464856,
+        "n_tests": 2
+      },
+      "bear_markets": {
+        "regime": "bear",
+        "avg_mae": 0.10789335787238381,
+        "std_mae": 0.01588699695857204,
+        "avg_direction_accuracy": 0.4884653188659973,
+        "std_direction_accuracy": 0.09253633686899279,
+        "avg_sharpe_ratio": -0.15027528265914095,
+        "std_sharpe_ratio": 0.86627379749367,
+        "avg_win_rate": 0.4884653188659973,
+        "std_win_rate": 0.09253633686899279,
+        "avg_max_drawdown": 0.2513617354233798,
+        "std_max_drawdown": 0.26469026001105894,
+        "n_tests": 3
+      },
+      "sideways_markets": {
+        "regime": "sideways",
+        "avg_mae": 0.10388029510036322,
+        "std_mae": 0.04212900222042403,
+        "avg_direction_accuracy": 0.5534539345281033,
+        "std_direction_accuracy": 0.0874597011115276,
+        "avg_sharpe_ratio": 0.37978824150652507,
+        "std_sharpe_ratio": 0.5191313197718215,
+        "avg_win_rate": 0.5534539345281033,
+        "std_win_rate": 0.0874597011115276,
+        "avg_max_drawdown": 12.531202094568128,
+        "std_max_drawdown": 16.404284703169523,
+        "n_tests": 3
+      }
+    },
+    "stress_testing": {
+      "high_volatility": {
+        "test_type": "high_volatility",
+        "avg_mae": 0.2373646476496047,
+        "worst_mae": 0.2373646476496047,
+        "avg_direction_accuracy": 0.11764705882352941,
+        "worst_direction_accuracy": 0.11764705882352941,
+        "avg_sharpe_ratio": -3.7078198675553025,
+        "worst_sharpe_ratio": -3.7078198675553025,
+        "avg_max_drawdown": 11.643218688331,
+        "worst_max_drawdown": 11.643218688331,
+        "n_tests": 1
+      },
+      "market_crashes": {
+        "test_type": "market_crashes",
+        "avg_mae": 0.06162503548352504,
+        "worst_mae": 0.06162503548352504,
+        "avg_direction_accuracy": 0.6891891891891891,
+        "worst_direction_accuracy": 0.6891891891891891,
+        "avg_sharpe_ratio": 1.0896088494014267,
+        "worst_sharpe_ratio": 1.0896088494014267,
+        "avg_max_drawdown": 0.9130058959511212,
+        "worst_max_drawdown": 0.9130058959511212,
+        "n_tests": 1
+      },
+      "extended_bear_markets": {
+        "test_type": "extended_bear",
+        "avg_mae": 0.17349959284574284,
+        "worst_mae": 0.20783596140451596,
+        "avg_direction_accuracy": 0.5295983086680761,
+        "worst_direction_accuracy": 0.45454545454545453,
+        "avg_sharpe_ratio": 0.4409858944975973,
+        "worst_sharpe_ratio": 0.45821083542737556,
+        "avg_max_drawdown": 0.35620217222108863,
+        "worst_max_drawdown": 0.7124043444421773,
+        "n_tests": 2,
+        "statistical_analysis": {
+          "direction_accuracy_significance": {
+            "metric_tested": "direction_accuracy",
+            "sample_size": 2,
+            "tests_performed": [
+              {
+                "test_name": "One-sample t-test vs random",
+                "null_hypothesis": "direction_accuracy = 0.5",
+                "statistic": -0.3943661971830987,
+                "p_value": 0.7313893789397656,
+                "significant": false,
+                "effect_size": 0.029598308668076112
+              }
+            ],
+            "significant_results": [],
+            "interpretation": "Unable to perform statistical tests due to error",
+            "error": "Statistical testing failed: Data must be at least length 3."
+          },
+          "sharpe_ratio_significance": {
+            "metric_tested": "sharpe_ratio",
+            "sample_size": 2,
+            "tests_performed": [],
+            "significant_results": [],
+            "interpretation": "Unable to perform statistical tests due to error",
+            "error": "Statistical testing failed: Data must be at least length 3."
+          }
+        }
+      }
+    },
+    "stability": {
+      "mae_stability": 0.9983766660683304,
+      "mae_cv": 0.0016259734295096786,
+      "direction_accuracy_stability": 0.9788220147000464,
+      "direction_accuracy_cv": 0.021636196348162006,
+      "sharpe_ratio_stability": 0.6964710977235464,
+      "sharpe_ratio_cv": 0.4358097604747048,
+      "overall_stability": 0.8912232594973077,
+      "n_runs": 5
+    },
+    "baseline_comparison": {
+      "buy_and_hold": {
+        "annual_return": 0.9636663743745809,
+        "annual_volatility": 0.6932843657660938,
+        "sharpe_ratio": 1.3900015952468643,
+        "strategy": "buy_and_hold"
+      },
+      "moving_average": {
+        "annual_return": 0.28256443379557616,
+        "annual_volatility": 0.6938386387655204,
+        "sharpe_ratio": 0.40724805164831346,
+        "strategy": "moving_average"
+      },
+      "random_predictions": {
+        "direction_accuracy": 0.54,
+        "sharpe_ratio": 0.3620427340072085,
+        "strategy": "random"
+      }
+    },
+    "risk_analysis": {
+      "var_95": -0.000641352977315129,
+      "max_drawdown": 2150.822570728309,
+      "sharpe_ratio": 0.3092530472980819,
+      "win_rate": 0.5230263157894737,
+      "profit_factor": 1.2802034273862972,
+      "risk_adjusted_return": 0.3092530472980819,
+      "tail_risk": 0.000641352977315129,
+      "consistency": 0.5230263157894737
+    }
+  },
+  "production_ready": true,
+  "assessment": {
+    "overall_score": 0.8737499999999999,
+    "category_scores": {
+      "walk_forward": 1.0,
+      "regime_specific": 0.66,
+      "stress_testing": 0.6666666666666666,
+      "stability": 1.0,
+      "baseline_comparison": 1.0
+    },
+    "passed_tests": [
+      "walk_forward: 1.00",
+      "stability: 1.00",
+      "baseline_comparison: 1.00"
+    ],
+    "failed_tests": [],
+    "warnings": [
+      "regime_specific: 0.66 (marginal)",
+      "stress_testing: 0.67 (marginal)"
+    ],
+    "critical_issues": []
+  },
+  "recommendations": {
+    "immediate_actions": [
+      "\u2705 Model ready for cautious production deployment"
+    ],
+    "improvements": [],
+    "monitoring": [
+      "\ud83d\udcc8 Implement comprehensive monitoring",
+      "\ud83d\udcca Monitor prediction accuracy daily",
+      "\ud83d\udd04 Retrain monthly with 18-month rolling window",
+      "\u26a0\ufe0f Set up performance degradation alerts",
+      "\ud83d\udcb0 Start with small position sizes (max 5%)",
+      "\ud83d\udcc8 Track regime changes and adapt accordingly"
+    ],
+    "risk_management": [
+      "\ud83d\udee1\ufe0f Implement strict stop-losses",
+      "\ud83d\udcc9 Monitor maximum drawdown (stop if >15%)",
+      "\ud83d\udd04 Have fallback strategies ready",
+      "\ud83d\udcca Regular model performance reviews"
+    ]
+  },
+  "metadata": {
+    "timestamp": "2025-08-08T12:02:59.163630",
+    "dataset_size": 2889,
+    "dataset_period": "2017-09-06 to 2025-08-03",
+    "test_periods": 12,
+    "test_length_days": 60,
+    "optimal_window_months": 48
+  }
+}

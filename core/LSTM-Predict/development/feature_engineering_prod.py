@@ -57,6 +57,56 @@ def engineer_features(btc_ohlcv, daily_oi, daily_funding_rate, df_newsdaily_sent
     df['day_sin'] = np.sin(2 * np.pi * df['day_of_week'] / 7)
     df['day_cos'] = np.cos(2 * np.pi * df['day_of_week'] / 7)
     
+    # ADDED: Bearish-specific features to boost SHORT signal generation
+    
+    # 1. Bearish divergence indicators - RSI vs Price momentum divergence
+    rsi_change = df['rsi'].pct_change()
+    df['price_rsi_divergence'] = df['returns_1d'] / (rsi_change + 1e-8)
+    
+    # 2. Volume-weighted selling pressure
+    selling_pressure_raw = np.where(df['returns_1d'] < 0, 
+                                   df['volume_avg_ratio'] * abs(df['returns_1d']), 0)
+    df['selling_pressure'] = selling_pressure_raw
+    df['selling_pressure_ma'] = pd.Series(selling_pressure_raw, index=df.index).rolling(5).mean()
+    
+    # 3. Distribution phase detection (high volume + negative returns)
+    distribution_raw = np.where(
+        (df['volume_avg_ratio'] > 1.2) & (df['returns_1d'] < -0.01), 1, 0
+    )
+    df['distribution_signal'] = pd.Series(distribution_raw, index=df.index).rolling(3).sum()
+    
+    # 4. Bearish MACD signal strength
+    df['macd_bearish'] = np.where(
+        (df['macd'] < df['macd_signal']) & (df['macd'] < 0), 1, 0
+    )
+    
+    # 5. Lower highs pattern detection
+    df['lower_highs'] = (
+        (df['high'] < df['high'].shift(1)) & 
+        (df['high'].shift(1) < df['high'].shift(2))
+    ).astype(int)
+    
+    # 6. Bearish engulfing pattern (simplified)
+    df['bearish_engulfing'] = (
+        (df['open'] > df['close'].shift(1)) &  # Today opens above yesterday's close
+        (df['close'] < df['open'].shift(1)) &  # Today closes below yesterday's open
+        (df['returns_1d'] < -0.015)            # Significant negative return
+    ).astype(int)
+    
+    # 7. Fear and greed proxy (inverse of volume momentum)
+    df['fear_proxy'] = np.where(
+        (df['returns_1d'] < 0) & (df['volume_avg_ratio'] > 1.0),
+        df['volume_avg_ratio'] * abs(df['returns_1d']) * 2,  # Amplify fear signal
+        0
+    )
+    
+    # 8. Breakdown momentum (price breaking below MA with volume)
+    df['breakdown_momentum'] = np.where(
+        (df['close'] < df['ma_20']) & (df['volume_avg_ratio'] > 1.1) & (df['returns_1d'] < -0.01),
+        abs(df['returns_1d']) * df['volume_avg_ratio'],
+        0
+    )
+    
     # PRODUCTION MODIFICATION: Handle target variables differently to preserve last row
     df['next_close'] = df['close'].shift(-1)
     df['target_return'] = (df['next_close'] - df['close']) / df['close']

@@ -180,3 +180,23 @@
 2025-08-01 14:37:10,340 - INFO - Next chunk will start from: 2025-08-01 10:40:00+00:00
 2025-08-01 14:37:10,445 - INFO - Total records fetched: 5219
 2025-08-01 14:37:10,504 - INFO - Successfully appended 5171 new rows
+2025-08-04 10:25:30,815 - INFO - Connecting to database to get latest timestamp...
+2025-08-04 10:25:30,825 - INFO - Found latest timestamp in database: 2025-08-01 10:35:00
+2025-08-04 10:25:30,826 - INFO - Starting from: 2025-08-01 10:35:00
+2025-08-04 10:25:30,826 - INFO - Fetching data from 2025-08-01 06:35:00+00:00 to 2025-08-04 06:25:30.826000+00:00
+2025-08-04 10:25:31,887 - INFO - Fetched chunk 1, total records: 500
+2025-08-04 10:25:31,887 - INFO - Next chunk will start from: 2025-08-03 00:20:00+00:00
+2025-08-04 10:25:32,320 - INFO - Fetched chunk 2, total records: 862
+2025-08-04 10:25:32,321 - INFO - Next chunk will start from: 2025-08-04 06:30:00+00:00
+2025-08-04 10:25:32,426 - INFO - Total records fetched: 862
+2025-08-04 10:25:32,441 - INFO - Successfully appended 814 new rows
+2025-08-07 11:41:32,849 - INFO - Connecting to database to get latest timestamp...
+2025-08-07 11:41:32,852 - INFO - Found latest timestamp in database: 2025-08-04 06:25:00
+2025-08-07 11:41:32,852 - INFO - Starting from: 2025-08-04 06:25:00
+2025-08-07 11:41:32,852 - INFO - Fetching data from 2025-08-04 02:25:00+00:00 to 2025-08-07 07:41:32.852000+00:00
+2025-08-07 11:41:33,816 - INFO - Fetched chunk 1, total records: 500
+2025-08-07 11:41:33,816 - INFO - Next chunk will start from: 2025-08-05 20:10:00+00:00
+2025-08-07 11:41:34,230 - INFO - Fetched chunk 2, total records: 927
+2025-08-07 11:41:34,230 - INFO - Next chunk will start from: 2025-08-07 07:45:00+00:00
+2025-08-07 11:41:34,334 - INFO - Total records fetched: 927
+2025-08-07 11:41:34,337 - INFO - Successfully appended 879 new rows

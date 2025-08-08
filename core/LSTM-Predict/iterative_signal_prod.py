@@ -24,6 +24,148 @@ from data_loader import load_all_data
 from sentiment import add_vader_sentiment, aggregate_daily_sentiment
 from feature_engineering_prod import engineer_features
 
+"""
+=============================================================================
+DELTALENS BITCOIN TRADING STRATEGY & RISK ASSESSMENT
+=============================================================================
+
+This module implements an advanced algorithmic trading system for Bitcoin (BTC/USDT) 
+using ensemble machine learning models with dynamic risk management.
+
+TRADING STRATEGY OVERVIEW:
+-------------------------
+The system employs a multi-model ensemble approach combining:
+1. LSTM (Long Short-Term Memory) networks for price prediction
+2. Gradient Boosting for market regime detection  
+3. Transformer models for complex pattern recognition
+4. Dynamic stop-loss calculation based on market conditions
+
+KEY FEATURES:
+- Ensemble prediction combining multiple ML models
+- Dynamic stop-loss based on volatility, momentum, and market regime
+- Kelly Criterion for optimal position sizing
+- Multi-factor risk assessment incorporating technical and sentiment indicators
+- Real-time data integration from Binance API
+- Comprehensive backtesting and performance monitoring
+
+SIGNAL GENERATION LOGIC:
+-----------------------
+Signals are generated when predicted returns exceed defined thresholds:
+- LONG signals: Predicted return > +2.0% with high confidence
+- SHORT signals: Predicted return < -2.0% with high confidence  
+- HOLD signals: Predicted return within ±2.0% range
+
+Position sizing follows Kelly Criterion methodology:
+- Position Size = (Predicted Return × Confidence) / Expected Volatility
+- Maximum position size capped at 10% of portfolio
+- Minimum confidence threshold of 0.6 required for signal execution
+
+DYNAMIC STOP-LOSS METHODOLOGY:
+-----------------------------
+Stop-loss levels are calculated using multiple market factors:
+
+1. VOLATILITY ADJUSTMENT:
+   - ATR (Average True Range): Adapts to recent price volatility
+   - Historical Volatility: 30-day rolling standard deviation
+   - Base multiplier: 2-5x depending on market conditions
+
+2. MARKET REGIME DETECTION:
+   - Trending Markets: Wider stops (1.2-1.4x multiplier)
+   - Ranging Markets: Tighter stops (0.7-0.9x multiplier)
+   - Bear Markets: Enhanced risk controls
+
+3. MOMENTUM ANALYSIS:
+   - Overbought conditions (RSI > 70): Tighter stops for longs
+   - Oversold conditions (RSI < 30): Wider stops allowing for recovery
+   - Momentum divergence detection for early exit signals
+
+4. FEAR & GREED INDEX:
+   - Extreme Fear (>75): Wider stops, expect volatility
+   - Extreme Greed (<25): Moderate stops, expect correction
+   - Neutral conditions: Standard stop-loss application
+
+5. CONFIDENCE-BASED ADJUSTMENT:
+   - High confidence trades: Tighter stops (higher conviction)
+   - Low confidence trades: Wider stops (allow for uncertainty)
+
+FINAL STOP-LOSS CALCULATION:
+Dynamic Stop = Base Stop (3%) × Volatility × Regime × Momentum × Fear × Confidence
+- Minimum: 1.5% (tight risk control)
+- Maximum: 12% (prevent excessive losses)
+
+RISK ASSESSMENT FRAMEWORK:
+=========================
+
+1. MARKET RISK:
+   - Maximum daily loss exposure: 10% of portfolio value
+   - Position correlation limits: Maximum 3 concurrent positions
+   - Sector concentration: 100% Bitcoin exposure (high concentration risk)
+   - Volatility monitoring: Real-time VaR calculations
+
+2. MODEL RISK:
+   - Ensemble approach reduces single-model dependency
+   - Regular model retraining (weekly) prevents overfitting
+   - Out-of-sample validation required before deployment
+   - Performance degradation monitoring with automatic alerts
+
+3. OPERATIONAL RISK:
+   - API failure contingency: Local data backup systems
+   - Network connectivity: Multiple data source redundancy
+   - System downtime: Automated position protection protocols
+   - Data quality checks: Outlier detection and correction
+
+4. LIQUIDITY RISK:
+   - Bitcoin market depth analysis before position sizing
+   - Slippage estimation for large positions
+   - Market hours consideration (24/7 crypto markets)
+   - Emergency exit procedures for low liquidity periods
+
+5. TECHNICAL RISK:
+   - Stop-loss execution risk in volatile markets
+   - Gap risk during market disruptions
+   - Platform risk (exchange downtime or issues)
+   - Latency risk in high-frequency scenarios
+
+PERFORMANCE METRICS:
+-------------------
+- Sharpe Ratio: Risk-adjusted returns measurement
+- Maximum Drawdown: Worst-case loss scenario tracking
+- Win Rate: Percentage of profitable trades
+- Average Holding Period: Trade duration analysis
+- Volatility Adjusted Returns: Return per unit of risk
+
+RISK LIMITS & CONTROLS:
+----------------------
+- Maximum Position Size: 10% of portfolio per trade
+- Daily Loss Limit: 5% of portfolio value
+- Maximum Consecutive Losses: 3 trades (triggers review)
+- Volatility Threshold: Suspend trading if BTC vol > 100% annualized
+- Correlation Limits: No more than 3 correlated positions
+
+EMERGENCY PROCEDURES:
+--------------------
+- Circuit Breaker: Automatic trading halt if losses exceed 5% in one day
+- Model Degradation: Switch to conservative mode if accuracy drops below 55%
+- Market Disruption: Immediate position closure if extreme volatility detected
+- System Failure: Manual override capabilities with predefined exit strategies
+
+REGULATORY & COMPLIANCE:
+-----------------------
+- Trade logging: All signals and executions recorded with timestamps
+- Audit trail: Complete decision rationale documentation
+- Risk reporting: Daily risk metrics and exposure analysis
+- Model validation: Independent validation of prediction models
+
+DISCLAIMER:
+----------
+This trading system involves substantial risk of loss. Past performance does not
+guarantee future results. The system is designed for sophisticated investors who
+understand the risks involved in algorithmic trading of volatile assets like Bitcoin.
+All users should carefully consider their risk tolerance and investment objectives.
+
+=============================================================================
+"""
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -566,80 +708,136 @@ class IterativeTradingSystem:
         yesterday = datetime.now() - timedelta(days=1)
         return yesterday.strftime('%Y-%m-%d')
     
-    def fetch_yesterday_binance_data(self) -> bool:
-        """Fetch only yesterday's daily OHLCV data from Binance and append to database"""
+    def fetch_missing_binance_data(self) -> bool:
+        """Fetch all missing daily OHLCV data from Binance until yesterday and append to database"""
         try:
             yesterday = self.get_yesterday_date()
-            logging.info(f"Fetching yesterday's data ({yesterday}) from Binance...")
+            logging.info(f"Fetching all missing data until yesterday ({yesterday}) from Binance...")
             
-            # Check if yesterday's data already exists
+            # Get the latest date from the database
             conn = sqlite3.connect(self.db_path)
-            check_query = "SELECT COUNT(*) FROM btc_daily_ohlcv WHERE datetime = ?"
-            existing_count = pd.read_sql_query(check_query, conn, params=[yesterday]).iloc[0, 0]
             
-            if existing_count > 0:
-                logging.info(f"Yesterday's data ({yesterday}) already exists in database")
-                conn.close()
-                return True
+            # Check what's the latest date we have in the database
+            latest_date_query = "SELECT MAX(datetime) FROM btc_daily_ohlcv"
+            result = pd.read_sql_query(latest_date_query, conn)
+            latest_date_in_db = result.iloc[0, 0]
+            
+            if latest_date_in_db is None:
+                # If database is empty, start from a reasonable date (e.g., 1 year ago)
+                start_date = (datetime.now() - timedelta(days=365)).strftime('%Y-%m-%d')
+                logging.info("Database is empty, starting from 1 year ago")
+            else:
+                # Start from the day after the latest date in database
+                latest_dt = pd.to_datetime(latest_date_in_db)
+                start_date = (latest_dt + timedelta(days=1)).strftime('%Y-%m-%d')
+                logging.info(f"Latest data in database: {latest_date_in_db}, starting from: {start_date}")
             
             conn.close()
             
-            # Calculate yesterday's timestamp range for Binance API
+            # Check if we need to fetch any data
+            start_dt = pd.to_datetime(start_date)
             yesterday_dt = pd.to_datetime(yesterday)
-            start_time = int(yesterday_dt.timestamp() * 1000)
-            end_time = int((yesterday_dt + timedelta(days=1)).timestamp() * 1000) - 1
             
-            # Binance API endpoint for daily klines
-            url = "https://api.binance.com/api/v3/klines"
-            params = {
-                'symbol': 'BTCUSDT',
-                'interval': '1d',
-                'startTime': start_time,
-                'endTime': end_time,
-                'limit': 1
-            }
+            if start_dt > yesterday_dt:
+                logging.info("No missing data to fetch - database is up to date")
+                return True
             
-            response = requests.get(url, params=params)
-            response.raise_for_status()
+            # Calculate the number of days to fetch
+            days_to_fetch = (yesterday_dt - start_dt).days + 1
+            logging.info(f"Need to fetch {days_to_fetch} days of data from {start_date} to {yesterday}")
             
-            data = response.json()
+            # Binance API has a limit of 1000 klines per request
+            # We'll fetch in batches to handle large date ranges
+            all_data = []
+            current_date = start_dt
             
-            if not data:
-                logging.warning(f"No data available from Binance for {yesterday}")
+            while current_date <= yesterday_dt:
+                # Calculate end date for this batch (max 1000 days or until yesterday)
+                batch_end_date = min(current_date + timedelta(days=999), yesterday_dt)
+                
+                # Calculate timestamps for Binance API
+                start_time = int(current_date.timestamp() * 1000)
+                end_time = int((batch_end_date + timedelta(days=1)).timestamp() * 1000) - 1
+                
+                logging.info(f"Fetching batch: {current_date.strftime('%Y-%m-%d')} to {batch_end_date.strftime('%Y-%m-%d')}")
+                
+                # Binance API endpoint for daily klines
+                url = "https://api.binance.com/api/v3/klines"
+                params = {
+                    'symbol': 'BTCUSDT',
+                    'interval': '1d',
+                    'startTime': start_time,
+                    'endTime': end_time,
+                    'limit': 1000
+                }
+                
+                response = requests.get(url, params=params)
+                response.raise_for_status()
+                
+                data = response.json()
+                
+                if not data:
+                    logging.warning(f"No data available from Binance for batch {current_date.strftime('%Y-%m-%d')} to {batch_end_date.strftime('%Y-%m-%d')}")
+                    current_date = batch_end_date + timedelta(days=1)
+                    continue
+                
+                # Convert to DataFrame
+                columns = ['datetime', 'open', 'high', 'low', 'close', 'volume', 
+                          'close_time', 'quote_volume', 'trades_count', 
+                          'taker_buy_base_volume', 'taker_buy_quote_volume', 'ignore']
+                
+                batch_df = pd.DataFrame(data, columns=columns)
+                
+                # Convert timestamp to datetime
+                batch_df['datetime'] = pd.to_datetime(batch_df['datetime'], unit='ms').dt.strftime('%Y-%m-%d')
+                
+                # Select and convert relevant columns
+                batch_df = batch_df[['datetime', 'open', 'high', 'low', 'close', 'volume']].copy()
+                batch_df[['open', 'high', 'low', 'close', 'volume']] = batch_df[['open', 'high', 'low', 'close', 'volume']].astype(float)
+                
+                all_data.append(batch_df)
+                logging.info(f"Fetched {len(batch_df)} records for this batch")
+                
+                # Move to next batch
+                current_date = batch_end_date + timedelta(days=1)
+                
+                # Add a small delay to be respectful to the API
+                import time
+                time.sleep(0.1)
+            
+            if not all_data:
+                logging.warning("No data was fetched from Binance")
                 return False
             
-            # Convert to DataFrame
-            columns = ['datetime', 'open', 'high', 'low', 'close', 'volume', 
-                      'close_time', 'quote_volume', 'trades_count', 
-                      'taker_buy_base_volume', 'taker_buy_quote_volume', 'ignore']
+            # Combine all batches
+            final_df = pd.concat(all_data, ignore_index=True)
             
-            df = pd.DataFrame(data, columns=columns)
+            # Remove any duplicate dates (just in case)
+            final_df = final_df.drop_duplicates(subset=['datetime'], keep='first')
             
-            # Convert timestamp to datetime
-            df['datetime'] = pd.to_datetime(df['datetime'], unit='ms').dt.strftime('%Y-%m-%d')
+            # Sort by date
+            final_df = final_df.sort_values('datetime')
             
-            # Verify we got yesterday's data exactly
-            if df['datetime'].iloc[0] != yesterday:
-                logging.warning(f"Expected {yesterday} but got {df['datetime'].iloc[0]} from Binance")
-                return False
-            
-            # Select and convert relevant columns
-            df = df[['datetime', 'open', 'high', 'low', 'close', 'volume']].copy()
-            df[['open', 'high', 'low', 'close', 'volume']] = df[['open', 'high', 'low', 'close', 'volume']].astype(float)
+            logging.info(f"Total records to insert: {len(final_df)}")
+            logging.info(f"Date range: {final_df['datetime'].min()} to {final_df['datetime'].max()}")
             
             # Insert into database
             conn = sqlite3.connect(self.db_path)
-            df.to_sql('btc_daily_ohlcv', conn, if_exists='append', index=False)
+            final_df.to_sql('btc_daily_ohlcv', conn, if_exists='append', index=False)
             conn.close()
             
-            logging.info(f"Successfully inserted yesterday's data ({yesterday}) into btc_daily_ohlcv")
-            logging.info(f"OHLCV data: O={df['open'].iloc[0]:.2f}, H={df['high'].iloc[0]:.2f}, "
-                        f"L={df['low'].iloc[0]:.2f}, C={df['close'].iloc[0]:.2f}, V={df['volume'].iloc[0]:.0f}")
+            logging.info(f"Successfully inserted {len(final_df)} records into btc_daily_ohlcv")
+            logging.info(f"Latest data: {final_df['datetime'].max()}")
+            
+            # Show sample of latest data
+            latest_row = final_df[final_df['datetime'] == final_df['datetime'].max()].iloc[0]
+            logging.info(f"Latest OHLCV: O={latest_row['open']:.2f}, H={latest_row['high']:.2f}, "
+                        f"L={latest_row['low']:.2f}, C={latest_row['close']:.2f}, V={latest_row['volume']:.0f}")
             
             return True
             
         except Exception as e:
-            logging.error(f"Error fetching yesterday's Binance data: {e}")
+            logging.error(f"Error fetching missing Binance data: {e}")
             return False
     
     def get_latest_date_from_ohlcv(self) -> Optional[str]:
@@ -1010,10 +1208,10 @@ class IterativeTradingSystem:
             
             logging.info(f"Generating signal for {today}")
             
-            # 1. First, fetch yesterday's daily data from Binance
-            logging.info("Step 1: Fetching yesterday's daily data from Binance...")
-            if not self.fetch_yesterday_binance_data():
-                logging.error("Failed to fetch yesterday's data from Binance")
+            # 1. First, fetch all missing daily data from Binance until yesterday
+            logging.info("Step 1: Fetching all missing daily data from Binance until yesterday...")
+            if not self.fetch_missing_binance_data():
+                logging.error("Failed to fetch missing data from Binance")
                 return None
             
             # 2. Load and prepare all data using load_all_data function
