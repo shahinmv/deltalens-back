@@ -11,6 +11,19 @@ from langchain_core.messages import HumanMessage
 import json
 from django.views.decorators.csrf import csrf_exempt
 
+from rest_framework import status, generics, permissions
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework_simplejwt.tokens import RefreshToken
+from django.contrib.auth import authenticate
+from .models import User
+from .serializers import (
+    UserRegistrationSerializer, 
+    UserLoginSerializer, 
+    UserSerializer,
+    UserRoleUpdateSerializer
+)
+
 # Create your views here.
 
 
@@ -356,6 +369,34 @@ def get_signal_performance(request):
         return JsonResponse({"error": "Failed to fetch signal performance"}, status=500)
 
 
+# @csrf_exempt
+# def stream_llm_response(request):
+#     if request.method != "POST":
+#         return JsonResponse({"error": "POST required"}, status=405)
+#     try:
+#         data = json.loads(request.body.decode())
+#         user_message = data.get("message", "")
+#         if not user_message:
+#             return JsonResponse({"error": "No message provided"}, status=400)
+#     except Exception as e:
+#         return JsonResponse({"error": f"Invalid JSON: {str(e)}"}, status=400)
+
+#     agent = StreamingQwenAgent()
+#     messages = [HumanMessage(content=user_message)]
+    
+#     def token_stream():
+#         for token in agent.stream_chat(messages):
+#             if isinstance(token, tuple):
+#                 # For tool responses, you may want to format differently
+#                 # if token[0] == "tool_name":
+#                 #     yield f"[TOOL_NAME] {token[1]}\n"
+#                 if token[0] == "ai_intermediate":
+#                     yield token[1]
+#             else:
+#                 yield token
+    
+#     return StreamingHttpResponse(token_stream(), content_type="text/plain")
+
 @csrf_exempt
 def stream_llm_response(request):
     if request.method != "POST":
@@ -368,20 +409,116 @@ def stream_llm_response(request):
     except Exception as e:
         return JsonResponse({"error": f"Invalid JSON: {str(e)}"}, status=400)
 
-    agent = StreamingQwenAgent()
-    messages = [HumanMessage(content=user_message)]
+    try:
+        agent = StreamingQwenAgent()
+        messages = [HumanMessage(content=user_message)]
+       
+        def token_stream():
+            for token in agent.stream_chat(messages):
+                if isinstance(token, tuple):
+                    # For tool responses, you may want to format differently
+                    # if token[0] == "tool_name":
+                    #     yield f"[TOOL_NAME] {token[1]}\n"
+                    if token[0] == "ai_intermediate":
+                        yield token[1]
+                else:
+                    yield token
+       
+        return StreamingHttpResponse(token_stream(), content_type="text/plain")
+    except Exception as e:
+        return JsonResponse({"error": f"LLM service error: {str(e)}"}, status=503)
+
+
+class UserRegistrationView(APIView):
+    permission_classes = [permissions.AllowAny]
     
-    def token_stream():
-        for token in agent.stream_chat(messages):
-            if isinstance(token, tuple):
-                # For tool responses, you may want to format differently
-                # if token[0] == "tool_name":
-                #     yield f"[TOOL_NAME] {token[1]}\n"
-                if token[0] == "ai_intermediate":
-                    yield token[1]
-            else:
-                yield token
+    def post(self, request):
+        serializer = UserRegistrationSerializer(data=request.data)
+        if serializer.is_valid():
+            user = serializer.save()
+            refresh = RefreshToken.for_user(user)
+            user_data = UserSerializer(user).data
+            
+            return Response({
+                'message': 'User created successfully',
+                'user': user_data,
+                'tokens': {
+                    'refresh': str(refresh),
+                    'access': str(refresh.access_token),
+                }
+            }, status=status.HTTP_201_CREATED)
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class UserLoginView(APIView):
+    permission_classes = [permissions.AllowAny]
     
-    return StreamingHttpResponse(token_stream(), content_type="text/plain")
+    def post(self, request):
+        serializer = UserLoginSerializer(data=request.data, context={'request': request})
+        if serializer.is_valid():
+            user = serializer.validated_data['user']
+            refresh = RefreshToken.for_user(user)
+            user_data = UserSerializer(user).data
+            
+            return Response({
+                'message': 'Login successful',
+                'user': user_data,
+                'tokens': {
+                    'refresh': str(refresh),
+                    'access': str(refresh.access_token),
+                }
+            }, status=status.HTTP_200_OK)
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class UserProfileView(generics.RetrieveUpdateAPIView):
+    serializer_class = UserSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def get_object(self):
+        return self.request.user
+
+
+class UserListView(generics.ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def get_queryset(self):
+        user = self.request.user
+        if not user.is_admin_user():
+            return User.objects.none()
+        return User.objects.all()
+
+
+class UpdateUserRoleView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def patch(self, request, user_id):
+        if not request.user.is_admin_user():
+            return Response(
+                {'error': 'Only admins can update user roles'}, 
+                status=status.HTTP_403_FORBIDDEN
+            )
+        
+        try:
+            user = User.objects.get(id=user_id)
+        except User.DoesNotExist:
+            return Response(
+                {'error': 'User not found'}, 
+                status=status.HTTP_404_NOT_FOUND
+            )
+        
+        serializer = UserRoleUpdateSerializer(user, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({
+                'message': 'User role updated successfully',
+                'user': UserSerializer(user).data
+            }, status=status.HTTP_200_OK)
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
