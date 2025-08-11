@@ -29,6 +29,7 @@ from prompt import get_system_prompt
 class AgentState(TypedDict):
     messages: Annotated[List[Any], "The messages in the conversation"]
     tool_calls_count: Dict[str, int]
+    iteration_count: int
 
 class StreamingQwenAgent:
     def __init__(self):
@@ -43,7 +44,7 @@ class StreamingQwenAgent:
         )
 
         # Available tools
-        self.tools = create_database_tools("db.sqlite3")
+        self.tools = create_database_tools("postgresql://postgres:AdkiHmmAoHPWhHzphxCwbqcDRvfmRnjJ@ballast.proxy.rlwy.net:49094/railway")
         
         # Try to bind tools to the model (may not work with all Ollama models)
         try:
@@ -84,6 +85,10 @@ class StreamingQwenAgent:
     def _agent_node(self, state: AgentState) -> Dict[str, Any]:
         """Agent node that processes messages and decides on actions."""
         messages = state["messages"]
+        iteration_count = state.get("iteration_count", 0) + 1
+        
+        print(f"🔄 Agent iteration {iteration_count}")
+        
         prompt_messages = [SystemMessage(content=get_system_prompt())]
         prompt_messages.extend(messages)
         
@@ -100,39 +105,22 @@ class StreamingQwenAgent:
                 print(f"🔧 Detected {len(response.tool_calls)} tool call(s)")
                 for i, tool_call in enumerate(response.tool_calls):
                     print(f"  Tool {i+1}: {tool_call['name']} with args {tool_call['args']}")
-                return {"messages": [response]}
+                return {"messages": [response], "iteration_count": iteration_count}
             
             # If no tool calls but we have tool results, generate final response
             elif any(isinstance(msg, ToolMessage) for msg in messages):
                 print("💬 Generating final response after tool execution...")
                 # Use streaming for final response
-                return {"messages": [self._generate_streaming_response(prompt_messages)]}
+                return {"messages": [self._generate_streaming_response(prompt_messages)], "iteration_count": iteration_count}
             
-            # If this is the initial request and no tool calls detected, 
-            # the model might not be using tools properly
-            # else:
-            #     print("⚠️  No tool calls detected. Checking if tools are needed...")
-            #     # Check if the user query seems to need tools
-            #     user_message = next((msg.content for msg in reversed(messages) if isinstance(msg, HumanMessage)), "")
-                
-            #     if self._needs_tools(user_message):
-            #         print("🔧 Query appears to need tools, but none were called. Generating response with tool guidance...")
-            #         # Add a hint to use tools in the system message
-            #         guided_prompt = prompt_messages.copy()
-            #         guided_prompt[0] = SystemMessage(content=system_prompt + "\n\nIMPORTANT: If the user is asking for table information, data quality stats, or wants to update descriptions, you MUST use the appropriate tools. Always call the relevant tools before providing a final answer.")
-                    
-            #         # Try again with enhanced prompt
-            #         response = self.llm_with_tools.invoke(guided_prompt)
-            #         if hasattr(response, 'tool_calls') and response.tool_calls:
-            #             print(f"🔧 Tool calls detected after guidance: {len(response.tool_calls)}")
-            #             return {"messages": [response]}
-                
-            #     print("💬 No tool calls needed, generating streaming response...")
-            #     return {"messages": [self._generate_streaming_response(prompt_messages)]}
+            # If no tool calls and no previous tool results, generate direct response
+            else:
+                print("💬 No tool calls needed, generating direct response...")
+                return {"messages": [self._generate_streaming_response(prompt_messages)], "iteration_count": iteration_count}
                 
         except Exception as e:
             print(f"❌ Error with LLM: {e}")
-            return {"messages": [AIMessage(content=f"I apologize, but I encountered an error: {str(e)}")]} 
+            return {"messages": [AIMessage(content=f"I apologize, but I encountered an error: {str(e)}")], "iteration_count": iteration_count} 
 
     # def _needs_tools(self, query: str) -> bool:
     #     """Check if the query likely needs tool calls."""
@@ -163,6 +151,14 @@ class StreamingQwenAgent:
     def _should_continue(self, state: AgentState) -> str:
         """Determine if we should continue to tools or end."""
         messages = state["messages"]
+        iteration_count = state.get("iteration_count", 0)
+        
+        # Safety check: prevent infinite loops
+        MAX_ITERATIONS = 10
+        if iteration_count >= MAX_ITERATIONS:
+            print(f"⚠️ Maximum iterations ({MAX_ITERATIONS}) reached, ending conversation")
+            return "end"
+        
         if not messages:
             return "end"
         
@@ -242,7 +238,8 @@ class StreamingQwenAgent:
         print(f"\n💬 User: {message}")
         initial_state = {
             "messages": [HumanMessage(content=message)],
-            "tool_calls_count": get_tool_call_counts()
+            "tool_calls_count": get_tool_call_counts(),
+            "iteration_count": 0
         }
         config = {"configurable": {"thread_id": "main_thread"}}
         try:
@@ -261,7 +258,8 @@ class StreamingQwenAgent:
         print(f"\n💬 User: {message}")
         initial_state = {
             "messages": [HumanMessage(content=message)],
-            "tool_calls_count": get_tool_call_counts()
+            "tool_calls_count": get_tool_call_counts(),
+            "iteration_count": 0
         }
         config = {"configurable": {"thread_id": "main_thread"}}
         try:
@@ -296,6 +294,7 @@ class StreamingQwenAgent:
         """
         initial_state = {
             "messages": messages,
+            "iteration_count": 0
         }
         print("📝 Input messages for streaming:")
         for i, msg in enumerate(messages):

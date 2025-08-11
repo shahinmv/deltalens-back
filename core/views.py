@@ -3,7 +3,8 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect, JsonResponse, StreamingHttpResponse
 import requests
 import time
-import sqlite3
+import psycopg2
+from psycopg2.extras import RealDictCursor
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from datetime import datetime
 from .llm_stream import StreamingQwenAgent
@@ -163,13 +164,13 @@ def get_market_stats(request):
 
 
 def get_today_news_sentiment(request):
-    db_path = 'db.sqlite3'
+    db_connection_string = 'postgresql://postgres:AdkiHmmAoHPWhHzphxCwbqcDRvfmRnjJ@ballast.proxy.rlwy.net:49094/railway'
     today = datetime.now().strftime('%Y-%m-%d')
     analyzer = SentimentIntensityAnalyzer()
     try:
-        conn = sqlite3.connect(db_path)
+        conn = psycopg2.connect(db_connection_string)
         cursor = conn.cursor()
-        cursor.execute("SELECT title, description FROM news WHERE date = ?", (today,))
+        cursor.execute("SELECT title, description FROM news WHERE date = %s", (today,))
         rows = cursor.fetchall()
         conn.close()
         if not rows:
@@ -187,16 +188,16 @@ def get_today_news_sentiment(request):
 
 
 def get_news(request):
-    db_path = 'db.sqlite3'
+    db_connection_string = 'postgresql://postgres:AdkiHmmAoHPWhHzphxCwbqcDRvfmRnjJ@ballast.proxy.rlwy.net:49094/railway'
     page = int(request.GET.get('page', 1))
     page_size = int(request.GET.get('page_size', 3))
     offset = (page - 1) * page_size
     try:
-        conn = sqlite3.connect(db_path)
+        conn = psycopg2.connect(db_connection_string)
         cursor = conn.cursor()
         cursor.execute("SELECT COUNT(*) FROM news")
         total_count = cursor.fetchone()[0]
-        cursor.execute("SELECT title, description, date FROM news ORDER BY date DESC LIMIT ? OFFSET ?", (page_size, offset))
+        cursor.execute("SELECT title, description, date FROM news ORDER BY date DESC LIMIT %s OFFSET %s", (page_size, offset))
         rows = cursor.fetchall()
         conn.close()
         news_list = [
@@ -216,9 +217,9 @@ def get_news(request):
 
 def get_latest_trading_signal(request):
     """Get the latest trading signal from the database"""
-    db_path = 'db.sqlite3'
+    db_connection_string = 'postgresql://postgres:AdkiHmmAoHPWhHzphxCwbqcDRvfmRnjJ@ballast.proxy.rlwy.net:49094/railway'
     try:
-        conn = sqlite3.connect(db_path)
+        conn = psycopg2.connect(db_connection_string)
         cursor = conn.cursor()
         
         # Get the latest trading signal
@@ -262,9 +263,9 @@ def get_latest_trading_signal(request):
 
 def get_iterative_trading_signals(request):
     """Get all trading signals from the iterative_trading_signals table"""
-    db_path = 'db.sqlite3'
+    db_connection_string = 'postgresql://postgres:AdkiHmmAoHPWhHzphxCwbqcDRvfmRnjJ@ballast.proxy.rlwy.net:49094/railway'
     try:
-        conn = sqlite3.connect(db_path)
+        conn = psycopg2.connect(db_connection_string)
         cursor = conn.cursor()
         
         # Get all iterative trading signals with required fields
@@ -319,9 +320,9 @@ def get_iterative_trading_signals(request):
 
 def get_signal_performance(request):
     """Get signal performance data from the new table"""
-    db_path = 'db.sqlite3'
+    db_connection_string = 'postgresql://postgres:AdkiHmmAoHPWhHzphxCwbqcDRvfmRnjJ@ballast.proxy.rlwy.net:49094/railway'
     try:
-        conn = sqlite3.connect(db_path)
+        conn = psycopg2.connect(db_connection_string)
         cursor = conn.cursor()
         
         # Get all signal performance data

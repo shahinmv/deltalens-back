@@ -1,4 +1,5 @@
-import sqlite3
+import psycopg2
+from psycopg2.extras import RealDictCursor
 from datetime import datetime, timedelta
 from typing import Optional, List, Dict, Any
 from langchain.tools import BaseTool
@@ -6,14 +7,15 @@ from pydantic import BaseModel, Field, PrivateAttr
 import pandas as pd
 from django.views.decorators.csrf import csrf_exempt
 import requests
+from sqlalchemy import create_engine
 
 class BTCOHLCVInput(BaseModel):
-    """Input schema for BTC OHLCV data retrieval"""
-    start_datetime: Optional[str] = Field(None, description="Start datetime in YYYY-MM-DD HH:MM:SS format")
-    end_datetime: Optional[str] = Field(None, description="End datetime in YYYY-MM-DD HH:MM:SS format")
+    """Input schema for BTC daily OHLCV data retrieval"""
+    start_datetime: Optional[str] = Field(None, description="Start date in YYYY-MM-DD format (daily data)")
+    end_datetime: Optional[str] = Field(None, description="End date in YYYY-MM-DD format (daily data)")
     limit: Optional[int] = Field(1000, description="Maximum number of records to return")
     only_non_imputed: Optional[bool] = Field(False, description="Only return non-imputed data")
-    interval: Optional[str] = Field(None, description="Optional aggregation interval (e.g., '4H', '1H', '1D'). If provided, aggregates data to this interval using pandas resample. Supported formats: pandas offset aliases like '4H', '1H', '1D', etc.")
+    interval: Optional[str] = Field(None, description="Optional aggregation interval for daily data (e.g., '7D', '30D', '1M'). If provided, aggregates data to this interval using pandas resample. Supported formats: pandas offset aliases like '7D', '30D', '1M', etc.")
 
 class FundingRatesInput(BaseModel):
     """Input schema for funding rates data retrieval"""
@@ -39,13 +41,17 @@ class OpenInterestInput(BaseModel):
 class BTCOHLCVTool(BaseTool):
     """Tool for retrieving BTC OHLCV data"""
     name: str = "btc_ohlcv_data"
-    description: str = "Retrieve Bitcoin OHLCV (Open, High, Low, Close, Volume) data from the database. Useful for price analysis, technical indicators, and market data queries. Supports optional aggregation interval (e.g., '4h', '1h', '1d')."
+    description: str = "Retrieve Bitcoin daily OHLCV (Open, High, Low, Close, Volume) data from the database. Contains daily timeframe data useful for price analysis, technical indicators, and market data queries. Supports optional aggregation interval (e.g., '7d', '30d', '1M')."
     args_schema: type = BTCOHLCVInput
-    _db_path: str = PrivateAttr()
+    _db_connection_string: str = PrivateAttr()
     
-    def __init__(self, db_path: str):
+    def __init__(self, db_connection_string: str):
         super().__init__()
-        self._db_path = db_path
+        self._db_connection_string = db_connection_string
+    
+    def _get_sqlalchemy_engine(self):
+        """Create SQLAlchemy engine for pandas operations"""
+        return create_engine(self._db_connection_string)
     
     def _fetch_today_btc_data(self) -> Optional[pd.DataFrame]:
         """Fetch today's BTC OHLCV data from Binance API"""
@@ -86,30 +92,55 @@ class BTCOHLCVTool(BaseTool):
              limit: int = 1000, only_non_imputed: bool = False, interval: Optional[str] = None) -> str:
         print(f"[BTCOHLCVTool] Called with start_datetime={start_datetime}, end_datetime={end_datetime}, limit={limit}, only_non_imputed={only_non_imputed}, interval={interval}")
         try:
-            conn = sqlite3.connect(self._db_path)
+            engine = self._get_sqlalchemy_engine()
             
-            query = "SELECT * FROM btc_second_ohlcv WHERE 1=1"
-            params = []
+            query = "SELECT * FROM btc_daily_ohlcv WHERE 1=1"
+            params = {}
             
             if start_datetime:
-                query += " AND datetime >= ?"
-                params.append(start_datetime)
+                query += " AND datetime >= %(start_date)s"
+                params['start_date'] = start_datetime
             
             if end_datetime:
-                query += " AND datetime <= ?"
-                params.append(end_datetime)
+                query += " AND datetime <= %(end_date)s"
+                params['end_date'] = end_datetime
             
             if only_non_imputed:
                 query += " AND imputed = 0"
             
-            query += " ORDER BY datetime DESC LIMIT ?"
-            params.append(limit)
+            query += " ORDER BY datetime DESC LIMIT %(limit)s"
+            params['limit'] = limit
             
-            df = pd.read_sql_query(query, conn, params=params)
-            conn.close()
+            print(f"[BTCOHLCVTool] Executing query: {query}")
+            print(f"[BTCOHLCVTool] Query parameters: {params}")
+            
+            df = pd.read_sql_query(query, engine, params=params)
+            
+            print(f"[BTCOHLCVTool] Query returned {len(df)} rows")
+            if not df.empty:
+                print(f"[BTCOHLCVTool] Data preview:")
+                print(df.head())
+                print(f"[BTCOHLCVTool] Date range: {df['datetime'].min()} to {df['datetime'].max()}")
+            else:
+                print("[BTCOHLCVTool] No data returned from query")
+                
+                # Let's check if the table exists and has any data at all
+                try:
+                    check_query = "SELECT COUNT(*) as total_rows FROM btc_daily_ohlcv"
+                    count_df = pd.read_sql_query(check_query, engine)
+                    total_rows = count_df.iloc[0]['total_rows']
+                    print(f"[BTCOHLCVTool] Total rows in btc_daily_ohlcv table: {total_rows}")
+                    
+                    if total_rows > 0:
+                        # Check date range in the table
+                        date_range_query = "SELECT MIN(datetime) as min_date, MAX(datetime) as max_date FROM btc_daily_ohlcv"
+                        date_range_df = pd.read_sql_query(date_range_query, engine)
+                        print(f"[BTCOHLCVTool] Available date range: {date_range_df.iloc[0]['min_date']} to {date_range_df.iloc[0]['max_date']}")
+                except Exception as e:
+                    print(f"[BTCOHLCVTool] Error checking table: {str(e)}")
             
             if df.empty:
-                return "No OHLCV data found for the specified criteria."
+                return f"No OHLCV data found for the specified criteria. Searched for data between {start_datetime or 'earliest'} and {end_datetime or 'latest'} with limit {limit}. Please check if the btc_daily_ohlcv table contains data for the requested date range."
             
             # Aggregate if interval is provided
             if interval:
@@ -183,38 +214,41 @@ class FundingRatesTool(BaseTool):
     name: str = "funding_rates_data"
     description: str = "Retrieve funding rates data for cryptocurrency perpetual contracts. Useful for analyzing funding costs and market sentiment."
     args_schema: type = FundingRatesInput
-    _db_path: str = PrivateAttr()
+    _db_connection_string: str = PrivateAttr()
     
-    def __init__(self, db_path: str):
+    def __init__(self, db_connection_string: str):
         super().__init__()
-        self._db_path = db_path
+        self._db_connection_string = db_connection_string
+    
+    def _get_sqlalchemy_engine(self):
+        """Create SQLAlchemy engine for pandas operations"""
+        return create_engine(self._db_connection_string)
     
     def _run(self, symbol: Optional[str] = None, start_date: Optional[str] = None, 
              end_date: Optional[str] = None, limit: int = 1000) -> str:
         print(f"[FundingRatesTool] Called with symbol={symbol}, start_date={start_date}, end_date={end_date}, limit={limit}")
         try:
-            conn = sqlite3.connect(self._db_path)
+            engine = self._get_sqlalchemy_engine()
             
             query = "SELECT * FROM funding_rates WHERE 1=1"
-            params = []
+            params = {}
             
             if symbol:
-                query += " AND symbol = ?"
-                params.append(symbol)
+                query += " AND symbol = %(symbol)s"
+                params['symbol'] = symbol
             
             if start_date:
-                query += " AND date(funding_time) >= ?"
-                params.append(start_date)
+                query += " AND date(funding_time) >= %(start_date)s"
+                params['start_date'] = start_date
             
             if end_date:
-                query += " AND date(funding_time) <= ?"
-                params.append(end_date)
+                query += " AND date(funding_time) <= %(end_date)s"
+                params['end_date'] = end_date
             
-            query += " ORDER BY funding_time DESC LIMIT ?"
-            params.append(limit)
+            query += " ORDER BY funding_time DESC LIMIT %(limit)s"
+            params['limit'] = limit
             
-            df = pd.read_sql_query(query, conn, params=params)
-            conn.close()
+            df = pd.read_sql_query(query, engine, params=params)
             
             if df.empty:
                 return "No funding rates data found for the specified criteria."
@@ -242,39 +276,42 @@ class NewsTool(BaseTool):
     name: str = "news_data"
     description: str = "Retrieve cryptocurrency news articles from the database. Useful for sentiment analysis and market context."
     args_schema: type = NewsInput
-    _db_path: str = PrivateAttr()
+    _db_connection_string: str = PrivateAttr()
     
-    def __init__(self, db_path: str):
+    def __init__(self, db_connection_string: str):
         super().__init__()
-        self._db_path = db_path
+        self._db_connection_string = db_connection_string
+    
+    def _get_sqlalchemy_engine(self):
+        """Create SQLAlchemy engine for pandas operations"""
+        return create_engine(self._db_connection_string)
     
     def _run(self, search_term: Optional[str] = None, start_date: Optional[str] = None, 
              end_date: Optional[str] = None, limit: int = 100) -> str:
         print(f"[NewsTool] Called with search_term={search_term}, start_date={start_date}, end_date={end_date}, limit={limit}")
         try:
-            conn = sqlite3.connect(self._db_path)
+            engine = self._get_sqlalchemy_engine()
             
             query = "SELECT * FROM news WHERE 1=1"
-            params = []
+            params = {}
             
             if search_term:
-                query += " AND (title LIKE ? OR description LIKE ?)"
+                query += " AND (title LIKE %(search_pattern)s OR description LIKE %(search_pattern)s)"
                 search_pattern = f"%{search_term}%"
-                params.extend([search_pattern, search_pattern])
+                params['search_pattern'] = search_pattern
             
             if start_date:
-                query += " AND date(date) >= ?"
-                params.append(start_date)
+                query += " AND date(date) >= %(start_date)s"
+                params['start_date'] = start_date
             
             if end_date:
-                query += " AND date(date) <= ?"
-                params.append(end_date)
+                query += " AND date(date) <= %(end_date)s"
+                params['end_date'] = end_date
             
-            query += " ORDER BY date DESC LIMIT ?"
-            params.append(limit)
+            query += " ORDER BY date DESC LIMIT %(limit)s"
+            params['limit'] = limit
             
-            df = pd.read_sql_query(query, conn, params=params)
-            conn.close()
+            df = pd.read_sql_query(query, engine, params=params)
             
             if df.empty:
                 return "No news articles found for the specified criteria."
@@ -297,34 +334,37 @@ class OpenInterestTool(BaseTool):
     name: str = "open_interest_data"
     description: str = "Retrieve open interest data for cryptocurrency derivatives. Useful for analyzing market positioning and leverage. Supports optional aggregation interval (e.g., '1H', '4H', '1D')."
     args_schema: type = OpenInterestInput
-    _db_path: str = PrivateAttr()
+    _db_connection_string: str = PrivateAttr()
     
-    def __init__(self, db_path: str):
+    def __init__(self, db_connection_string: str):
         super().__init__()
-        self._db_path = db_path
+        self._db_connection_string = db_connection_string
+    
+    def _get_sqlalchemy_engine(self):
+        """Create SQLAlchemy engine for pandas operations"""
+        return create_engine(self._db_connection_string)
     
     def _run(self, start_timestamp: Optional[str] = None, end_timestamp: Optional[str] = None, 
              limit: int = 1000, interval: Optional[str] = None) -> str:
         print(f"[OpenInterestTool] Called with start_timestamp={start_timestamp}, end_timestamp={end_timestamp}, limit={limit}, interval={interval}")
         try:
-            conn = sqlite3.connect(self._db_path)
+            engine = self._get_sqlalchemy_engine()
             
             query = "SELECT * FROM open_interest WHERE 1=1"
-            params = []
+            params = {}
             
             if start_timestamp:
-                query += " AND timestamp >= ?"
-                params.append(start_timestamp)
+                query += " AND timestamp >= %(start_timestamp)s"
+                params['start_timestamp'] = start_timestamp
             
             if end_timestamp:
-                query += " AND timestamp <= ?"
-                params.append(end_timestamp)
+                query += " AND timestamp <= %(end_timestamp)s"
+                params['end_timestamp'] = end_timestamp
             
-            query += " ORDER BY timestamp DESC LIMIT ?"
-            params.append(limit)
+            query += " ORDER BY timestamp DESC LIMIT %(limit)s"
+            params['limit'] = limit
             
-            df = pd.read_sql_query(query, conn, params=params)
-            conn.close()
+            df = pd.read_sql_query(query, engine, params=params)
             
             if df.empty:
                 return "No open interest data found for the specified criteria."
@@ -380,16 +420,20 @@ class DatabaseAnalysisTool(BaseTool):
     """Tool for general database analysis and statistics"""
     name: str = "database_analysis"
     description: str = "Get general statistics and analysis across all database tables. Useful for understanding data availability and coverage."
-    _db_path: str = PrivateAttr()
+    _db_connection_string: str = PrivateAttr()
     
-    def __init__(self, db_path: str):
+    def __init__(self, db_connection_string: str):
         super().__init__()
-        self._db_path = db_path
+        self._db_connection_string = db_connection_string
+    
+    def _get_sqlalchemy_engine(self):
+        """Create SQLAlchemy engine for pandas operations"""
+        return create_engine(self._db_connection_string)
     
     def _run(self, query: str = "") -> str:
         print(f"[DatabaseAnalysisTool] Called with query={query}")
         try:
-            conn = sqlite3.connect(self._db_path)
+            engine = self._get_sqlalchemy_engine()
             
             # Get table information
             tables_info = {}
@@ -401,9 +445,9 @@ class DatabaseAnalysisTool(BaseTool):
                     MIN(datetime) as earliest_date,
                     MAX(datetime) as latest_date,
                     SUM(CASE WHEN imputed = 1 THEN 1 ELSE 0 END) as imputed_records
-                FROM btc_second_ohlcv
-            """, conn)
-            tables_info['btc_second_ohlcv'] = ohlcv_stats.to_dict('records')[0]
+                FROM btc_daily_ohlcv
+            """, engine)
+            tables_info['btc_daily_ohlcv'] = ohlcv_stats.to_dict('records')[0]
             
             # Funding rates stats
             funding_stats = pd.read_sql_query("""
@@ -413,7 +457,7 @@ class DatabaseAnalysisTool(BaseTool):
                     MIN(funding_time) as earliest_time,
                     MAX(funding_time) as latest_time
                 FROM funding_rates
-            """, conn)
+            """, engine)
             tables_info['funding_rates'] = funding_stats.to_dict('records')[0]
             
             # News stats
@@ -423,7 +467,7 @@ class DatabaseAnalysisTool(BaseTool):
                     MIN(date) as earliest_date,
                     MAX(date) as latest_date
                 FROM news
-            """, conn)
+            """, engine)
             tables_info['news'] = news_stats.to_dict('records')[0]
             
             # Open interest stats
@@ -433,10 +477,8 @@ class DatabaseAnalysisTool(BaseTool):
                     MIN(timestamp) as earliest_timestamp,
                     MAX(timestamp) as latest_timestamp
                 FROM open_interest
-            """, conn)
+            """, engine)
             tables_info['open_interest'] = oi_stats.to_dict('records')[0]
-            
-            conn.close()
             
             # Format the results
             result = "Database Analysis Summary:\n\n"
@@ -453,18 +495,18 @@ class DatabaseAnalysisTool(BaseTool):
             return f"Error analyzing database: {str(e)}"
 
 # Factory function to create all tools
-def create_database_tools(db_path: str) -> List[BaseTool]:
-    """Create all database tools for the given database path"""
+def create_database_tools(db_connection_string: str) -> List[BaseTool]:
+    """Create all database tools for the given database connection string"""
     return [
-        BTCOHLCVTool(db_path),
-        FundingRatesTool(db_path),
-        NewsTool(db_path),
-        OpenInterestTool(db_path),
-        DatabaseAnalysisTool(db_path)
+        BTCOHLCVTool(db_connection_string),
+        FundingRatesTool(db_connection_string),
+        NewsTool(db_connection_string),
+        OpenInterestTool(db_connection_string),
+        DatabaseAnalysisTool(db_connection_string)
     ]
 
 # Example usage:
-# tools = create_database_tools("db.sqlite3")
+# tools = create_database_tools("postgresql://user:password@host:port/database")
 # 
 # # Add tools to your LangChain agent
 # from langchain.agents import initialize_agent, AgentType
