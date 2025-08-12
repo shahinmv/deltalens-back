@@ -321,12 +321,11 @@ class StreamingQwenAgent:
             
             
             if hasattr(response, 'tool_calls') and response.tool_calls:
-
-                # for chunk in self.llm.stream(prompt_messages):
-                #     token = chunk.content if hasattr(chunk, "content") else str(chunk)
-                #     # print(token, end="", flush=True)
-                #     yield ("ai_intermediate", token)
-
+                # Stream the LLM's reasoning text before tool execution
+                if response.content:
+                    for char in response.content:
+                        yield char
+                
                 print(f"🔧 Processing {len(response.tool_calls)} tool call(s)")
                 tool_messages = []
                 
