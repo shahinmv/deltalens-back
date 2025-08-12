@@ -294,11 +294,12 @@ class StreamingQwenAgent:
             print(f"❌ Error in sync_chat: {e}")
             return f"An error occurred: {str(e)}"
 
-    def stream_chat(self, messages):
+    def stream_chat(self, messages, session_id=None, user=None):
         """
         Generator that yields the LLM's response in real time, including tool calls and final answer.
         Accepts a list of LangChain message objects as chat memory.
         Now yields tool responses as ('tool', content) tuples for memory saving.
+        Optionally saves conversation to database if session_id and user provided.
         """
         initial_state = {
             "messages": messages,
@@ -308,8 +309,13 @@ class StreamingQwenAgent:
         for i, msg in enumerate(messages):
             print(f"  {i}: {type(msg).__name__} - {str(msg)[:100]}...")
         
-        config = {"configurable": {"thread_id": "main_thread"}}
+        config = {"configurable": {"thread_id": session_id or "main_thread"}}
         state = initial_state
+        
+        # Track tool calls and responses for database saving
+        current_tool_calls = []
+        current_tool_responses = []
+        ai_response_content = ""
         
         while True:
             # Agent node
@@ -334,6 +340,13 @@ class StreamingQwenAgent:
                     tool_args = tool_call["args"]
                     tool_id = tool_call["id"]
                     
+                    # Track tool call for database
+                    current_tool_calls.append({
+                        "name": tool_name,
+                        "args": tool_args,
+                        "id": tool_id
+                    })
+                    
                     tool_func = next((t for t in self.tools if t.name == tool_name), None)
                     if tool_func:
                         yield ("tool_name", tool_name)
@@ -343,6 +356,13 @@ class StreamingQwenAgent:
                             tool_call_id=tool_id
                         )
                         tool_messages.append(tool_message)
+                        
+                        # Track tool response for database
+                        current_tool_responses.append({
+                            "tool_name": tool_name,
+                            "result": str(result)
+                        })
+                        
                         # Yield tool response for memory saving
                         yield ("tool", str(result), tool_name)
                     else:
@@ -352,6 +372,13 @@ class StreamingQwenAgent:
                             tool_call_id=tool_id
                         )
                         tool_messages.append(tool_message)
+                        
+                        # Track error response for database
+                        current_tool_responses.append({
+                            "tool_name": tool_name,
+                            "result": error_msg
+                        })
+                        
                         yield ("tool", error_msg, tool_name)
                 
                 state["messages"].append(response)
@@ -362,9 +389,58 @@ class StreamingQwenAgent:
                 print("🔄 Streaming final response...")
                 for chunk in self.llm.stream(prompt_messages):
                     token = chunk.content if hasattr(chunk, "content") else str(chunk)
-                    # print(token, end="", flush=True)
+                    ai_response_content += token
                     yield token
+                
+                # Save AI response to database if session provided
+                if session_id and user:
+                    try:
+                        self._save_ai_message_to_db(session_id, ai_response_content, current_tool_calls, current_tool_responses)
+                    except Exception as e:
+                        print(f"❌ Error saving AI message to database: {e}")
                 break
+
+    def _save_ai_message_to_db(self, session_id, content, tool_calls, tool_responses):
+        """Save AI message to database"""
+        from django.apps import apps
+        ConversationMessage = apps.get_model('core', 'ConversationMessage')
+        ConversationSession = apps.get_model('core', 'ConversationSession')
+        
+        try:
+            session = ConversationSession.objects.get(id=session_id)
+            ConversationMessage.objects.create(
+                session=session,
+                content=content,
+                is_user=False,
+                tool_calls=tool_calls if tool_calls else None,
+                tool_responses=tool_responses if tool_responses else None
+            )
+            print(f"✅ AI message saved to session {session_id}")
+        except Exception as e:
+            print(f"❌ Error saving AI message: {e}")
+            raise
+
+    def get_conversation_history(self, session_id, limit=50):
+        """Get conversation history from database and convert to LangChain messages"""
+        from django.apps import apps
+        ConversationMessage = apps.get_model('core', 'ConversationMessage')
+        
+        try:
+            messages = ConversationMessage.objects.filter(
+                session_id=session_id
+            ).order_by('created_at')[:limit]
+            
+            langchain_messages = []
+            for msg in messages:
+                if msg.is_user:
+                    langchain_messages.append(HumanMessage(content=msg.content))
+                else:
+                    langchain_messages.append(AIMessage(content=msg.content))
+            
+            return langchain_messages
+        except Exception as e:
+            print(f"❌ Error retrieving conversation history: {e}")
+            return []
 
 def get_tool_call_counts():
     """Return tool call counts - placeholder implementation"""

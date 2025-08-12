@@ -21,4 +21,8 @@ urlpatterns = [
     # Admin endpoints
     path('api/admin/users/', views.UserListView.as_view(), name='user-list'),
     path('api/admin/users/<int:user_id>/role/', views.UpdateUserRoleView.as_view(), name='update-user-role'),
+    
+    # Conversation endpoints
+    path('api/conversations/', views.ConversationSessionListView.as_view(), name='conversation-sessions'),
+    path('api/conversations/<uuid:session_id>/', views.ConversationSessionDetailView.as_view(), name='conversation-detail'),
 ] 

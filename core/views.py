@@ -18,7 +18,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate
-from .models import User, MarketStats
+from .models import User, MarketStats, ConversationSession, ConversationMessage
 from .serializers import (
     UserRegistrationSerializer, 
     UserLoginSerializer, 
@@ -436,6 +436,7 @@ def stream_llm_response(request):
     try:
         data = json.loads(request.body.decode())
         user_message = data.get("message", "")
+        session_id = data.get("session_id", None)
         if not user_message:
             return JsonResponse({"error": "No message provided"}, status=400)
     except Exception as e:
@@ -443,10 +444,48 @@ def stream_llm_response(request):
 
     try:
         agent = StreamingQwenAgent()
-        messages = [HumanMessage(content=user_message)]
+        
+        # Get or create conversation session
+        if request.user.is_authenticated:
+            if session_id:
+                try:
+                    session = ConversationSession.objects.get(id=session_id, user=request.user)
+                    print(f"✅ Using existing session: {session.id}")
+                except ConversationSession.DoesNotExist:
+                    print(f"❌ Session {session_id} not found, creating new one")
+                    session = ConversationSession.objects.create(user=request.user)
+            else:
+                print("🆕 Creating new session - no session_id provided")
+                session = ConversationSession.objects.create(user=request.user)
+            
+            # Save user message to database
+            ConversationMessage.objects.create(
+                session=session,
+                content=user_message,
+                is_user=True
+            )
+            
+            # Get conversation history (includes the message we just saved)
+            messages = agent.get_conversation_history(session.id)
+                
+            # Generate title if this is the first user message
+            if not session.title:
+                session.generate_title()
+        else:
+            # For unauthenticated users, just use the current message
+            messages = [HumanMessage(content=user_message)]
+            session = None
        
         def token_stream():
-            for token in agent.stream_chat(messages):
+            # First yield the session ID if it's a new session
+            if session and not session_id:
+                yield f"SESSION_ID:{session.id}\n"
+            
+            for token in agent.stream_chat(
+                messages, 
+                session_id=session.id if session else None, 
+                user=request.user if request.user.is_authenticated else None
+            ):
                 if isinstance(token, tuple):
                     # For tool responses, you may want to format differently
                     # if token[0] == "tool_name":
@@ -553,4 +592,95 @@ class UpdateUserRoleView(APIView):
         
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
+# Conversation Management Views
+class ConversationSessionListView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def get(self, request):
+        """Get user's conversation sessions"""
+        sessions = ConversationSession.objects.filter(
+            user=request.user, 
+            is_active=True
+        ).order_by('-updated_at')
+        
+        sessions_data = []
+        for session in sessions:
+            sessions_data.append({
+                'id': str(session.id),
+                'title': session.title or f'Conversation {session.id}',
+                'created_at': session.created_at,
+                'updated_at': session.updated_at,
+                'message_count': session.messages.count()
+            })
+        
+        return Response({'sessions': sessions_data})
+
+    def post(self, request):
+        """Create a new conversation session"""
+        session = ConversationSession.objects.create(user=request.user)
+        return Response({
+            'id': str(session.id),
+            'title': session.title or f'New Conversation',
+            'created_at': session.created_at,
+            'updated_at': session.updated_at
+        }, status=status.HTTP_201_CREATED)
+
+
+class ConversationSessionDetailView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def get(self, request, session_id):
+        """Get conversation history for a specific session"""
+        try:
+            session = ConversationSession.objects.get(
+                id=session_id, 
+                user=request.user,
+                is_active=True
+            )
+        except ConversationSession.DoesNotExist:
+            return Response(
+                {'error': 'Conversation not found'}, 
+                status=status.HTTP_404_NOT_FOUND
+            )
+        
+        messages = session.messages.order_by('created_at')
+        messages_data = []
+        for msg in messages:
+            messages_data.append({
+                'id': str(msg.id),
+                'content': msg.content,
+                'is_user': msg.is_user,
+                'reasoning': msg.reasoning,
+                'tool_calls': msg.tool_calls,
+                'tool_responses': msg.tool_responses,
+                'created_at': msg.created_at
+            })
+        
+        return Response({
+            'session': {
+                'id': str(session.id),
+                'title': session.title,
+                'created_at': session.created_at,
+                'updated_at': session.updated_at
+            },
+            'messages': messages_data
+        })
+    
+    def delete(self, request, session_id):
+        """Delete a conversation session"""
+        try:
+            session = ConversationSession.objects.get(
+                id=session_id, 
+                user=request.user,
+                is_active=True
+            )
+            session.is_active = False
+            session.save()
+            return Response({'message': 'Conversation deleted'})
+        except ConversationSession.DoesNotExist:
+            return Response(
+                {'error': 'Conversation not found'}, 
+                status=status.HTTP_404_NOT_FOUND
+            )
 
