@@ -14,6 +14,7 @@ sys.path.append(str(llm_path))
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage, ToolMessage
 from langchain_core.tools import tool
 from langchain_ollama import ChatOllama
+from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
@@ -36,12 +37,19 @@ class StreamingQwenAgent:
         """Initialize the streaming agent with Qwen3:4b model."""
         print("🚀 Initializing Streaming Qwen Agent...")
         
-        self.llm = ChatOllama(
-            model="qwen3:4b",
+        # self.llm = ChatOllama(
+        #     model="qwen3:4b",
+        #     temperature=0.1,
+        #     streaming=True,
+        #     callbacks=[]
+        # )
+
+        self.llm = ChatOpenAI(
+            model="gpt-4o-mini",
             temperature=0.1,
-            streaming=True,
-            callbacks=[]
+            api_key="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",
         )
+
 
         # Available tools
         self.tools = create_database_tools("postgresql://postgres:AdkiHmmAoHPWhHzphxCwbqcDRvfmRnjJ@ballast.proxy.rlwy.net:49094/railway")

@@ -6,7 +6,8 @@ import time
 import psycopg2
 from psycopg2.extras import RealDictCursor
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-from datetime import datetime
+from datetime import datetime, timedelta
+from django.utils import timezone
 from .llm_stream import StreamingQwenAgent
 from langchain_core.messages import HumanMessage
 import json
@@ -17,7 +18,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate
-from .models import User
+from .models import User, MarketStats
 from .serializers import (
     UserRegistrationSerializer, 
     UserLoginSerializer, 
@@ -29,6 +30,24 @@ from .serializers import (
 
 
 def get_market_stats(request):
+    # Check if we have recent cached data (within 5 minutes)
+    cache_threshold = timezone.now() - timedelta(minutes=5)
+    cached_stats = MarketStats.objects.filter(updated_at__gte=cache_threshold).order_by('-updated_at').first()
+    
+    if cached_stats:
+        # Return cached data
+        response = {
+            "market_cap": cached_stats.market_cap,
+            "market_cap_change_24h": cached_stats.market_cap_change_24h,
+            "market_cap_change_percentage_24h": cached_stats.market_cap_change_percentage_24h,
+            "btc_dominance": cached_stats.btc_dominance,
+            "btc_dominance_change_24h": cached_stats.btc_dominance_change_24h,
+            "volume_24h": cached_stats.volume_24h,
+            "volume_24h_change": cached_stats.volume_24h_change,
+        }
+        return JsonResponse(response)
+    
+    # If no recent cached data, fetch from APIs
     def get_bitcoin_marketcap_dominance():
         MAX_RETRIES = 3
         RETRY_DELAY = 3  # seconds
@@ -148,18 +167,30 @@ def get_market_stats(request):
         return JsonResponse({"error": "Failed to fetch market data"}, status=500)
 
     try:
+        # Store the fetched data in cache
+        market_stats = MarketStats.objects.create(
+            market_cap=market_data["market_cap"],
+            market_cap_change_24h=market_data["market_cap_change_24h"],
+            market_cap_change_percentage_24h=market_data["market_cap_change_percentage_24h"],
+            btc_dominance=market_data["btc_dominance"],
+            btc_dominance_change_24h=market_data["btc_dominance_change_24h"],
+            volume_24h=binance_data["volume_24h_usdt"],
+            volume_24h_change=binance_data["price_change_percent_24h"]
+        )
+        
         response = {
-            "market_cap": market_data["market_cap"],
-            "market_cap_change_24h": market_data["market_cap_change_24h"],
-            "market_cap_change_percentage_24h": market_data["market_cap_change_percentage_24h"],
-            "btc_dominance": market_data["btc_dominance"],
-            "btc_dominance_change_24h": market_data["btc_dominance_change_24h"],
-            "volume_24h": binance_data["volume_24h_usdt"],
-            "volume_24h_change": binance_data["price_change_percent_24h"],
+            "market_cap": market_stats.market_cap,
+            "market_cap_change_24h": market_stats.market_cap_change_24h,
+            "market_cap_change_percentage_24h": market_stats.market_cap_change_percentage_24h,
+            "btc_dominance": market_stats.btc_dominance,
+            "btc_dominance_change_24h": market_stats.btc_dominance_change_24h,
+            "volume_24h": market_stats.volume_24h,
+            "volume_24h_change": market_stats.volume_24h_change,
         }
     except Exception as e:
-        print(f"Error constructing response: {e}")
+        print(f"Error constructing response or saving to cache: {e}")
         return JsonResponse({"error": "Failed to construct response"}, status=500)
+    
     return JsonResponse(response)
 
 

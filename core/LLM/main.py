@@ -2,7 +2,7 @@ import psycopg2
 from psycopg2.extras import RealDictCursor
 from datetime import datetime, timedelta
 from typing import Optional, List, Dict, Any
-from langchain.tools import BaseTool
+from langchain_core.tools import BaseTool
 from pydantic import BaseModel, Field, PrivateAttr
 import pandas as pd
 from django.views.decorators.csrf import csrf_exempt

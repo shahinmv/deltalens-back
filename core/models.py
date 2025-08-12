@@ -1,6 +1,23 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
+class MarketStats(models.Model):
+    market_cap = models.FloatField()
+    market_cap_change_24h = models.FloatField()
+    market_cap_change_percentage_24h = models.FloatField()
+    btc_dominance = models.FloatField()
+    btc_dominance_change_24h = models.FloatField()
+    volume_24h = models.FloatField()
+    volume_24h_change = models.FloatField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name_plural = "Market Stats"
+
+    def __str__(self):
+        return f"Market Stats - {self.updated_at}"
+
 class User(AbstractUser):
     ROLE_CHOICES = [
         ('non_member', 'Non-Member'),
