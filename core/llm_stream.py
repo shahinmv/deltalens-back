@@ -1,4 +1,5 @@
 import sys
+import os
 import asyncio
 from pathlib import Path
 from typing import Dict, Any, List, TypedDict, Annotated
@@ -47,12 +48,13 @@ class StreamingQwenAgent:
         self.llm = ChatOpenAI(
             model="gpt-4o-mini",
             temperature=0.1,
-            api_key="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",
+            api_key=os.getenv('OPENAI_API_KEY'),
         )
 
 
         # Available tools
-        self.tools = create_database_tools("postgresql://postgres:AdkiHmmAoHPWhHzphxCwbqcDRvfmRnjJ@ballast.proxy.rlwy.net:49094/railway")
+        llm_db_url = os.getenv('CRYPTO_DATABASE_URL')
+        self.tools = create_database_tools(llm_db_url)
         
         # Try to bind tools to the model (may not work with all Ollama models)
         try:

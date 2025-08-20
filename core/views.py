@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect, JsonResponse, StreamingHttpResponse
 import requests
 import time
+import os
 import psycopg2
 from psycopg2.extras import RealDictCursor
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
@@ -99,7 +100,7 @@ def get_market_stats(request):
                 print(f"Error extracting market_data from BTC data: {e}")
                 return None
             headers = {
-                'X-CMC_PRO_API_KEY': 'ac4bc071-2576-46de-8aab-718cb1d02fb6',  # Replace with your actual API key
+                'X-CMC_PRO_API_KEY': os.getenv('CMC_PRO_API_KEY'),
                 'Accept': 'application/json'
             }
             global_url = "https://pro-api.coinmarketcap.com/v1/global-metrics/quotes/latest"
@@ -195,7 +196,7 @@ def get_market_stats(request):
 
 
 def get_today_news_sentiment(request):
-    db_connection_string = 'postgresql://postgres:AdkiHmmAoHPWhHzphxCwbqcDRvfmRnjJ@ballast.proxy.rlwy.net:49094/railway'
+    db_connection_string = os.getenv('CRYPTO_DATABASE_URL')
     today = datetime.now().strftime('%Y-%m-%d')
     analyzer = SentimentIntensityAnalyzer()
     try:
@@ -219,7 +220,7 @@ def get_today_news_sentiment(request):
 
 
 def get_news(request):
-    db_connection_string = 'postgresql://postgres:AdkiHmmAoHPWhHzphxCwbqcDRvfmRnjJ@ballast.proxy.rlwy.net:49094/railway'
+    db_connection_string = os.getenv('CRYPTO_DATABASE_URL')
     page = int(request.GET.get('page', 1))
     page_size = int(request.GET.get('page_size', 3))
     offset = (page - 1) * page_size
@@ -248,7 +249,7 @@ def get_news(request):
 
 def get_latest_trading_signal(request):
     """Get the latest trading signal from the database"""
-    db_connection_string = 'postgresql://postgres:AdkiHmmAoHPWhHzphxCwbqcDRvfmRnjJ@ballast.proxy.rlwy.net:49094/railway'
+    db_connection_string = os.getenv('CRYPTO_DATABASE_URL')
     try:
         conn = psycopg2.connect(db_connection_string)
         cursor = conn.cursor()
@@ -294,7 +295,7 @@ def get_latest_trading_signal(request):
 
 def get_iterative_trading_signals(request):
     """Get all trading signals from the iterative_trading_signals table"""
-    db_connection_string = 'postgresql://postgres:AdkiHmmAoHPWhHzphxCwbqcDRvfmRnjJ@ballast.proxy.rlwy.net:49094/railway'
+    db_connection_string = os.getenv('CRYPTO_DATABASE_URL')
     try:
         conn = psycopg2.connect(db_connection_string)
         cursor = conn.cursor()
@@ -351,7 +352,7 @@ def get_iterative_trading_signals(request):
 
 def get_signal_performance(request):
     """Get signal performance data from the new table"""
-    db_connection_string = 'postgresql://postgres:AdkiHmmAoHPWhHzphxCwbqcDRvfmRnjJ@ballast.proxy.rlwy.net:49094/railway'
+    db_connection_string = os.getenv('CRYPTO_DATABASE_URL')
     try:
         conn = psycopg2.connect(db_connection_string)
         cursor = conn.cursor()
